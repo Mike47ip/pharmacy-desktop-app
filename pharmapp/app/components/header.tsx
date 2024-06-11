@@ -11,10 +11,10 @@ import Image from "next/image";
 export default function Header() {
  return (
   <>
-   <div className="flex justify-between px-4  w-full">
+   <div className="flex justify-between px-4 py-1  w-full">
     <span className="text-[7px] font-medium">9:13</span>
 
-<div className="flex">
+<div className="flex gap-1">
 
     <WifiIcon className="w-2" />
     <Battery0Icon className="w-2" />
@@ -46,7 +46,7 @@ export default function Header() {
     <div className="flex items-center gap-2">
      {/* <Image
       src="/healing_dp1lsh.png"
-      alt="hel"
+      alt="heal"
       width={25}
       height={20}
      /> */}
@@ -56,8 +56,8 @@ export default function Header() {
      </div>
      <div className="flex justify-center font-normal border-[0.5px] p-1 border-slate-200 rounded-md">
       <BellIcon className="w-[0.7rem]"/>
+     <span className="w-1 h-1 right-4 top-5 rounded-full absolute bg-red-600"></span>
      </div>
-     <span></span>
 
 
     </div>
