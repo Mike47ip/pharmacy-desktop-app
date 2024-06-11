@@ -14,6 +14,14 @@ const config: Config = {
    fill: {
     green: "#07AF29",
    },
+   colors: {
+    custom: {
+          gray: "#858589",
+          green: "#0AB554",
+          lightgreen: "#DDFFE7",
+    }
+    
+   }
   },
  },
  plugins: [],

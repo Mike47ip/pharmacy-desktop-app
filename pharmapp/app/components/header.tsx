@@ -6,8 +6,7 @@ import {
  WifiIcon,
 } from "@heroicons/react/24/outline";
 import { Battery0Icon, Battery50Icon } from "@heroicons/react/24/solid";
-import Image from "next/image";
-// import healing from "../assets/healing.png";
+// import Image from "next/image";
 
 export default function Header() {
  return (
