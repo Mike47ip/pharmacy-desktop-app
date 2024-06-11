@@ -1,9 +1,12 @@
+import Header from "./components/header";
 
 
 export default function Home() {
-  return (
-    <main>
-      <p>Helloadfaf</p>
-    </main>
-  );
+ return (
+  <>
+   <main>
+    <Header />
+   </main>
+  </>
+ );
 }
