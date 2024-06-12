@@ -22,10 +22,10 @@ export default function Header() {
 </div>
    </div>
 
-   <nav className="flex justify-between px-4 pb-4">
+   <nav className="flex justify-between px-4 pt-7 pb-4">
     <div className="flex items-center gap-2">
      <svg
-      className="w-8 h-8"
+      className="w-10 h-10"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
      >

@@ -1,4 +1,6 @@
-import Image from "next/image";
+
+
+// import Image from "next/image";
 import {
  MagnifyingGlassIcon,
  ViewfinderCircleIcon,
@@ -15,30 +17,30 @@ const Body: React.FC<BodyProps> = () => {
      <li className="flex w-full p-3 justify-between font-medium border-b-[1px] border-custom-400 rounded-2xl">
       {" "}
       <div className="flex gap-[4px] flex-col">
-       <span className="text-[0.7rem] font-semibold text-custom-gray">
+       <span className="text-[0.8rem] font-semibold text-custom-gray">
         Your Waitlist Number
        </span>
-       <p className="text-[0.9rem] font-semibold">
-        A1<span className="text-custom-gray">#1219</span>
+       <p className="text-[1.2rem] font-semibold">
+        A1<span className="text-slate-300">#1219</span>
        </p>
       </div>{" "}
       <div className="flex justify-center items-center h-9 px-2 rounded-xl gap-2 bg-custom-lightgreen ">
        <span className="">
         <ViewfinderCircleIcon className="text-custom-green w-5 " />
        </span>
-       <p className="text-custom-green text-sm font-semibold ">Scan Again</p>
+       <p className="text-custom-green text-md font-semibold ">Scan Again</p>
       </div>
      </li>
      <li className="flex w-full p-3 justify-between font-medium">
       {" "}
       <div className="flex gap-[4px] flex-col">
-       <span className="text-[0.7rem] font-semibold text-custom-gray">
+       <span className="text-[0.8rem] font-semibold text-custom-gray">
         Your Name
        </span>
-       <p className="text-[0.9rem] font-semibold">Nana Adjei</p>
+       <p className="text-[1.2rem] font-semibold">Nana Adjei</p>
       </div>{" "}
       <div className="flex justify-center items-center">
-       <p className="text-sm font-semibold ">
+       <p className="text-md font-semibold ">
         <span className="text-custom-green">3 </span>items
        </p>
       </div>
@@ -53,11 +55,22 @@ const Body: React.FC<BodyProps> = () => {
     </div>
      <input
       type="text"
-      className="border border-gray-300 w-11/12 bg-custom-backgray rounded-full round px-12 py-7 h-6 mt-9 text-sm border-custom-backgray focus:outline-none focus:border-blue-500"
+      className="border w-11/12 bg-custom-backgray rounded-full round px-12 py-7 h-6 mt-9 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
       placeholder="Search collection..."
      />
-     
     </div>
+   </article>
+
+   <article>
+    <ul className="flex gap-4 font-open-sans">
+      <li className="koo text-xs font-medium px-4 py-2 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">All</li>
+      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Tablet</li>
+      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Capsule</li>
+      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Suppository</li>
+      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray" >Powder</li>
+      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Syrup</li>
+      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Potion</li>
+    </ul>
    </article>
 
    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum laudantium reprehenderit aperiam fugiat sint aspernatur nihil distinctio, incidunt autem, animi ad doloribus dolor architecto ipsa! Dolorum excepturi modi dolor et.</p>
