@@ -49,13 +49,14 @@ const Body: React.FC<BodyProps> = () => {
    <article>
     <div className="flex justify-center items-center px-4">
     <div className="absolute left-11 mt-10">
-     <MagnifyingGlassIcon className="w-5" />
+     <MagnifyingGlassIcon className="w-7 text-custom-gray" />
     </div>
      <input
       type="text"
-      className="border border-gray-300 w-11/12 bg-custom-backgray rounded-full round px-6 py-7 h-6 mt-9 text-sm border-none focus:outline-none focus:border-blue-500"
+      className="border border-gray-300 w-11/12 bg-custom-backgray rounded-full round px-12 py-7 h-6 mt-9 text-sm border-custom-backgray focus:outline-none focus:border-blue-500"
       placeholder="Search collection..."
      />
+     
     </div>
    </article>
 
