@@ -61,19 +61,19 @@ const Body: React.FC<BodyProps> = () => {
     </div>
    </article>
 
-   <article>
-    <ul className="flex gap-4 font-open-sans">
-      <li className="koo text-xs font-medium px-4 py-2 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">All</li>
-      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Tablet</li>
-      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Capsule</li>
-      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Suppository</li>
-      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray" >Powder</li>
-      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Syrup</li>
-      <li className="koo text-xs font-medium p-2 rounded-3xl text-custom-gray">Potion</li>
+   <article className="pt-4 px-3">
+    <ul className="flex gap-4 font-open-sans overflow-hidden">
+      <li className="koo text-xs font-medium px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">All</li>
+      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Tablet</li>
+      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Capsule</li>
+      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Suppository</li>
+      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray" >Powder</li>
+      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Syrup</li>
+      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Potion</li>
     </ul>
    </article>
 
-   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum laudantium reprehenderit aperiam fugiat sint aspernatur nihil distinctio, incidunt autem, animi ad doloribus dolor architecto ipsa! Dolorum excepturi modi dolor et.</p>
+   <p className="pt-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum laudantium reprehenderit aperiam fugiat sint aspernatur nihil distinctio, incidunt autem, animi ad doloribus dolor architecto ipsa! Dolorum excepturi modi dolor et.</p>
   </>
  );
 };
