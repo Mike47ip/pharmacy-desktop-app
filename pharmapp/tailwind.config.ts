@@ -19,6 +19,7 @@ const config: Config = {
           gray: "#858589",
           green: "#0AB554",
           lightgreen: "#DDFFE7",
+          backgray: "#F5F5FD",
     }
     
    }
