@@ -17,12 +17,14 @@ const Medicines = () => {
     <div className="flex justify-center items-center">
      <ul className="grid grid-cols-2 pt-2">
       <li className="mx-2 pt-3">
+        <div className="relative w-full pb-[65.25%]">
        <Image
         src="/para.jpg"
         alt="para"
         className="rounded-lg object-cover"
         layout="fill"
        />
+        </div>
        <p className="pt-3 text-sm font-semibold">Paracetamol Berno</p>
        <div className=" w-36 text-[0.7rem] leading-snug text-custom-gray">
         Paracetamol works by inhibiting the production of certain chameical..
@@ -47,13 +49,14 @@ const Medicines = () => {
        </div>
       </li>
       <li className="mx-2 pt-3">
+        <div className="relative w-full pb-[65.25%]">
        <Image
         src="/para.jpg"
         alt="para"
-        className="rounded-lg"
-        width={170}
-        height={150}
+        className="rounded-lg object-cover"
+        layout="fill"
        />
+        </div>
        <p className="pt-3 text-sm font-semibold">Paracetamol Berno</p>
        <div className=" w-36 text-[0.7rem] leading-snug text-custom-gray">
         Paracetamol works by inhibiting the production of certain chameical..
@@ -78,13 +81,14 @@ const Medicines = () => {
        </div>
       </li>
       <li className="mx-2 pt-3">
+        <div className="relative w-full pb-[65.25%]">
        <Image
         src="/para.jpg"
         alt="para"
-        className="rounded-lg"
-        width={170}
-        height={150}
+        className="rounded-lg object-cover"
+        layout="fill"
        />
+        </div>
        <p className="pt-3 text-sm font-semibold">Paracetamol Berno</p>
        <div className=" w-36 text-[0.7rem] leading-snug text-custom-gray">
         Paracetamol works by inhibiting the production of certain chameical..
@@ -109,13 +113,14 @@ const Medicines = () => {
        </div>
       </li>
       <li className="mx-2 pt-3">
+        <div className="relative w-full pb-[65.25%]">
        <Image
         src="/para.jpg"
         alt="para"
-        className="rounded-lg"
-        width={170}
-        height={150}
+        className="rounded-lg object-cover"
+        layout="fill"
        />
+        </div>
        <p className="pt-3 text-sm font-semibold">Paracetamol Berno</p>
        <div className=" w-36 text-[0.7rem] leading-snug text-custom-gray">
         Paracetamol works by inhibiting the production of certain chameical..
@@ -139,6 +144,7 @@ const Medicines = () => {
         </div>
        </div>
       </li>
+
      </ul>
     </div>
    </article>
