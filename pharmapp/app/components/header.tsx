@@ -1,6 +1,5 @@
 import {
  ArrowsRightLeftIcon,
- Battery100Icon,
  BellIcon,
  ShieldExclamationIcon,
  WifiIcon,
@@ -55,7 +54,7 @@ export default function Header() {
      </div>
      <div className="flex justify-center font-normal border-[0.5px] p-1 border-slate-400 rounded-md">
       <BellIcon className="w-6" />
-      <span className="w-1 h-1 right-4 top-8 rounded-full absolute bg-red-600"></span>
+      <span className="w-1 h-1 right-[18px] top-[64px] rounded-full absolute bg-red-600"></span>
      </div>
     </div>
    </nav>

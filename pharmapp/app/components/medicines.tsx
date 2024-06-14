@@ -4,7 +4,10 @@ const Medicines = () => {
  return (
   <>
    <article className="pt-6 px-4">
-    <h2 className="font-bold text-lg pl-4">Medicines</h2>
+    <div className="flex justify-between">
+     <h2 className="font-bold text-lg pl-4">Medicines</h2>
+     <button className=" text-custom-green font-semibold underline">See all</button>
+    </div>
     <div className="flex justify-center items-center">
      <ul className="grid grid-cols-2 pt-2">
       <li className="mx-2 pt-3">
