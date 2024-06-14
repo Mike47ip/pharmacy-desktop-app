@@ -1,5 +1,3 @@
-
-
 // import Image from "next/image";
 import {
  MagnifyingGlassIcon,
@@ -51,9 +49,9 @@ const Body: React.FC<BodyProps> = () => {
 
    <article>
     <div className="flex justify-center items-center px-4">
-    <div className="absolute left-11 mt-10">
-     <MagnifyingGlassIcon className="w-7 text-custom-gray" />
-    </div>
+     <div className="absolute left-11 mt-10">
+      <MagnifyingGlassIcon className="w-7 text-custom-gray" />
+     </div>
      <input
       type="text"
       className="border w-11/12 bg-custom-backgray rounded-full round px-12 py-7 h-6 mt-9 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
@@ -64,19 +62,30 @@ const Body: React.FC<BodyProps> = () => {
 
    <article className="pt-4 px-8">
     <ul className="flex gap-4 font-open-sans overflow-hidden">
-      <li className="koo text-xs font-medium px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">All</li>
-      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Tablet</li>
-      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Capsule</li>
-      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Suppository</li>
-      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray" >Powder</li>
-      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Syrup</li>
-      <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">Potion</li>
+     <li className="koo text-xs font-medium px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">
+      All
+     </li>
+     <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+      Tablet
+     </li>
+     <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+      Capsule
+     </li>
+     <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+      Suppository
+     </li>
+     <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+      Powder
+     </li>
+     <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+      Syrup
+     </li>
+     <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+      Potion
+     </li>
     </ul>
    </article>
-
    <Medicines />
-
-   <p className="pt-32">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum laudantium reprehenderit aperiam fugiat sint aspernatur nihil distinctio, incidunt autem, animi ad doloribus dolor architecto ipsa! Dolorum excepturi modi dolor et.</p>
   </>
  );
 };

@@ -14,12 +14,11 @@ export default function Header() {
    <div className="flex justify-between px-4 py-1  w-full">
     <span className="text-4 font-medium">9:13</span>
 
-<div className="flex gap-1">
-
-    <WifiIcon className="w-5" />
-    <Battery50Icon className="w-5" />
-    <ArrowsRightLeftIcon className="w-5" />
-</div>
+    <div className="flex gap-1">
+     <WifiIcon className="w-5" />
+     <Battery50Icon className="w-5" />
+     <ArrowsRightLeftIcon className="w-5" />
+    </div>
    </div>
 
    <nav className="flex justify-between px-4 pt-7 pb-4">
@@ -52,14 +51,12 @@ export default function Header() {
      /> */}
 
      <div className="flex justify-center font-normal border-[0.5px] p-1 border-slate-400 rounded-md">
-      <ShieldExclamationIcon className="w-6"/>
+      <ShieldExclamationIcon className="w-6" />
      </div>
      <div className="flex justify-center font-normal border-[0.5px] p-1 border-slate-400 rounded-md">
-      <BellIcon className="w-6"/>
-     <span className="w-1 h-1 right-4 top-8 rounded-full absolute bg-red-600"></span>
+      <BellIcon className="w-6" />
+      <span className="w-1 h-1 right-4 top-8 rounded-full absolute bg-red-600"></span>
      </div>
-
-
     </div>
    </nav>
   </>
