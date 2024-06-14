@@ -1,13 +1,4 @@
 import Image from "next/image";
-import para from "../assets/para.jpeg";
-import vento from "../assets/vento.jpg";
-import injection from "../assets/injection.jpg";
-import honey from "../assets/honey.webp";
-import {
- PlusCircleIcon,
- PlusIcon,
- UserPlusIcon,
-} from "@heroicons/react/24/solid";
 
 const Medicines = () => {
  return (
