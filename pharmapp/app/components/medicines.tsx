@@ -51,7 +51,7 @@ const Medicines = () => {
       <li className="mx-2 pt-3">
         <div className="relative w-full pb-[65.25%]">
        <Image
-        src="/para.jpg"
+        src="/vento.jpg"
         alt="para"
         className="rounded-lg object-cover"
         layout="fill"
@@ -83,7 +83,7 @@ const Medicines = () => {
       <li className="mx-2 pt-3">
         <div className="relative w-full pb-[65.25%]">
        <Image
-        src="/para.jpg"
+        src="/injection.jpg"
         alt="para"
         className="rounded-lg object-cover"
         layout="fill"
@@ -115,7 +115,7 @@ const Medicines = () => {
       <li className="mx-2 pt-3">
         <div className="relative w-full pb-[65.25%]">
        <Image
-        src="/para.jpg"
+        src="/Capsule.jpg"
         alt="para"
         className="rounded-lg object-cover"
         layout="fill"
