@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import {
  MagnifyingGlassIcon,
  ViewfinderCircleIcon,
@@ -9,6 +8,7 @@ interface BodyProps {
 }
 
 const Body: React.FC<BodyProps> = () => {
+
  return (
   <>
    <article className="flex justify-center items-center">
@@ -61,7 +61,7 @@ const Body: React.FC<BodyProps> = () => {
    </article>
 
    <article className="pt-4 px-8">
-    <ul className="flex gap-4 font-open-sans overflow-hidden">
+    <ul className="flex gap-4 font-open-sans overflow-x-auto">
      <li className="koo text-xs font-medium px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">
       All
      </li>

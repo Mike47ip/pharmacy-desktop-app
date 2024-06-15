@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -47,28 +46,24 @@ const Medicines: React.FC = () => {
     },
   ];
 
-  const [quantities, setQuantities] = useState<number[]>(Array(medicinesData.length).fill(0));
+  const [quantities, setQuantities] = useState<number[]>(Array(medicinesData.length).fill(1));
 
   const handleIncrease = (index: number) => {
-    console.log(`Increasing quantity for index: ${index}`);
     setQuantities((prevQuantities) => {
       const newQuantities = [...prevQuantities];
       if (newQuantities[index] < medicinesData[index].stock) {
         newQuantities[index] += 1;
       }
-      console.log(`New quantities after increase: ${newQuantities}`);
       return newQuantities;
     });
   };
 
   const handleDecrease = (index: number) => {
-    console.log(`Decreasing quantity for index: ${index}`);
     setQuantities((prevQuantities) => {
       const newQuantities = [...prevQuantities];
-      if (newQuantities[index] > 0) {
+      if (newQuantities[index] > 1) {
         newQuantities[index] -= 1;
       }
-      console.log(`New quantities after decrease: ${newQuantities}`);
       return newQuantities;
     });
   };
