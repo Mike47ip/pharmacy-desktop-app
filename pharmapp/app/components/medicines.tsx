@@ -166,7 +166,7 @@ const Medicines: React.FC = () => {
             -
            </span>
           </button>
-          <span className="text-[0.5rem] font-semibold">
+          <span className="text-[0.5rem] absolute ml-[2.1rem] font-semibold">
            {quantities[index]}
           </span>
           <button
