@@ -48,27 +48,29 @@ const Medicines: React.FC = () => {
   ];
 
   const [quantities, setQuantities] = useState<number[]>(Array(medicinesData.length).fill(0));
+  const [cartItems, setCartItems] = useState<number>(0);
+  const [cartTotal, setCartTotal] = useState<number>(0);
 
   const handleIncrease = (index: number) => {
-    console.log(`Increasing quantity for index: ${index}`);
     setQuantities((prevQuantities) => {
       const newQuantities = [...prevQuantities];
       if (newQuantities[index] < medicinesData[index].stock) {
         newQuantities[index] += 1;
+        setCartItems((prevItems) => prevItems + 1);
+        setCartTotal((prevTotal) => prevTotal + medicinesData[index].price);
       }
-      console.log(`New quantities after increase: ${newQuantities}`);
       return newQuantities;
     });
   };
 
   const handleDecrease = (index: number) => {
-    console.log(`Decreasing quantity for index: ${index}`);
     setQuantities((prevQuantities) => {
       const newQuantities = [...prevQuantities];
       if (newQuantities[index] > 0) {
         newQuantities[index] -= 1;
+        setCartItems((prevItems) => prevItems - 1);
+        setCartTotal((prevTotal) => prevTotal - medicinesData[index].price);
       }
-      console.log(`New quantities after decrease: ${newQuantities}`);
       return newQuantities;
     });
   };
@@ -126,6 +128,15 @@ const Medicines: React.FC = () => {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+      <section className="pt-6 px-4">
+        <div className="flex justify-between">
+          <h2 className="font-bold text-lg pl-4">Shopping Cart</h2>
+        </div>
+        <div>
+          <p>Total Items: {cartItems}</p>
+          <p>Total Cost: ${cartTotal.toFixed(2)}</p>
         </div>
       </section>
     </>
