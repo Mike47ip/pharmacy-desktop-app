@@ -123,16 +123,16 @@ const Medicines: React.FC = () => {
      </button>
     </div>
     <div className="flex justify-center items-center">
-     <ul className="grid grid-cols-2 gap-4 pt-2">
+     <ul className="grid grid-cols-2 w-full gap-3 pt-2">
       {medicinesData.map((medicine, index) => (
-       <li className="mx-2 pt-3" key={index}>
+       <li className="mx-1 pt-3" key={index}>
         <div className="relative w-full pb-[65.25%]">
          <Image
           src={medicine.src}
           alt={medicine.alt}
           className="rounded-lg object-cover"
-          layout="fill"
-          objectFit="cover"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
          />
         </div>
         <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
@@ -140,9 +140,13 @@ const Medicines: React.FC = () => {
          {medicine.description}
         </div>
         <span className="text-[0.6rem] font-bold">Stock: {medicine.stock}</span>
-        <div className="flex justify-between items-center w-44 mt-2">
+        <div className="flex justify-between items-center w-11/12 mt-2">
          <div className="flex">
-          <span className={`pr-1 align-super text-xs font-semibold ${ medicine.stock === 0 ? "text-custom-gray" : "text-custom-green"}`}>
+          <span
+           className={`pr-1 align-super text-xs font-semibold ${
+            medicine.stock === 0 ? "text-custom-gray" : "text-custom-green"
+           }`}
+          >
            $
           </span>
           <p className="font-bold font-open-sans">
@@ -171,11 +175,15 @@ const Medicines: React.FC = () => {
           </span>
           <button
            onClick={() => handleIncrease(index)}
-           className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${ medicine.stock === 0 ? "bg-custom-gray" : "bg-custom-green"}`}
+           className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
+            medicine.stock === 0 ? "bg-custom-gray cursor-not-allowed" : "bg-custom-green"
+           }`}
            aria-label="Increase quantity"
-           disabled={ medicine.stock === 0}
+           disabled={medicine.stock === 0}
           >
-           <span className={`pb-[1.1px] font-semibold text-lg text-white`}>+</span>
+           <span className={`pb-[1.1px] font-semibold text-lg text-white`}>
+            +
+           </span>
           </button>
          </div>
         </div>
