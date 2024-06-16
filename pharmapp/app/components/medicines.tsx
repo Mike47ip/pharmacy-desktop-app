@@ -52,27 +52,59 @@ const Medicines: React.FC = () => {
   const [cartTotal, setCartTotal] = useState<number>(0);
 
   const handleIncrease = (index: number) => {
+    console.log(`Attempting to increase quantity for index: ${[index]}`);
+    
     setQuantities((prevQuantities) => {
       const newQuantities = [...prevQuantities];
       if (newQuantities[index] < medicinesData[index].stock) {
         newQuantities[index] += 1;
-        setCartItems((prevItems) => prevItems + 1);
-        setCartTotal((prevTotal) => prevTotal + medicinesData[index].price);
+        console.log(`New quantity for index ${index}: ${newQuantities[index]}`);
+        return newQuantities;
       }
-      return newQuantities;
+      console.log(`Cannot increase: stock limit reached for index ${index}`);
+      return prevQuantities;
+    });
+  
+    setCartItems((prevItems) => {
+      const newItems = prevItems + 1;
+      console.log(`Updated cart items: ${newItems}`);
+      return newItems;
+    });
+  
+    setCartTotal((prevTotal) => {
+      const newTotal = prevTotal + medicinesData[index].price;
+      console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
+      return newTotal;
     });
   };
 
   const handleDecrease = (index: number) => {
+    console.log(`Attempting to decrease quantity for index: ${index}`);
+    
     setQuantities((prevQuantities) => {
       const newQuantities = [...prevQuantities];
       if (newQuantities[index] > 0) {
         newQuantities[index] -= 1;
-        setCartItems((prevItems) => prevItems - 1);
-        setCartTotal((prevTotal) => prevTotal - medicinesData[index].price);
+        console.log(`New quantity for index ${index}: ${newQuantities[index]}`);
+        return newQuantities;
       }
-      return newQuantities;
+      console.log(`Cannot decrease: quantity already 0 for index ${index}`);
+      return prevQuantities;
     });
+  
+    if (quantities[index] > 0) {
+      setCartItems((prevItems) => {
+        const newItems = prevItems - 1;
+        console.log(`Updated cart items: ${newItems}`);
+        return newItems;
+      });
+  
+      setCartTotal((prevTotal) => {
+        const newTotal = prevTotal - medicinesData[index].price;
+        console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
+        return newTotal;
+      });
+    }
   };
 
   return (
