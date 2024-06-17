@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import {
+ ChevronDownIcon,
+} from "@heroicons/react/24/solid";
 
 interface Medicine {
  src: string;
@@ -71,18 +74,25 @@ const Medicines: React.FC = () => {
    return prevQuantities;
   });
 
-  setCartItems((prevItems) => {
-   const newItems = prevItems + 1;
-   console.log(`Updated cart items: ${newItems}`);
-   return newItems;
-  });
 
-  setCartTotal((prevTotal) => {
-   const newTotal = prevTotal + medicinesData[index].price;
-   console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
-   return newTotal;
-  });
+  if (quantities[index] < medicinesData[index].stock) { 
+    setCartItems((prevItems) => {
+     const newItems = prevItems + 1;
+     console.log(`Updated cart items: ${newItems}`);
+     return newItems;
+    });
+
+    setCartTotal((prevTotal) => {
+     const newTotal = prevTotal + medicinesData[index].price;
+     console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
+     return newTotal;
+    });
+
+
+  }
+  
  };
+
 
  const handleDecrease = (index: number) => {
   console.log(`Attempting to decrease quantity for index: ${index}`);
@@ -176,7 +186,9 @@ const Medicines: React.FC = () => {
           <button
            onClick={() => handleIncrease(index)}
            className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
-            medicine.stock === 0 ? "bg-custom-gray cursor-not-allowed" : "bg-custom-green"
+            medicine.stock === 0
+             ? "bg-custom-gray cursor-not-allowed"
+             : "bg-custom-green"
            }`}
            aria-label="Increase quantity"
            disabled={medicine.stock === 0}
@@ -192,14 +204,17 @@ const Medicines: React.FC = () => {
      </ul>
     </div>
    </section>
-   <section className="pt-6 px-4">
-    <div className="flex justify-between">
-     <h2 className="font-bold text-lg pl-4">Shopping Cart</h2>
+   <section className="flex justify-between items-center px-4 py-9">
+    <div className="flex flex-col justify-center items-center">
+     <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
+     <p className="flex font-semibold gap-1">
+      <span className="text-custom-green font-semibold">{cartItems}</span>items{" "}
+      <ChevronDownIcon className="w-4 absolute ml-16"/>
+     </p>
     </div>
-    <div>
-     <p>Total Items: {cartItems}</p>
-     <p>Total Cost: ${cartTotal.toFixed(2)}</p>
-    </div>
+    <button className="flex justify-center rounded-xl w-32 h-10 bg-custom-green text-white items-center">
+     <p className="text-sm whitespace-nowrap absolute">Purchase {cartTotal.toFixed(2)}</p>
+    </button>
    </section>
   </>
  );
