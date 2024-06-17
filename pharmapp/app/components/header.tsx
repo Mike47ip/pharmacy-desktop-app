@@ -10,7 +10,7 @@ import { Battery0Icon, Battery50Icon } from "@heroicons/react/24/solid";
 export default function Header() {
  return (
   <>
-   <div className="flex justify-between px-4 py-1  w-full">
+   <div className="flex justify-between px-4 py-1 w-full">
     <span className="text-4 font-medium">9:13</span>
 
     <div className="flex gap-1">
