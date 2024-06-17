@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import {
- ChevronDownIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 interface Medicine {
  src: string;
@@ -77,6 +75,7 @@ const Medicines: React.FC = () => {
  );
  const [cartItems, setCartItems] = useState<number>(0);
  const [cartTotal, setCartTotal] = useState<number>(0);
+ const [isCartVisible, setIsCartVisible] = useState<boolean>(false); // New state for cart visibility
 
  const handleIncrease = (index: number) => {
   console.log(`Attempting to increase quantity for index: ${[index]}`);
@@ -92,25 +91,22 @@ const Medicines: React.FC = () => {
    return prevQuantities;
   });
 
+  //Only add drugs as long as they are not out of stock
+  if (quantities[index] < medicinesData[index].stock) {
+   setCartItems((prevItems) => {
+    const newItems = prevItems + 1;
+    console.log(`Updated cart items: ${newItems}`);
+    return newItems;
+   });
 
-  if (quantities[index] < medicinesData[index].stock) { 
-    setCartItems((prevItems) => {
-     const newItems = prevItems + 1;
-     console.log(`Updated cart items: ${newItems}`);
-     return newItems;
-    });
-
-    setCartTotal((prevTotal) => {
-     const newTotal = prevTotal + medicinesData[index].price;
-     console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
-     return newTotal;
-    });
-
-
+   setCartTotal((prevTotal) => {
+    const newTotal = prevTotal + medicinesData[index].price;
+    console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
+    return newTotal;
+   });
   }
-  
+  setIsCartVisible(true);
  };
-
 
  const handleDecrease = (index: number) => {
   console.log(`Attempting to decrease quantity for index: ${index}`);
@@ -143,7 +139,7 @@ const Medicines: React.FC = () => {
 
  return (
   <>
-   <section className="pt-6 px-4 mb-24">
+   <section id="medicineCards" className={`pt-6 px-4 ${isCartVisible ? "mb-24" : "pb-4"}`}>
     <div className="flex justify-between">
      <h2 className="font-bold text-lg pl-4">Medicines</h2>
      <button className="text-custom-green font-semibold underline">
@@ -222,18 +218,25 @@ const Medicines: React.FC = () => {
      </ul>
     </div>
    </section>
-   <section className="flex justify-between fixed bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30">
-    <div className="flex flex-col justify-center items-center">
-     <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
-     <p className="flex font-semibold gap-1">
-      <span className="text-custom-green font-semibold">{cartItems}</span>items{" "}
-      <ChevronDownIcon className="w-4 absolute ml-16"/>
-     </p>
-    </div>
-    <button className="flex justify-center rounded-xl w-32 h-10 bg-custom-green text-white items-center">
-     <p className="text-sm whitespace-nowrap absolute">Purchase {cartTotal.toFixed(2)}</p>
-    </button>
-   </section>
+   {isCartVisible && ( // Conditionally render the Cart section based on isCartVisible
+    <section
+     id="Cart"
+     className="flex justify-between fixed bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+    >
+     <div className="flex flex-col justify-center items-center">
+      <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
+      <p className="flex font-semibold gap-1">
+       <span className="text-custom-green font-semibold">{cartItems}</span>items{" "}
+       <ChevronDownIcon className="w-4 absolute ml-16" />
+      </p>
+     </div>
+     <button className="flex justify-center rounded-xl w-32 h-10 bg-custom-green text-white items-center">
+      <p className="text-sm whitespace-nowrap absolute">
+       Purchase {cartTotal.toFixed(2)}
+      </p>
+     </button>
+    </section>
+   )}
   </>
  );
 };
