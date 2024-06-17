@@ -204,7 +204,7 @@ const Medicines: React.FC = () => {
      </ul>
     </div>
    </section>
-   <section className="flex justify-between items-center px-4 py-9">
+   <section className="flex justify-between fixed bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30">
     <div className="flex flex-col justify-center items-center">
      <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
      <p className="flex font-semibold gap-1">

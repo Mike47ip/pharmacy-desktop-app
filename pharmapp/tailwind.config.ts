@@ -26,6 +26,9 @@ const config: Config = {
       'green-gradient': '#08B133', // Starting color
       'green-gradient-light': '#06A680', // Ending color
    },
+   boxShadow: {
+      'upward': '0 -4px 6px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.06)',
+    },
   },
  },
  plugins: [],
