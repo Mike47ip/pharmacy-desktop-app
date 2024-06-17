@@ -52,6 +52,24 @@ const Medicines: React.FC = () => {
    stock: 10,
    price: 2.99,
   },
+  {
+   src: "/ColaceGlycerin",
+   alt: "capsule",
+   title: "Colace Glycerine",
+   description:
+    "Effective in treating suppository illnesses with minimal side effects..",
+   stock: 18,
+   price: 8.99,
+  },
+  {
+   src: "/injection5",
+   alt: "capsule",
+   title: "Injection Medicine",
+   description:
+    "Most effective way of adminsitering drugs into your body without any..",
+   stock: 6,
+   price: 10.42,
+  },
  ];
 
  const [quantities, setQuantities] = useState<number[]>(
@@ -125,7 +143,7 @@ const Medicines: React.FC = () => {
 
  return (
   <>
-   <section className="pt-6 px-4">
+   <section className="pt-6 px-4 mb-24">
     <div className="flex justify-between">
      <h2 className="font-bold text-lg pl-4">Medicines</h2>
      <button className="text-custom-green font-semibold underline">
