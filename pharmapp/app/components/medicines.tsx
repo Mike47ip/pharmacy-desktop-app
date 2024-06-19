@@ -75,7 +75,7 @@ const Medicines: React.FC = () => {
  );
  const [cartItems, setCartItems] = useState<number>(0);
  const [cartTotal, setCartTotal] = useState<number>(0);
- const [isCartVisible, setIsCartVisible] = useState<boolean>(false); // New state for cart visibility
+ const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
 
  const handleIncrease = (index: number) => {
   console.log(`Attempting to increase quantity for index: ${[index]}`);
@@ -91,7 +91,12 @@ const Medicines: React.FC = () => {
    return prevQuantities;
   });
 
-  //Only add drugs as long as they are not out of stock
+  // Check if all quantities are zero after decrementing
+if (quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0) {
+  setIsCartVisible(false);
+  }
+
+  //Only add drugs as long as they are not out of quantity
   if (quantities[index] < medicinesData[index].stock) {
    setCartItems((prevItems) => {
     const newItems = prevItems + 1;
@@ -135,7 +140,7 @@ const Medicines: React.FC = () => {
     return newTotal;
    });
   }
- };
+};
 
  return (
   <>
