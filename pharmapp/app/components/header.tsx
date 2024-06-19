@@ -4,7 +4,11 @@ import {
  ShieldExclamationIcon,
  WifiIcon,
 } from "@heroicons/react/24/outline";
-import { Battery0Icon, Battery50Icon } from "@heroicons/react/24/solid";
+import {
+ Battery0Icon,
+ Battery50Icon,
+ MagnifyingGlassIcon,
+} from "@heroicons/react/24/solid";
 // import Image from "next/image";
 
 export default function Header() {
@@ -20,8 +24,10 @@ export default function Header() {
     </div>
    </div>
 
-   <nav className="flex justify-between px-4 pt-7 pb-4">
-    <div className="flex items-center gap-2">
+   <nav></nav>
+
+   <nav className="flex gap-5 px-4 pt-7 pb-4">
+    <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"
       xmlns="http://www.w3.org/2000/svg"
@@ -39,6 +45,24 @@ export default function Header() {
       />
      </svg>
      <h1 className="text-5 font-semibold">MedKitPOS</h1>
+    </div>
+
+    <div className="flex justify-center items-center">
+     <div className="flex flex-col">
+      <h1 className="text-lg font-bold">Nana Adjei</h1>
+      <span>Date</span>
+     </div>
+
+     <div className="flex justify-center items-center px-4">
+      <div className="">
+       <MagnifyingGlassIcon className="w-7 text-custom-gray" />
+      </div>
+      <input
+       type="text"
+       className="border  bg-custom-backgray rounded-full round px-12 py-7 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+       placeholder="Search collection..."
+      />
+     </div>
     </div>
 
     <div className="flex items-center gap-2">
