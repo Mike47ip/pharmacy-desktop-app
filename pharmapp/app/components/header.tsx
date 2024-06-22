@@ -21,7 +21,7 @@ const today = new Date();
 export default function Header() {
  return (
   <>
-   <nav className="flex gap-28 px-4 pt-7 pb-4">
+   <nav className="flex justify-between items-center px-5 pt-7 pb-4">
     <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"
@@ -42,25 +42,25 @@ export default function Header() {
      <h1 className="text-5 font-semibold">MedKitPOS</h1>
     </div>
 
-    <div className="flex justify-center items-center">
+   
      <div className="flex flex-col">
       <h1 className="text-lg font-bold">Nana Adjei</h1>
       <span className="text-sm">{formattedDate}</span>
      </div>
 
      <div className="flex justify-center items-center px-4">
-      <div className="left-[10%] absolute">
+      <div className="left-[21%] absolute">
        <MagnifyingGlassIcon className="w-7 text-custom-gray" />
       </div>
       <input
        type="text"
-       className="border  bg-custom-backgray rounded-full round px-12 py-7 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+       className="border w-[27rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
        placeholder="Search collection..."
       />
      </div>
-    </div>
+    
 
-    <div className="flex items-center gap-2">
+
      {/* <Image
       src="/healing_dp1lsh.png"
       alt="heal"
@@ -85,7 +85,7 @@ export default function Header() {
 
      <Image className="rounded-full" src="/passport.jpg" alt="passport pic" width={30} height={25}/>
      
-    </div>
+    
     <div>
       <h3 className="font-bold">Sugar Yaw</h3>
       <p className="text-sm">Pharmacist</p>
