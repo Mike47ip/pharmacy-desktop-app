@@ -9,24 +9,12 @@ import {
  Battery50Icon,
  MagnifyingGlassIcon,
 } from "@heroicons/react/24/solid";
-// import Image from "next/image";
+import Image from "next/image";
 
 export default function Header() {
  return (
   <>
-   <div className="flex justify-between px-4 py-1 w-full">
-    <span className="text-4 font-medium">9:13</span>
-
-    <div className="flex gap-1">
-     <WifiIcon className="w-5" />
-     <Battery50Icon className="w-5" />
-     <ArrowsRightLeftIcon className="w-5" />
-    </div>
-   </div>
-
-   <nav></nav>
-
-   <nav className="flex gap-5 px-4 pt-7 pb-4">
+   <nav className="flex gap-28 px-4 pt-7 pb-4">
     <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"
@@ -50,11 +38,11 @@ export default function Header() {
     <div className="flex justify-center items-center">
      <div className="flex flex-col">
       <h1 className="text-lg font-bold">Nana Adjei</h1>
-      <span>Date</span>
+      <span className="text-sm">Date</span>
      </div>
 
      <div className="flex justify-center items-center px-4">
-      <div className="">
+      <div className="left-[10%] absolute">
        <MagnifyingGlassIcon className="w-7 text-custom-gray" />
       </div>
       <input
@@ -73,13 +61,27 @@ export default function Header() {
       height={20}
      /> */}
 
-     <div className="flex justify-center font-normal border-[0.5px] p-1 border-slate-400 rounded-md">
+     <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
       <ShieldExclamationIcon className="w-6" />
+      <p>
+        Use Voucher
+      </p>
      </div>
-     <div className="flex justify-center font-normal border-[0.5px] p-1 border-slate-400 rounded-md">
+     <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
       <BellIcon className="w-6" />
+      <p>
+        Scan Prescription
+      </p>
       <span className="w-1 h-1 right-[18px] top-[64px] rounded-full absolute bg-red-600"></span>
      </div>
+     <BellIcon className="w-6" />
+
+     <Image className="rounded-full" src="/passport.jpg" alt="passport pic" width={30} height={25}/>
+     
+    </div>
+    <div>
+      <h3 className="font-bold">Sugar Yaw</h3>
+      <p className="text-sm">Pharmacist</p>
     </div>
    </nav>
   </>
