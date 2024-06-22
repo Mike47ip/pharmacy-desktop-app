@@ -20,6 +20,7 @@ const config: Config = {
      green: "#0AB554",
      lightgreen: "#DDFFE7",
      backgray: "#F5F5FD",
+     dark: "#1E1E1E",
     },
    },
    gradientColorStops: {

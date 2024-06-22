@@ -5,8 +5,6 @@ import {
  WifiIcon,
 } from "@heroicons/react/24/outline";
 import {
- Battery0Icon,
- Battery50Icon,
  MagnifyingGlassIcon,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
@@ -45,7 +43,7 @@ export default function Header() {
    
      <div className="flex flex-col">
       <h1 className="text-lg font-bold">Nana Adjei</h1>
-      <span className="text-sm">{formattedDate}</span>
+      <span className="text-sm text-custom-gray">{formattedDate}</span>
      </div>
 
      <div className="flex justify-center items-center px-4">
@@ -88,7 +86,7 @@ export default function Header() {
     
     <div>
       <h3 className="font-bold">Sugar Yaw</h3>
-      <p className="text-sm">Pharmacist</p>
+      <p className="text-sm text-custom-gray">Pharmacist</p>
     </div>
    </nav>
   </>
