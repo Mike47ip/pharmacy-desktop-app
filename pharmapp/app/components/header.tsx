@@ -11,6 +11,13 @@ import {
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
+const today = new Date();
+  // Define options for formatting the date
+  const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+
+  // Format the date
+  const formattedDate = new Intl.DateTimeFormat('en-GB', options).format(today);
+
 export default function Header() {
  return (
   <>
@@ -38,7 +45,7 @@ export default function Header() {
     <div className="flex justify-center items-center">
      <div className="flex flex-col">
       <h1 className="text-lg font-bold">Nana Adjei</h1>
-      <span className="text-sm">Date</span>
+      <span className="text-sm">{formattedDate}</span>
      </div>
 
      <div className="flex justify-center items-center px-4">
