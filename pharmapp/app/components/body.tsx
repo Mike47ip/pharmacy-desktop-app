@@ -10,8 +10,8 @@ interface BodyProps {
 const Body: React.FC<BodyProps> = () => {
  return (
   <>
-   <main>
-    <div>
+   <main className="flex w-full">
+    <div className="w-full">
      <article className="flex justify-center items-center">
       <ul className="flex flex-col w-10/12 justify-center font-open-sans items-center border-[1px] border-custom-400 rounded-2xl">
        <li className="flex w-full p-3 justify-between font-medium border-b-[1px] border-custom-400 rounded-2xl">

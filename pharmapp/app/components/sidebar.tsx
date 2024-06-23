@@ -1,9 +1,9 @@
-import Image from "next/image";
+
 
 const Sidebar = () => {
  return (
   <>
-   <div className="w-1/5 bg-custom-dark h-full">
+   <div className="w-1/5 bg-custom-dark h-screen">
     <h1>Main Menu</h1>
     <ul>
      <li className="w-11 h-11">
