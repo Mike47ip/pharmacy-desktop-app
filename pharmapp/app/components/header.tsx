@@ -1,8 +1,6 @@
 import {
- ArrowsRightLeftIcon,
  BellIcon,
  ShieldExclamationIcon,
- WifiIcon,
 } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
@@ -22,7 +20,7 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(today);
 export default function Header() {
  return (
   <>
-   <nav className="flex justify-between items-center px-5 pt-7 pb-4">
+   <nav className="flex justify-between items-center px-5 py-7">
     <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"
@@ -44,12 +42,13 @@ export default function Header() {
     </div>
 
     <div className="flex flex-col">
-     <h1 className="text-lg font-bold">Nana Adjei</h1>
+     <h1 className="text-lg font-bold whitespace-nowrap">Nana Adjei Barimaba
+     </h1>
      <span className="text-sm text-custom-gray">{formattedDate}</span>
     </div>
 
     <div className="flex justify-center items-center px-4">
-     <div className="left-[21%] absolute">
+     <div className="left-[32%] absolute">
       <MagnifyingGlassIcon className="w-7 text-custom-gray" />
      </div>
      <input
@@ -59,13 +58,13 @@ export default function Header() {
      />
     </div>
 
-    <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
-     <ShieldExclamationIcon className="w-6" />
-     <p>Use Voucher</p>
+    <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
+   <Image src="/voucher.png" alt="voucher" width={23} height={23}/>
+     <p className="whitespace-nowrap text-sm font-semibold">Use Voucher</p>
     </div>
-    <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
-     <BellIcon className="w-6" />
-     <p>Scan Prescription</p>
+    <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M40-120v-200h80v120h120v80H40Zm680 0v-80h120v-120h80v200H720ZM160-240v-480h80v480h-80Zm120 0v-480h40v480h-40Zm120 0v-480h80v480h-80Zm120 0v-480h120v480H520Zm160 0v-480h40v480h-40Zm80 0v-480h40v480h-40ZM40-640v-200h200v80H120v120H40Zm800 0v-120H720v-80h200v200h-80Z"/></svg>
+     <p className="whitespace-nowrap text-sm font-semibold">Scan Prescription</p>
      <span className="w-1 h-1 right-[18px] top-[64px] rounded-full absolute bg-red-600"></span>
     </div>
     <BellIcon className="w-6" />
@@ -79,8 +78,8 @@ export default function Header() {
     />
 
     <div>
-     <h3 className="font-bold">Sugar Yaw</h3>
-     <p className="text-sm text-custom-gray">Pharmacist</p>
+     <h3 className="font-semibold whitespace-nowrap">Sugar Yaw</h3>
+     <p className="text-xs text-custom-gray">Pharmacist</p>
     </div>
    </nav>
   </>

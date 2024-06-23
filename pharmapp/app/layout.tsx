@@ -23,7 +23,7 @@ export default function RootLayout({
         <Sidebar />
         <div className="flex flex-col w-full">
           <Header />
-          <main className="overflow-auto">
+          <main className="overflow-auto bg-custom-background">
             {children}
           </main>
         </div>

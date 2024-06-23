@@ -167,7 +167,7 @@ if (quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0)
         <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
         <div className="w-36 text-[0.7rem] leading-snug text-custom-gray">
          {medicine.description}
-        </div>
+        </div>=
         <span className="text-[0.6rem] font-bold">Stock: {medicine.stock}</span>
         <div className="flex justify-between items-center w-11/12 mt-2">
          <div className="flex">
