@@ -23,7 +23,7 @@ export default function RootLayout({
         <Sidebar />
         <div className="flex flex-col ml">
           <Header />
-          <main className=" overflow-auto">
+          <main className="overflow-auto">
             {children}
           </main>
         </div>
