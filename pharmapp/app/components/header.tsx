@@ -4,17 +4,20 @@ import {
  ShieldExclamationIcon,
  WifiIcon,
 } from "@heroicons/react/24/outline";
-import {
- MagnifyingGlassIcon,
-} from "@heroicons/react/24/solid";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
 const today = new Date();
-  // Define options for formatting the date
-  const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+// Define options for formatting the date
+const options: Intl.DateTimeFormatOptions = {
+ weekday: "long",
+ day: "2-digit",
+ month: "long",
+ year: "numeric",
+};
 
-  // Format the date
-  const formattedDate = new Intl.DateTimeFormat('en-GB', options).format(today);
+// Format the date
+const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(today);
 
 export default function Header() {
  return (
@@ -40,53 +43,44 @@ export default function Header() {
      <h1 className="text-5 font-semibold">MedKitPOS</h1>
     </div>
 
-   
-     <div className="flex flex-col">
-      <h1 className="text-lg font-bold">Nana Adjei</h1>
-      <span className="text-sm text-custom-gray">{formattedDate}</span>
-     </div>
+    <div className="flex flex-col">
+     <h1 className="text-lg font-bold">Nana Adjei</h1>
+     <span className="text-sm text-custom-gray">{formattedDate}</span>
+    </div>
 
-     <div className="flex justify-center items-center px-4">
-      <div className="left-[21%] absolute">
-       <MagnifyingGlassIcon className="w-7 text-custom-gray" />
-      </div>
-      <input
-       type="text"
-       className="border w-[27rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
-       placeholder="Search collection..."
-      />
+    <div className="flex justify-center items-center px-4">
+     <div className="left-[21%] absolute">
+      <MagnifyingGlassIcon className="w-7 text-custom-gray" />
      </div>
-    
+     <input
+      type="text"
+      className="border w-[27rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+      placeholder="Search collection..."
+     />
+    </div>
 
-
-     {/* <Image
-      src="/healing_dp1lsh.png"
-      alt="heal"
-      width={25}
-      height={20}
-     /> */}
-
-     <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
-      <ShieldExclamationIcon className="w-6" />
-      <p>
-        Use Voucher
-      </p>
-     </div>
-     <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
-      <BellIcon className="w-6" />
-      <p>
-        Scan Prescription
-      </p>
-      <span className="w-1 h-1 right-[18px] top-[64px] rounded-full absolute bg-red-600"></span>
-     </div>
+    <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
+     <ShieldExclamationIcon className="w-6" />
+     <p>Use Voucher</p>
+    </div>
+    <div className="flex justify-center font-normal border-[0.5px] p-2 border-slate-200 rounded-lg">
      <BellIcon className="w-6" />
+     <p>Scan Prescription</p>
+     <span className="w-1 h-1 right-[18px] top-[64px] rounded-full absolute bg-red-600"></span>
+    </div>
+    <BellIcon className="w-6" />
 
-     <Image className="rounded-full" src="/passport.jpg" alt="passport pic" width={30} height={25}/>
-     
-    
+    <Image
+     className="rounded-full"
+     src="/passport.jpg"
+     alt="passport pic"
+     width={30}
+     height={25}
+    />
+
     <div>
-      <h3 className="font-bold">Sugar Yaw</h3>
-      <p className="text-sm text-custom-gray">Pharmacist</p>
+     <h3 className="font-bold">Sugar Yaw</h3>
+     <p className="text-sm text-custom-gray">Pharmacist</p>
     </div>
    </nav>
   </>
