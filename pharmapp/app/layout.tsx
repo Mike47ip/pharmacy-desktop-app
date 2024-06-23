@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex w-screen h-screen`}>
         <Sidebar />
-        <div className="flex flex-col ml">
+        <div className="flex flex-col w-full">
           <Header />
           <main className="overflow-auto">
             {children}
