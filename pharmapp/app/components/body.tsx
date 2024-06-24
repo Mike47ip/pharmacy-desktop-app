@@ -3,6 +3,7 @@ import {
  ViewfinderCircleIcon,
 } from "@heroicons/react/24/solid";
 import Medicines from "./medicines";
+import { WaitingList } from "./waitinglist";
 interface BodyProps {
  // Define props here if needed
 }
@@ -14,7 +15,7 @@ const Body: React.FC<BodyProps> = () => {
     <div className="w-full">
       <article>
         <div>
-          
+
         </div>
       </article>
      <article className="flex justify-center items-center">
@@ -93,6 +94,9 @@ const Body: React.FC<BodyProps> = () => {
      </article>
      <Medicines />
     </div>
+    <aside>
+      <WaitingList />
+    </aside>
    </main>
   </>
  );

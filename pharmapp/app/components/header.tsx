@@ -20,7 +20,7 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(today);
 export default function Header() {
  return (
   <>
-   <nav className="flex justify-between items-center px-5 py-7">
+   <nav className="flex justify-between items-center px-5 py-7 border-b-[1px] border-slate-20">
     <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"

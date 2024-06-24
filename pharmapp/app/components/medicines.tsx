@@ -92,8 +92,10 @@ const Medicines: React.FC = () => {
   });
 
   // Check if all quantities are zero after decrementing
-if (quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0) {
-  setIsCartVisible(false);
+  if (
+   quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0
+  ) {
+   setIsCartVisible(false);
   }
 
   //Only add drugs as long as they are not out of quantity
@@ -140,11 +142,14 @@ if (quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0)
     return newTotal;
    });
   }
-};
+ };
 
  return (
   <>
-   <section id="medicineCards" className={`pt-6 px-4 ${isCartVisible ? "mb-24" : "pb-4"}`}>
+   <section
+    id="medicineCards"
+    className={`pt-6 px-4 ${isCartVisible ? "mb-24" : "pb-4"}`}
+   >
     <div className="flex justify-between">
      <h2 className="font-bold text-lg pl-4">Medicines</h2>
      <button className="text-custom-green font-semibold underline">
@@ -167,7 +172,7 @@ if (quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0)
         <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
         <div className="w-36 text-[0.7rem] leading-snug text-custom-gray">
          {medicine.description}
-        </div>=
+        </div>
         <span className="text-[0.6rem] font-bold">Stock: {medicine.stock}</span>
         <div className="flex justify-between items-center w-11/12 mt-2">
          <div className="flex">
