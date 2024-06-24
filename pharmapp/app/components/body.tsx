@@ -20,7 +20,7 @@ const Body: React.FC<BodyProps> = () => {
        <div className="flex flex-col gap-2">
         <div className="flex gap-4 text-white font-semibold">
          <h1>Your subscription is almost expired</h1>
-         <div className="flex  justify-center gap-1  text-xs align-super"> <ClockIcon  className="text-white w-3 h-3" /> 7 days left</div>
+         <div className="flex  justify-center gap-1 font-medium text-xs align-super"> <ClockIcon  className="text-white w-3 h-3" /> 7 days left</div>
         </div>
         <div>
          <p className="text-custom-gray text-sm">
