@@ -6,7 +6,6 @@ import {
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { UsersIcon } from "@heroicons/react/24/outline";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import { CloudIcon } from "@heroicons/react/24/outline";
 
 const Sidebar = () => {
  return (

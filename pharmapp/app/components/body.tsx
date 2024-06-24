@@ -68,7 +68,7 @@ const Body: React.FC<BodyProps> = () => {
       </ul>
      </article>
 
-     <article>
+     <article className="hidden">
       <div className="flex justify-center items-center px-4">
        <div className="absolute left-11 mt-10">
         <MagnifyingGlassIcon className="w-7 text-custom-gray" />
