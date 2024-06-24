@@ -42,9 +42,9 @@ const Sidebar = () => {
          {" "}
          <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="32px"
+          height="28px"
           viewBox="0 -960 960 960"
-          width="32px"
+          width="28px"
           className="text-custom-green"
           fill="currentColor"
          >
@@ -53,14 +53,14 @@ const Sidebar = () => {
          Home
         </li>
         <li className="flex items-center gap-5 py-3">
-         <ClockIcon className="w-7 ml-1" /> History
+         <ClockIcon className="w-7" /> History
         </li>
         <li className="flex items-center gap-5 py-3">
-         <ChartPieIcon className="w-7 ml-1" /> Supplies
+         <ChartPieIcon className="w-7" /> Supplies
         </li>
         <li className="flex items-center gap-5 py-3">
          {" "}
-         <UsersIcon className="w-7 ml-1" /> Waitlist
+         <UsersIcon className="w-7" /> Waitlist
         </li>
        </ul>
       </div>
@@ -69,11 +69,11 @@ const Sidebar = () => {
        <h3 className="text-custom-gray pb-4 pt-7 font-semibold">General</h3>
        <ul className="text-white">
         <li className="flex items-center gap-5 py-3">
-         <Cog6ToothIcon className="w-7 ml-1" />
+         <Cog6ToothIcon className="w-7" />
          Home
         </li>
         <li className="flex items-center gap-5 py-3">
-         <UserGroupIcon className="w-7 ml-1" /> History
+         <UserGroupIcon className="w-7" /> History
         </li>
        </ul>
       </div>
@@ -81,7 +81,7 @@ const Sidebar = () => {
 
      <div className="flex text-white pt-16">
       <button className="flex items-center gap-5 py-3">
-       <ArrowLeftStartOnRectangleIcon className="w-7 ml-1" />
+       <ArrowLeftStartOnRectangleIcon className="w-7" />
        Logout
       </button>
      </div>
