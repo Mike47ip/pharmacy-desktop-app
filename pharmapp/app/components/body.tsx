@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Medicines from "./medicines";
 import { WaitingList } from "./waitinglist";
+import { ClockIcon } from "@heroicons/react/24/outline";
 interface BodyProps {
  // Define props here if needed
 }
@@ -15,19 +16,19 @@ const Body: React.FC<BodyProps> = () => {
    <main className="flex w-full">
     <div className="w-[70%]">
      <article className="p-10">
-      <div className="relative flex justify-between items-start p-10 bg-dark-black-background bg-cover bg-center rounded-3xl">
-       <div>
-        <div className="flex text-white">
+      <div className="relative flex justify-between items-center p-7 bg-dark-black-background bg-cover bg-center rounded-3xl">
+       <div className="flex flex-col gap-2">
+        <div className="flex gap-4 text-white font-semibold">
          <h1>Your subscription is almost expired</h1>
-         <span className="text-xs align-super">7 days left</span>
+         <div className="flex  justify-center gap-1  text-xs align-super"> <ClockIcon  className="text-white w-3 h-3" /> 7 days left</div>
         </div>
         <div>
-         <p className="text-custom-gray">
+         <p className="text-custom-gray text-sm">
           Update your plan to superior to enjoy <br /> many additional benefits
          </p>
         </div>
        </div>
-       <button className="bg-custom-green p-5">Upgrade Plan</button>
+       <button className="bg-custom-green py-3 px-5 text-white font-bold rounded-2xl">Upgrade Plan</button>
       </div>
      </article>
 
