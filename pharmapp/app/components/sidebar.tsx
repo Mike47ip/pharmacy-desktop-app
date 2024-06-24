@@ -1,4 +1,9 @@
-import { ChartPieIcon } from "@heroicons/react/24/outline";
+import {
+ ArrowLeftStartOnRectangleIcon,
+ ChartPieIcon,
+ UserGroupIcon,
+} from "@heroicons/react/24/outline";
+import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { UsersIcon } from "@heroicons/react/24/outline";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { CloudIcon } from "@heroicons/react/24/outline";
@@ -6,7 +11,7 @@ import { CloudIcon } from "@heroicons/react/24/outline";
 const Sidebar = () => {
  return (
   <>
-   <div className="w-2/12 p-4 bg-custom-dark h-screen">
+   <div className="w-2/12 p-4 bg-custom-dark h-full overflow-y-auto flex flex-col custom-scrollbar">
     <div className="flex flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-custom-gray">
      <h1 className="text-white">MedkitPOS</h1>
      <svg
@@ -27,35 +32,59 @@ const Sidebar = () => {
      </svg>
     </div>
 
-    <div className="pt-16">
-     <h2 className="text-custom-gray pb-4">Main Menu</h2>
+    <div className="flex flex-col h-full justify-between">
+     <div>
+      <div className="pt-16">
+       <h2 className="text-custom-gray pb-4 font-semibold">Main Menu</h2>
 
-     <ul className="text-white">
-      <li className="flex items-center gap-5 py-3">
-       {" "}
-       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="32px"
-        viewBox="0 -960 960 960"
-        width="32px"
-        className="text-custom-green"
-        fill="currentColor"
-       >
-        <path d="M666-440 440-666l226-226 226 226-226 226Zm-546-80v-320h320v320H120Zm400 400v-320h320v320H520Zm-400 0v-320h320v320H120Z" />
-       </svg>
-       Home
-      </li>
-      <li className="flex items-center gap-5 py-3">
-       <ClockIcon className="w-7 ml-1" /> History
-      </li>
-      <li className="flex items-center gap-5 py-3">
-       <ChartPieIcon className="w-7 ml-1" /> Supplies
-      </li>
-      <li className="flex items-center gap-5 py-3">
-       {" "}
-       <UsersIcon className="w-7 ml-1" /> Waitlist
-      </li>
-     </ul>
+       <ul className="text-white">
+        <li className="flex items-center gap-5 py-3">
+         {" "}
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          className="text-custom-green"
+          fill="currentColor"
+         >
+          <path d="M666-440 440-666l226-226 226 226-226 226Zm-546-80v-320h320v320H120Zm400 400v-320h320v320H520Zm-400 0v-320h320v320H120Z" />
+         </svg>
+         Home
+        </li>
+        <li className="flex items-center gap-5 py-3">
+         <ClockIcon className="w-7 ml-1" /> History
+        </li>
+        <li className="flex items-center gap-5 py-3">
+         <ChartPieIcon className="w-7 ml-1" /> Supplies
+        </li>
+        <li className="flex items-center gap-5 py-3">
+         {" "}
+         <UsersIcon className="w-7 ml-1" /> Waitlist
+        </li>
+       </ul>
+      </div>
+
+      <div>
+       <h3 className="text-custom-gray pb-4 pt-7 font-semibold">General</h3>
+       <ul className="text-white">
+        <li className="flex items-center gap-5 py-3">
+         <Cog6ToothIcon className="w-7 ml-1" />
+         Home
+        </li>
+        <li className="flex items-center gap-5 py-3">
+         <UserGroupIcon className="w-7 ml-1" /> History
+        </li>
+       </ul>
+      </div>
+     </div>
+
+     <div className="flex text-white pt-16">
+      <button className="flex items-center gap-5 py-3">
+       <ArrowLeftStartOnRectangleIcon className="w-7 ml-1" />
+       Logout
+      </button>
+     </div>
     </div>
    </div>
   </>
