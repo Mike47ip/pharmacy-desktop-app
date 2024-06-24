@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
  MagnifyingGlassIcon,
  ViewfinderCircleIcon,
@@ -13,11 +14,23 @@ const Body: React.FC<BodyProps> = () => {
   <>
    <main className="flex w-full">
     <div className="w-[70%]">
-      <article>
-        <div>
-
+     <article className="p-10">
+      <div className="relative flex justify-between items-start p-10 bg-dark-black-background bg-cover bg-center rounded-3xl">
+       <div>
+        <div className="flex text-white">
+         <h1>Your subscription is almost expired</h1>
+         <span className="text-xs align-super">7 days left</span>
         </div>
-      </article>
+        <div>
+         <p className="text-custom-gray">
+          Update your plan to superior to enjoy <br /> many additional benefits
+         </p>
+        </div>
+       </div>
+       <button className="bg-custom-green p-5">Upgrade Plan</button>
+      </div>
+     </article>
+
      <article className="flex justify-center items-center">
       <ul className="flex flex-col w-10/12 justify-center font-open-sans items-center border-[1px] border-custom-400 rounded-2xl">
        <li className="flex w-full p-3 justify-between font-medium border-b-[1px] border-custom-400 rounded-2xl">
@@ -95,7 +108,7 @@ const Body: React.FC<BodyProps> = () => {
      <Medicines />
     </div>
     <aside className="w-[30%]">
-      <WaitingList />
+     <WaitingList />
     </aside>
    </main>
   </>

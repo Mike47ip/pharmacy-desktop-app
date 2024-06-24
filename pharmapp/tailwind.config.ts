@@ -8,6 +8,9 @@ const config: Config = {
  ],
  theme: {
   extend: {
+   backgroundImage: {
+      'dark-black-background': "url('/dark-black-background.jpg')",
+    },
    fontFamily: {
     "open-sans": ["Open Sans", "sans-serif"],
    },
