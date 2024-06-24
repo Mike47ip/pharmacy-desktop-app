@@ -2,7 +2,7 @@
 
 export const WaitingList: React.FC = () => {
   return (
-    <main className="sticky top-0 w-52 w-64 w-[100%] text-white bg-black h-auto">
+    <main className="sticky top-0  text-white bg-black h-auto">
       <ul>
         <li>
 WAITLIST

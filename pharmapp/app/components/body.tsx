@@ -12,7 +12,7 @@ const Body: React.FC<BodyProps> = () => {
  return (
   <>
    <main className="flex w-full">
-    <div className="w-full">
+    <div className="w-[70%]">
       <article>
         <div>
 
@@ -94,7 +94,7 @@ const Body: React.FC<BodyProps> = () => {
      </article>
      <Medicines />
     </div>
-    <aside>
+    <aside className="w-[30%]">
       <WaitingList />
     </aside>
    </main>
