@@ -182,8 +182,16 @@ const Medicines: React.FC = () => {
            {medicine.description}
           </div>
           <div className="flex  gap-6 items-center whitespace-nowrap">
-           <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">Netto: <span className="text-black text-[0.9rem]">{medicine.netto}</span></p>
-           <p className="text-[0.6rem] font-bold flex text-custom-gray flex-col"> Stock: <span className="text-black text-[0.9rem]">{medicine.stock} Available </span>
+           <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">
+            Netto:{" "}
+            <span className="text-black text-[0.9rem]">{medicine.netto}</span>
+           </p>
+           <p className="text-[0.6rem] font-bold flex text-custom-gray flex-col">
+            {" "}
+            Stock:{" "}
+            <span className="text-black text-[0.9rem]">
+             {medicine.stock} Available{" "}
+            </span>
            </p>
           </div>
          </div>
