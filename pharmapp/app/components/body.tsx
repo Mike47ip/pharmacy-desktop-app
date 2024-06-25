@@ -1,12 +1,16 @@
 import Image from "next/image";
 import {
-  CheckCircleIcon,
+ CheckCircleIcon,
  MagnifyingGlassIcon,
  ViewfinderCircleIcon,
 } from "@heroicons/react/24/solid";
 import Medicines from "./medicines";
 import { WaitingList } from "./waitinglist";
-import { ArrowRightCircleIcon, ClockIcon, UserIcon } from "@heroicons/react/24/outline";
+import {
+ ArrowRightCircleIcon,
+ ClockIcon,
+ UserIcon,
+} from "@heroicons/react/24/outline";
 
 interface Medicine {
  grade: string;
@@ -85,7 +89,10 @@ const Body: React.FC<BodyProps> = () => {
      </article>
 
      <article className="pl-5">
-      <h3 className="text-lg font-bold">Waiting List</h3>
+      <div className="flex justify-between">
+       <h3 className="text-lg font-bold">Waiting List</h3>
+       <button className="pr-3 text-custom-green font-bold underline">See more</button>
+      </div>
       <div className="max-w-[60rem]">
        <ul id="waiting-list" className="flex gap-5 overflow-x-hidden">
         {medicinesData.map((medicine, index) => (
@@ -94,9 +101,21 @@ const Body: React.FC<BodyProps> = () => {
            <h4 className="font-bold text-3xl">{medicine.grade}</h4>
           </div>
           <div className="w-44">
-           <p className="text-sm bg-custom-dark text-white text-right rounded-lg px-1 flex justify-between items-center"> <CheckCircleIcon className={`w-3 h-3 ${index === 1 ? 'text-gray-500' : 'text-custom-green'}`} /> {medicine.code}</p>
-           <p className="text-lg mt-2 whitespace-nowrap font-semibold flex gap-6 items-center"><UserIcon className="w-6 text-custom-gray" /> {medicine.name}</p>
-           <p className="flex gap-6 text-sm text-custom-gray"><ArrowRightCircleIcon className="w-6"/> {medicine.items} items</p>
+           <p className="text-sm bg-custom-dark text-white text-right rounded-lg px-1 flex justify-between items-center">
+            {" "}
+            <CheckCircleIcon
+             className={`w-3 h-3 ${
+              index === 1 ? "text-gray-500" : "text-custom-green"
+             }`}
+            />{" "}
+            {medicine.code}
+           </p>
+           <p className="text-lg mt-2 whitespace-nowrap font-semibold flex gap-4 items-center">
+            <UserIcon className="w-6 text-custom-gray" /> {medicine.name}
+           </p>
+           <p className="flex gap-4 text-sm text-custom-gray">
+            <ArrowRightCircleIcon className="w-6" /> {medicine.items} items
+           </p>
           </div>
          </li>
         ))}
