@@ -24,7 +24,7 @@ const Medicines: React.FC = () => {
    price: 3.75,
   },
   {
-   src: "/vento.jpg",
+   src: "/syrup.jpg",
    alt: "vento",
    title: "Vento Syrup",
    description:
@@ -157,27 +157,33 @@ const Medicines: React.FC = () => {
      </button>
     </div>
     <div className="flex justify-center items-center">
-     <ul className="grid grid-cols-2 w-full gap-11 pt-2">
+     <ul className="grid grid-cols-2 w-full gap-5 pt-2">
       {medicinesData.map((medicine, index) => (
-       <li className="flex mx-1 pt-3" key={index}>
-        <div className="relative w-full pb-[50.25%]">
+       <li className="flex flex-col bg-white rounded-xl" key={index}>
+        <div  className="flex">
          <Image
           src={medicine.src}
           alt={medicine.alt}
-          className="rounded-lg object-cover p-5"
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 20vw, 30vw"
+          className="object-cover p-5 rounded-3xl"
+          width={220}
+          height={250}
+          
+  
          />
-        </div>
+        
         <div>
          <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
-         <div className="w-36 text-[0.7rem] leading-snug text-custom-gray">
+         <div className="w-36 text-[0.8rem] leading-snug text-custom-gray">
           {medicine.description}
          </div>
          <span className="text-[0.6rem] font-bold">
           Stock: {medicine.stock}
          </span>
-         <div className="flex justify-between items-center w-11/12 mt-2">
+
+        </div>
+
+        </div>
+        <div className="flex justify-between items-center w-11/12 mt-2">
           <div className="flex">
            <span
             className={`pr-1 align-super text-xs font-semibold ${
@@ -226,7 +232,6 @@ const Medicines: React.FC = () => {
            </button>
           </div>
          </div>
-        </div>
        </li>
       ))}
      </ul>
