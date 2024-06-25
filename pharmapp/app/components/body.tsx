@@ -91,7 +91,9 @@ const Body: React.FC<BodyProps> = () => {
      <article className="pl-5">
       <div className="flex justify-between">
        <h3 className="text-lg font-bold">Waiting List</h3>
-       <button className="pr-3 text-custom-green font-bold underline">See more</button>
+       <button className="pr-3 text-custom-green font-bold underline">
+        See more
+       </button>
       </div>
       <div className="max-w-[60rem]">
        <ul id="waiting-list" className="flex gap-5 overflow-x-hidden">
@@ -99,6 +101,7 @@ const Body: React.FC<BodyProps> = () => {
          <li key={index} className="flex bg-white rounded-2xl gap-4 p-2">
           <div className="p-7 bg-custom-background rounded-lg">
            <h4 className="font-bold text-3xl">{medicine.grade}</h4>
+           {/* <p className=" mt-4 mr-[20%] font-bold">________</p> */}
           </div>
           <div className="w-44">
            <p className="text-sm bg-custom-dark text-white text-right rounded-lg px-1 flex justify-between items-center">
@@ -123,7 +126,7 @@ const Body: React.FC<BodyProps> = () => {
       </div>
      </article>
 
-     <article className="flex justify-center items-center">
+     <article className="flex justify-center hidden items-center">
       <ul className="flex flex-col w-10/12 justify-center font-open-sans items-center border-[1px] border-custom-400 rounded-2xl">
        <li className="flex w-full p-3 justify-between font-medium border-b-[1px] border-custom-400 rounded-2xl">
         {" "}
@@ -174,25 +177,25 @@ const Body: React.FC<BodyProps> = () => {
 
      <article className="pt-4 px-8 overflow-x-auto">
       <ul className="flex gap-4 font-open-sans ">
-       <li className="koo text-xs font-medium px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">
+       <li className="koo text-sm font-bold px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">
         All
        </li>
-       <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+       <li className="koo text-sm font-bold px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
         Tablet
        </li>
-       <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+       <li className="koo text-sm font-bold px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
         Capsule
        </li>
-       <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+       <li className="koo text-sm font-bold px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
         Suppository
        </li>
-       <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+       <li className="koo text-sm font-bold px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
         Powder
        </li>
-       <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+       <li className="koo text-sm font-bold px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
         Syrup
        </li>
-       <li className="koo text-xs font-medium px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
+       <li className="koo text-sm font-bold px-5 py-3 border-[0.6px] border-slate-400 rounded-3xl text-custom-gray">
         Potion
        </li>
       </ul>
