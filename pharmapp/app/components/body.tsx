@@ -6,6 +6,52 @@ import {
 import Medicines from "./medicines";
 import { WaitingList } from "./waitinglist";
 import { ClockIcon } from "@heroicons/react/24/outline";
+
+interface Medicine {
+ grade: string;
+ code: string;
+ name: string;
+ items: number;
+}
+
+const medicinesData: Medicine[] = [
+ {
+  grade: "A1",
+  code: "para",
+  name: "Paracetamol Berno",
+  items: 5,
+ },
+ {
+  grade: "A2",
+  code: "vento",
+  name: "Vento Syrup",
+  items: 8,
+ },
+ {
+  grade: "A3",
+  code: "injection",
+  name: "Injection Fluid",
+  items: 10,
+ },
+ {
+  grade: "A4",
+  code: "capsule",
+  name: "Capsule Medicine",
+  items: 12,
+ },
+ {
+  grade: "A5",
+  code: "capsule",
+  name: "Colace Glycerine",
+  items: 7,
+ },
+ {
+  grade: "A6",
+  code: "capsule",
+  name: "Injection Medicine",
+  items: 11,
+ },
+];
 interface BodyProps {
  // Define props here if needed
 }
@@ -20,7 +66,10 @@ const Body: React.FC<BodyProps> = () => {
        <div className="flex flex-col gap-2">
         <div className="flex gap-4 text-white font-semibold">
          <h1>Your subscription is almost expired</h1>
-         <div className="flex  justify-center gap-1 font-medium text-xs align-super"> <ClockIcon  className="text-white w-3 h-3" /> 7 days left</div>
+         <div className="flex  justify-center gap-1 font-medium text-xs align-super">
+          {" "}
+          <ClockIcon className="text-white w-3 h-3" /> 7 days left
+         </div>
         </div>
         <div>
          <p className="text-custom-gray text-sm">
@@ -28,18 +77,24 @@ const Body: React.FC<BodyProps> = () => {
          </p>
         </div>
        </div>
-       <button className="bg-custom-green py-3 px-5 text-white font-bold rounded-2xl">Upgrade Plan</button>
+       <button className="bg-custom-green py-3 px-5 text-white font-bold rounded-2xl">
+        Upgrade Plan
+       </button>
       </div>
      </article>
 
      <article>
-      <h3>Waiting List</h3>
-      <ul>
-        <li>
-
+      <h3 className="text-lg font-bold">Waiting List</h3>
+      <ul id="waiting-list">
+       {medicinesData.map((medicine, index) => (
+        <li key={index} className="flex gap-4 p-4 border-b">
+         <h4 className="font-semibold">{medicine.grade}</h4>
+         <p className="text-sm text-custom-gray">{medicine.code}</p>
+         <p className="text-sm">{medicine.name}</p>
+         <p className="text-sm">Stock: {medicine.items}</p>
         </li>
+       ))}
       </ul>
-
      </article>
 
      <article className="flex justify-center items-center">

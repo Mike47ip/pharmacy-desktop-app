@@ -15,7 +15,7 @@ export const WaitingList: React.FC = () => {
    </p>
    <div className="max-w-md mx-auto mt-8 bg-custom-background p-4 rounded-lg">
     <div className="h-28 overflow-y-auto rounded-lg bg-gray-100 custom-scrollbar">
-     <table className="w-full overflow-y-auto table-fixed">
+     <table className="w-full  table-fixed">
       <thead>
        <tr className="text-custom-gray">
         <th className="px-4 py-2 w-1/2 text-left">Name</th>
