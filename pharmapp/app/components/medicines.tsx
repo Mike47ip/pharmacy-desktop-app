@@ -179,28 +179,28 @@ const Medicines: React.FC = () => {
           </span>
          </div>
         </div>
-        <div className="flex justify-between items-center w-11/12 mt-2">
+        <div className="flex justify-between p-2 items-center w-full ">
          <div className="flex">
           <span
-           className={`pr-1 align-super text-xs font-semibold ${
+           className={`pr-1 align-super text-md font-semibold ${
             medicine.stock === 0 ? "text-custom-gray" : "text-custom-green"
            }`}
           >
            $
           </span>
-          <p className="font-bold font-open-sans">
-           {medicine.price.toFixed(2)}
+          <p className="font-bold text-2xl font-open-sans">
+           {medicine.price.toFixed(2)} <span className="text-custom-gray text-base font-medium">/bottle</span>
           </p>
          </div>
-         <div className="bg-slate-100 w-20 p-1 flex justify-between items-center rounded-2xl">
+         <div className="bg-slate-100 w-40 p-1 flex justify-between relative items-center rounded-3xl">
           <button
            onClick={() => handleDecrease(index)}
-           className="bg-white w-6 h-6 flex justify-center items-center rounded-full"
+           className="bg-white w-8 h-8 flex justify-center items-center rounded-full"
            aria-label="Decrease quantity"
            disabled={medicine.stock === 0}
           >
            <span
-            className={`font-semibold text-lg ${
+            className={`font-semibold text-3xl ${
              medicine.stock === 0
               ? "text-custom-gray cursor-not-allowed"
               : "text-custom-green"
@@ -209,12 +209,12 @@ const Medicines: React.FC = () => {
             -
            </span>
           </button>
-          <span className="text-[0.5rem] absolute ml-[2.1rem] font-semibold">
+          <span className="text-[1rem] font-semibold">
            {quantities[index]}
           </span>
           <button
            onClick={() => handleIncrease(index)}
-           className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
+           className={`w-8 h-8 flex justify-center items-center text-white rounded-full ${
             medicine.stock === 0
              ? "bg-custom-gray cursor-not-allowed"
              : "bg-custom-green"
@@ -222,7 +222,7 @@ const Medicines: React.FC = () => {
            aria-label="Increase quantity"
            disabled={medicine.stock === 0}
           >
-           <span className={`pb-[1.1px] font-semibold text-lg text-white`}>
+           <span className={`pb-[1.1px] font-semibold text-2xl text-white`}>
             +
            </span>
           </button>
