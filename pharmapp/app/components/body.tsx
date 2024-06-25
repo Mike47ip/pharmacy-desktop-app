@@ -1,11 +1,12 @@
 import Image from "next/image";
 import {
+  CheckCircleIcon,
  MagnifyingGlassIcon,
  ViewfinderCircleIcon,
 } from "@heroicons/react/24/solid";
 import Medicines from "./medicines";
 import { WaitingList } from "./waitinglist";
-import { ClockIcon } from "@heroicons/react/24/outline";
+import { ArrowRightCircleIcon, ClockIcon, UserIcon } from "@heroicons/react/24/outline";
 
 interface Medicine {
  grade: string;
@@ -17,37 +18,37 @@ interface Medicine {
 const medicinesData: Medicine[] = [
  {
   grade: "A1",
-  code: "para",
-  name: "Paracetamol Berno",
+  code: "#2312",
+  name: "Ama Sarpong ",
   items: 5,
  },
  {
   grade: "A2",
-  code: "vento",
-  name: "Vento Syrup",
+  code: "#4567",
+  name: "Ben K Osei",
   items: 8,
  },
  {
   grade: "A3",
-  code: "injection",
+  code: "#5793",
   name: "Injection Fluid",
   items: 10,
  },
  {
   grade: "A4",
-  code: "capsule",
+  code: "#4445",
   name: "Capsule Medicine",
   items: 12,
  },
  {
   grade: "A5",
-  code: "capsule",
+  code: "#6318",
   name: "Colace Glycerine",
   items: 7,
  },
  {
   grade: "A6",
-  code: "capsule",
+  code: "#9423",
   name: "Injection Medicine",
   items: 11,
  },
@@ -83,18 +84,24 @@ const Body: React.FC<BodyProps> = () => {
       </div>
      </article>
 
-     <article>
+     <article className="pl-5">
       <h3 className="text-lg font-bold">Waiting List</h3>
-      <ul id="waiting-list">
-       {medicinesData.map((medicine, index) => (
-        <li key={index} className="flex gap-4 p-4 border-b">
-         <h4 className="font-semibold">{medicine.grade}</h4>
-         <p className="text-sm text-custom-gray">{medicine.code}</p>
-         <p className="text-sm">{medicine.name}</p>
-         <p className="text-sm">Stock: {medicine.items}</p>
-        </li>
-       ))}
-      </ul>
+      <div className="max-w-[60rem]">
+       <ul id="waiting-list" className="flex gap-5 overflow-x-hidden">
+        {medicinesData.map((medicine, index) => (
+         <li key={index} className="flex bg-white rounded-2xl gap-4 p-2">
+          <div className="p-7 bg-custom-background rounded-lg">
+           <h4 className="font-bold text-3xl">{medicine.grade}</h4>
+          </div>
+          <div className="w-44">
+           <p className="text-sm bg-custom-dark text-white text-right rounded-lg px-1 flex justify-between items-center"> <CheckCircleIcon className={`w-3 h-3 ${index === 1 ? 'text-gray-500' : 'text-custom-green'}`} /> {medicine.code}</p>
+           <p className="text-lg mt-2 whitespace-nowrap font-semibold flex gap-6 items-center"><UserIcon className="w-6 text-custom-gray" /> {medicine.name}</p>
+           <p className="flex gap-6 text-sm text-custom-gray"><ArrowRightCircleIcon className="w-6"/> {medicine.items} items</p>
+          </div>
+         </li>
+        ))}
+       </ul>
+      </div>
      </article>
 
      <article className="flex justify-center items-center">
