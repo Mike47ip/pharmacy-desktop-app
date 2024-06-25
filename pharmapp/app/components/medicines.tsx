@@ -160,78 +160,74 @@ const Medicines: React.FC = () => {
      <ul className="grid grid-cols-2 w-full gap-5 pt-2">
       {medicinesData.map((medicine, index) => (
        <li className="flex flex-col bg-white rounded-xl" key={index}>
-        <div  className="flex">
+        <div className="flex">
          <Image
           src={medicine.src}
           alt={medicine.alt}
           className="object-cover p-5 rounded-3xl"
           width={220}
           height={250}
-          
-  
          />
-        
-        <div>
-         <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
-         <div className="w-36 text-[0.8rem] leading-snug text-custom-gray">
-          {medicine.description}
+
+         <div>
+          <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
+          <div className="w-36 text-[0.8rem] leading-snug text-custom-gray">
+           {medicine.description}
+          </div>
+          <span className="text-[0.6rem] font-bold">
+           Stock: {medicine.stock}
+          </span>
          </div>
-         <span className="text-[0.6rem] font-bold">
-          Stock: {medicine.stock}
-         </span>
-
-        </div>
-
         </div>
         <div className="flex justify-between items-center w-11/12 mt-2">
-          <div className="flex">
-           <span
-            className={`pr-1 align-super text-xs font-semibold ${
-             medicine.stock === 0 ? "text-custom-gray" : "text-custom-green"
-            }`}
-           >
-            $
-           </span>
-           <p className="font-bold font-open-sans">
-            {medicine.price.toFixed(2)}
-           </p>
-          </div>
-          <div className="bg-slate-100 w-20 p-1 flex justify-between items-center rounded-2xl">
-           <button
-            onClick={() => handleDecrease(index)}
-            className="bg-white w-6 h-6 flex justify-center items-center rounded-full"
-            aria-label="Decrease quantity"
-            disabled={medicine.stock === 0}
-           >
-            <span
-             className={`font-semibold text-lg ${
-              medicine.stock === 0
-               ? "text-custom-gray cursor-not-allowed"
-               : "text-custom-green"
-             }`}
-            >
-             -
-            </span>
-           </button>
-           <span className="text-[0.5rem] absolute ml-[2.1rem] font-semibold">
-            {quantities[index]}
-           </span>
-           <button
-            onClick={() => handleIncrease(index)}
-            className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
-             medicine.stock === 0
-              ? "bg-custom-gray cursor-not-allowed"
-              : "bg-custom-green"
-            }`}
-            aria-label="Increase quantity"
-            disabled={medicine.stock === 0}
-           >
-            <span className={`pb-[1.1px] font-semibold text-lg text-white`}>
-             +
-            </span>
-           </button>
-          </div>
+         <div className="flex">
+          <span
+           className={`pr-1 align-super text-xs font-semibold ${
+            medicine.stock === 0 ? "text-custom-gray" : "text-custom-green"
+           }`}
+          >
+           $
+          </span>
+          <p className="font-bold font-open-sans">
+           {medicine.price.toFixed(2)}
+          </p>
          </div>
+         <div className="bg-slate-100 w-20 p-1 flex justify-between items-center rounded-2xl">
+          <button
+           onClick={() => handleDecrease(index)}
+           className="bg-white w-6 h-6 flex justify-center items-center rounded-full"
+           aria-label="Decrease quantity"
+           disabled={medicine.stock === 0}
+          >
+           <span
+            className={`font-semibold text-lg ${
+             medicine.stock === 0
+              ? "text-custom-gray cursor-not-allowed"
+              : "text-custom-green"
+            }`}
+           >
+            -
+           </span>
+          </button>
+          <span className="text-[0.5rem] absolute ml-[2.1rem] font-semibold">
+           {quantities[index]}
+          </span>
+          <button
+           onClick={() => handleIncrease(index)}
+           className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
+            medicine.stock === 0
+             ? "bg-custom-gray cursor-not-allowed"
+             : "bg-custom-green"
+           }`}
+           aria-label="Increase quantity"
+           disabled={medicine.stock === 0}
+          >
+           <span className={`pb-[1.1px] font-semibold text-lg text-white`}>
+            +
+           </span>
+          </button>
+         </div>
+        </div>
        </li>
       ))}
      </ul>
