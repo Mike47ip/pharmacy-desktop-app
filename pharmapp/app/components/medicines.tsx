@@ -9,6 +9,7 @@ interface Medicine {
  title: string;
  description: string;
  stock: number;
+ netto: string;
  price: number;
 }
 
@@ -20,6 +21,7 @@ const Medicines: React.FC = () => {
    title: "Paracetamol Berno",
    description:
     "Paracetamol works by inhibiting the production of certain chemicals..",
+   netto: "60ml",
    stock: 12,
    price: 3.75,
   },
@@ -29,6 +31,7 @@ const Medicines: React.FC = () => {
    title: "Vento Syrup",
    description:
     "Vento Syrup is used for treating cough and cold of different kinds..",
+   netto: "33ml",
    stock: 0, // Deliberately empty stock for tesing
    price: 4.5,
   },
@@ -38,6 +41,7 @@ const Medicines: React.FC = () => {
    title: "Injection Fluid",
    description:
     "Used for intravenous administration to treat various conditions..",
+   netto: "100ml",
    stock: 8,
    price: 5.2,
   },
@@ -47,6 +51,7 @@ const Medicines: React.FC = () => {
    title: "Capsule Medicine",
    description:
     "Effective in treating chronic illnesses with minimal side effects..",
+   netto: "24ml",
    stock: 10,
    price: 2.99,
   },
@@ -56,6 +61,7 @@ const Medicines: React.FC = () => {
    title: "Colace Glycerine",
    description:
     "Effective in treating suppository illnesses with minimal side effects..",
+   netto: "17ml",
    stock: 18,
    price: 8.99,
   },
@@ -65,6 +71,7 @@ const Medicines: React.FC = () => {
    title: "Injection Medicine",
    description:
     "Most effective way of adminsitering drugs into your body without any..",
+   netto: "6ml",
    stock: 6,
    price: 10.42,
   },
@@ -171,12 +178,14 @@ const Medicines: React.FC = () => {
 
          <div>
           <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
-          <div className="w-36 text-[0.8rem] leading-snug text-custom-gray">
+          <div className="w-36 h-20 text-[0.8rem] leading-snug text-custom-gray">
            {medicine.description}
           </div>
-          <span className="text-[0.6rem] font-bold">
-           Stock: {medicine.stock}
-          </span>
+          <div className="flex  gap-6 items-center whitespace-nowrap">
+           <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">Netto: <span className="text-black text-[0.9rem]">{medicine.netto}</span></p>
+           <p className="text-[0.6rem] font-bold flex text-custom-gray flex-col"> Stock: <span className="text-black text-[0.9rem]">{medicine.stock} Available </span>
+           </p>
+          </div>
          </div>
         </div>
         <div className="flex justify-between p-2 items-center w-full ">
@@ -189,7 +198,10 @@ const Medicines: React.FC = () => {
            $
           </span>
           <p className="font-bold text-2xl font-open-sans">
-           {medicine.price.toFixed(2)} <span className="text-custom-gray text-base font-medium">/bottle</span>
+           {medicine.price.toFixed(2)}{" "}
+           <span className="text-custom-gray text-base font-medium">
+            /bottle
+           </span>
           </p>
          </div>
          <div className="bg-slate-100 w-40 p-1 flex justify-between relative items-center rounded-3xl">
@@ -209,9 +221,7 @@ const Medicines: React.FC = () => {
             -
            </span>
           </button>
-          <span className="text-[1rem] font-semibold">
-           {quantities[index]}
-          </span>
+          <span className="text-[1rem] font-semibold">{quantities[index]}</span>
           <button
            onClick={() => handleIncrease(index)}
            className={`w-8 h-8 flex justify-center items-center text-white rounded-full ${
