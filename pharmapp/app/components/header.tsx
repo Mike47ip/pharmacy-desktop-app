@@ -1,4 +1,4 @@
-import { BellIcon, ShieldExclamationIcon } from "@heroicons/react/24/outline";
+import { BellIcon } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
@@ -76,7 +76,7 @@ export default function Header() {
     </div>
     <div className="border-[0.5px] p-2 border-slate-200 rounded-lg">
      <BellIcon className="w-6" />
-     <span className="w-1 h-1 right-[11%] top-[6%] rounded-full absolute bg-red-600"></span>
+     <span className="w-2 h-2 right-[11%] top-[6%] rounded-full absolute bg-red-600"></span>
     </div>
 
     <Image
