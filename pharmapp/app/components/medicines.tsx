@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
-interface Medicine {
+export interface Medicine {
  src: string;
  alt: string;
  title: string;

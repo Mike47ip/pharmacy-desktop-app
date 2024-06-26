@@ -5,12 +5,12 @@ import {
  ViewfinderCircleIcon,
 } from "@heroicons/react/24/solid";
 import Medicines from "./medicines";
-import { WaitingList } from "./waitinglist";
 import {
  ArrowRightCircleIcon,
  ClockIcon,
  UserIcon,
 } from "@heroicons/react/24/outline";
+import { WaitingList } from "./waitinglist";
 
 interface Medicine {
  grade: string;
@@ -95,13 +95,12 @@ const Body: React.FC<BodyProps> = () => {
         See more
        </button>
       </div>
-      <div className="max-w-[60rem]">
+      <div className="max-w-[50rem]">
        <ul id="waiting-list" className="flex gap-5 overflow-x-hidden">
         {medicinesData.map((medicine, index) => (
          <li key={index} className="flex bg-white rounded-2xl gap-4 p-2">
           <div className="p-7 bg-custom-background rounded-lg">
            <h4 className="font-bold text-3xl">{medicine.grade}</h4>
-           {/* <p className=" mt-4 mr-[20%] font-bold">________</p> */}
           </div>
           <div className="w-44">
            <p className="text-sm bg-custom-dark text-white text-right rounded-lg px-1 flex justify-between items-center">
@@ -203,7 +202,7 @@ const Body: React.FC<BodyProps> = () => {
      <Medicines />
     </div>
     <aside className="w-[30%]">
-     <WaitingList medicines={medicinesData} />
+    <WaitingList medicines={medicinesData} /> {/* Corrected line */}
     </aside>
    </main>
   </>
