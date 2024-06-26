@@ -126,7 +126,7 @@ const Body: React.FC<BodyProps> = () => {
       </div>
      </article>
 
-     <article className="flex justify-center hidden items-center">
+     <article className="justify-center hidden items-center">
       <ul className="flex flex-col w-10/12 justify-center font-open-sans items-center border-[1px] border-custom-400 rounded-2xl">
        <li className="flex w-full p-3 justify-between font-medium border-b-[1px] border-custom-400 rounded-2xl">
         {" "}
@@ -203,7 +203,7 @@ const Body: React.FC<BodyProps> = () => {
      <Medicines />
     </div>
     <aside className="w-[30%]">
-     <WaitingList />
+     <WaitingList medicines={medicinesData} />
     </aside>
    </main>
   </>

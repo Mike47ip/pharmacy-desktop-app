@@ -1,4 +1,16 @@
-export const WaitingList: React.FC = () => {
+import Image from 'next/image';
+
+interface Medicine {
+  grade: string;
+  code: string;
+  name: string;
+  items: number;
+}
+
+interface WaitingListProps {
+  medicines: Medicine[];
+}
+export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
  return (
   <main className="sticky top-0 h-auto p-4 bg-white border-l-[1px] border-slate-20">
    <div className="flex justify-between">
@@ -72,6 +84,20 @@ export const WaitingList: React.FC = () => {
      </table>
     </div>
    </div>
+   <aside id="waiting-list">
+   <ul className="flex flex-col gap-4">
+        {medicines.map((medicine, index) => (
+          <li key={index} className="flex items-center gap-4">
+
+            <div>
+              <p className="font-bold">{medicine.name}</p>
+              <p className="text-sm text-gray-500">{medicine.items} items</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+   </aside>
   </main>
  );
 };

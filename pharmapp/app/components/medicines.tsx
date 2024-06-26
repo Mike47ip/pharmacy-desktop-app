@@ -177,7 +177,7 @@ const Medicines: React.FC = () => {
          />
 
          <div>
-          <p className="pt-3 text-sm font-semibold">{medicine.title}</p>
+          <p className="pt-3 text-sm font-bold">{medicine.title}</p>
           <div className="w-36 h-20 text-[0.8rem] leading-snug text-custom-gray">
            {medicine.description}
           </div>
@@ -186,7 +186,7 @@ const Medicines: React.FC = () => {
             Netto:{" "}
             <span className="text-black text-[0.9rem]">{medicine.netto}</span>
            </p>
-           <p className="text-[0.6rem] font-bold flex text-custom-gray flex-col">
+           <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">
             {" "}
             Stock:{" "}
             <span className="text-black text-[0.9rem]">
