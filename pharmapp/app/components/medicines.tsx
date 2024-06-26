@@ -254,7 +254,7 @@ const Medicines: React.FC = () => {
    {isCartVisible && ( // Conditionally render the Cart section based on isCartVisible
     <section
      id="Cart"
-     className="flex lg:hidden justify-between fixed bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+     className="flex justify-between  bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
     >
      <div className="flex flex-col justify-center items-center">
       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>

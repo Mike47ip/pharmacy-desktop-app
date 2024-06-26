@@ -11,13 +11,8 @@ import {
  UserIcon,
 } from "@heroicons/react/24/outline";
 import { WaitingList } from "./waitinglist";
+import {Medicine} from "../types";
 
-interface Medicine {
- grade: string;
- code: string;
- name: string;
- items: number;
-}
 
 const medicinesData: Medicine[] = [
  {

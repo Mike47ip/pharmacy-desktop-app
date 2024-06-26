@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Medicine } from "./medicines";
+import { Medicine } from "../types";
+
 
 export interface WaitingListProps {
  medicines: Medicine[];
@@ -125,7 +126,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
       {medicines.map((medicine, index) => (
        <li key={index} className="flex items-center ">
         <div>
-         <p className="font-bold">{medicine.description}</p>
+         <p className="font-bold">{medicine.title}</p>
          <p className="text-sm text-gray-500">{quantities[index]} items</p>
         </div>
         <div className="flex items-center gap-4">
