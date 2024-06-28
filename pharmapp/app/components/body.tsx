@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import {
  CheckCircleIcon,
  MagnifyingGlassIcon,
@@ -11,10 +11,11 @@ import {
  UserIcon,
 } from "@heroicons/react/24/outline";
 import { WaitingList } from "./waitinglist";
-import {Medicine} from "../types";
+import WaitlistInterface from "../types";
+import { medicinesData } from "./medicines";
 
 
-const medicinesData: Medicine[] = [
+const waitListData: WaitlistInterface[] = [
  {
   grade: "A1",
   code: "#2312",
@@ -92,7 +93,7 @@ const Body: React.FC<BodyProps> = () => {
       </div>
       <div className="max-w-[50rem]">
        <ul id="waiting-list" className="flex gap-5 overflow-x-hidden">
-        {medicinesData.map((medicine, index) => (
+        {waitListData.map((medicine, index) => (
          <li key={index} className="flex bg-white rounded-2xl gap-4 p-2">
           <div className="p-7 bg-custom-background rounded-lg">
            <h4 className="font-bold text-3xl">{medicine.grade}</h4>
