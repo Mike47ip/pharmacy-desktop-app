@@ -17,7 +17,7 @@ export const medicinesData: Medicine[] = [
  {
   src: "/para.jpg",
   alt: "para",
-  title: "Para Berno",
+  title: "Paracetamol Berno",
   description:
    "Paracetamol works by inhibiting the production of certain chemicals..",
   netto: "60ml",

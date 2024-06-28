@@ -134,26 +134,26 @@ export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
 
    <div className="max-w-md mx-auto mt-8 bg-custom-background p-4 rounded-lg">
     <div className="h-44 overflow-y-auto rounded-lg bg-gray-100 custom-scrollbar">
-     <ul className=" flex flex-col gap-4 gap-10">
+     <ul className=" flex flex-col gap-8">
       {medicines.map((medicine, index) => (
-       <li key={index} className="">
+       <li key={index} className="flex-grow overflow-hidden">  {/*Hide to remove horizontal scroll */}
         <div className="flex justify-between gap-2 h-[6rem]">
-         <div className="">
+         <div id="image" className="flex-shrink-0 z-10">
           <Image
            src={medicine.src}
            alt={medicine.alt}
-           className="object-cover p-1 w-28"
+           className="object-cover p-1 w-[4.5rem]"
            width={300}
            height={250}
           />
          </div>
 
-         <div>
-          <div>
-           <p className="font-bold">{medicine.title}</p>
+       
+          <div className="flex-shrink" id="title">
+           <p className="font-bold z-40">{medicine.title}</p>
           </div>
-         </div>
-         <div className="flex flex-col justify-between items-end">
+     
+         <div id="control-panel" className="flex flex-shrink flex-col justify-between items-end">
          <PencilSquareIcon className="w-6" />
           <div className="bg-white w-34 w-24 p-1 flex justify-between relative items-center rounded-3xl">
            <button

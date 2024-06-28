@@ -61,7 +61,7 @@ const Body: React.FC<BodyProps> = () => {
  return (
   <>
    <main className="flex w-full">
-    <div className="w-[70%]">
+    <div className="w-[69%]">
      <article className="p-10">
       <div className="relative flex justify-between items-center p-7 bg-dark-black-background bg-cover bg-center rounded-3xl">
        <div className="flex flex-col gap-2">
@@ -197,8 +197,8 @@ const Body: React.FC<BodyProps> = () => {
      </article>
      <Medicines />
     </div>
-    <aside className="w-[30%]">
-    <WaitingList medicines={medicinesData} /> {/* Corrected line */}
+    <aside className="w-[31%]">
+    <WaitingList medicines={medicinesData} /> 
     </aside>
    </main>
   </>
