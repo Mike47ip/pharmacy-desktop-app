@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Medicine2 } from "../types";
+import Image from "next/image";
 
 export interface Medicine {
   src: string;
@@ -136,6 +136,15 @@ export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
           <ul className="flex flex-col gap-4">
             {medicines.map((medicine, index) => (
               <li key={index} className="flex items-center ">
+                <div className="object-cover w-full">
+                <Image
+          src={medicine.src}
+          alt={medicine.alt}
+          className="object-cover p-5 rounded-3xl"
+          width={300}
+          height={250}
+         />
+                </div>
                 <div>
                   <p className="font-bold">{medicine.title}</p>
                   <p className="text-sm text-gray-500">{quantities[index]} items</p>
