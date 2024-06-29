@@ -204,8 +204,8 @@ export const Medicines: React.FC<MedicinesProps> = ({
        <ChevronDownIcon className="w-4 absolute ml-16" />
       </p>
      </div>
-     <button className="flex justify-center rounded-xl w-32 h-10 bg-custom-green text-white items-center">
-      <p className="text-sm whitespace-nowrap absolute">
+     <button className="flex justify-center rounded-xl min-w-min h-10 bg-custom-green text-white items-center px-4">
+      <p className="text-sm whitespace-nowrap">
        Purchase {cartTotal.toFixed(2)}
       </p>
      </button>
