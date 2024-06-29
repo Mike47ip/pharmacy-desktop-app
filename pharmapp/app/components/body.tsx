@@ -1,4 +1,4 @@
-
+"use client";
 import {
  CheckCircleIcon,
  MagnifyingGlassIcon,
@@ -12,8 +12,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { WaitingList } from "./waitinglist";
 import WaitlistInterface from "../types";
-import { medicinesData } from "./medicines";
-
+import { medicinesData } from "../utils/medicineData";
+import { useState } from "react";
 
 const waitListData: WaitlistInterface[] = [
  {
@@ -58,6 +58,84 @@ interface BodyProps {
 }
 
 const Body: React.FC<BodyProps> = () => {
+ const [quantities, setQuantities] = useState<number[]>(
+  Array(medicinesData.length).fill(0)
+ );
+ const [cartItems, setCartItems] = useState<number>(0);
+ const [cartTotal, setCartTotal] = useState<number>(0);
+ const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
+
+ const handleIncrease = (index: number) => {
+  console.log(`Attempting to increase quantity for index: ${[index]}`);
+
+  setQuantities((prevQuantities) => {
+   const newQuantities = [...prevQuantities];
+   if (newQuantities[index] < medicinesData[index].stock) {
+    newQuantities[index] += 1;
+    console.log(`New quantity for index ${index}: ${newQuantities[index]}`);
+    return newQuantities;
+   }
+   console.log(`Cannot increase: stock limit reached for index ${index}`);
+   return prevQuantities;
+  });
+
+  // Check if all quantities are zero after decrementing
+  if (
+   quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0
+  ) {
+   setIsCartVisible(false);
+  }
+
+  //Only add drugs as long as they are not out of quantity
+  if (quantities[index] < medicinesData[index].stock) {
+   setCartItems((prevItems) => {
+    const newItems = prevItems + 1;
+    console.log(`Updated cart items: ${newItems}`);
+    return newItems;
+   });
+
+   setCartTotal((prevTotal) => {
+    const newTotal = prevTotal + medicinesData[index].price;
+    console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
+    return newTotal;
+   });
+  }
+  setIsCartVisible(true);
+ };
+
+ const handleDecrease = (index: number) => {
+  console.log(`Attempting to decrease quantity for index: ${index}`);
+
+  setQuantities((prevQuantities) => {
+   const newQuantities = [...prevQuantities];
+   if (newQuantities[index] > 0) {
+    newQuantities[index] -= 1;
+    console.log(`New quantity for index ${index}: ${newQuantities[index]}`);
+    return newQuantities;
+   }
+   console.log(`Cannot decrease: quantity already 0 for index ${index}`);
+   return prevQuantities;
+  });
+
+  if (quantities[index] > 0) {
+   setCartItems((prevItems) => {
+    const newItems = prevItems - 1;
+    console.log(`Updated cart items: ${newItems}`);
+    return newItems;
+   });
+
+   setCartTotal((prevTotal) => {
+    const newTotal = prevTotal - medicinesData[index].price;
+    console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
+    return newTotal;
+   });
+
+   setIsCartVisible(
+    quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) > 1
+  ); // Update cart visibility based on remaining quantities
+  }
+ };
+
  return (
   <>
    <main className="flex w-full">
@@ -195,10 +273,25 @@ const Body: React.FC<BodyProps> = () => {
        </li>
       </ul>
      </article>
-     <Medicines />
+     <Medicines
+      quantities={quantities}
+      handleIncrease={handleIncrease}
+      handleDecrease={handleDecrease}
+      isCartVisible={isCartVisible}
+      cartItems={cartItems}
+      cartTotal={cartTotal}
+     />
     </div>
     <aside className="w-[31%]">
-    <WaitingList medicines={medicinesData} /> 
+     <WaitingList
+      medicines={medicinesData}
+      quantities={quantities}
+      handleIncrease={handleIncrease}
+      handleDecrease={handleDecrease}
+      isCartVisible={isCartVisible}
+      cartItems={cartItems}
+      cartTotal={cartTotal}
+     />
     </aside>
    </main>
   </>

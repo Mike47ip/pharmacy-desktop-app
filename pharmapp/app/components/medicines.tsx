@@ -2,154 +2,98 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { medicinesData } from "../utils/medicineData";
 
-export interface Medicine {
- src: string;
- alt: string;
- title: string;
- description: string;
- stock: number;
- netto: string;
- price: number;
+
+//  src: string;
+//  alt: string;
+//  title: string;
+//  description: string;
+//  stock: number;
+//  netto: string;
+//  price: number;
+// }
+
+// NEW: Update the component props
+interface MedicinesProps {
+ quantities: number[];
+ handleIncrease: (index: number) => void;
+ handleDecrease: (index: number) => void;
+ isCartVisible: boolean;
+ cartItems: number;
+ cartTotal: number;
 }
 
-export const medicinesData: Medicine[] = [
- {
-  src: "/para.jpg",
-  alt: "para",
-  title: "Paracetamol Berno",
-  description:
-   "Paracetamol works by inhibiting the production of certain chemicals..",
-  netto: "60ml",
-  stock: 12,
-  price: 3.75,
- },
- {
-  src: "/syrup.jpg",
-  alt: "vento",
-  title: "Vento Syrup",
-  description:
-   "Vento Syrup is used for treating cough and cold of different kinds..",
-  netto: "33ml",
-  stock: 0, // Deliberately empty stock for tesing
-  price: 4.5,
- },
- {
-  src: "/injection.jpg",
-  alt: "injection",
-  title: "Injection Fluid",
-  description:
-   "Used for intravenous administration to treat various conditions..",
-  netto: "100ml",
-  stock: 8,
-  price: 5.2,
- },
- {
-  src: "/capsule.jpg",
-  alt: "capsule",
-  title: "Capsule Medicine",
-  description:
-   "Effective in treating chronic illnesses with minimal side effects..",
-  netto: "24ml",
-  stock: 10,
-  price: 2.99,
- },
- {
-  src: "/ColaceGlycerin",
-  alt: "capsule",
-  title: "Colace Glycerine",
-  description:
-   "Effective in treating suppository illnesses with minimal side effects..",
-  netto: "17ml",
-  stock: 18,
-  price: 8.99,
- },
- {
-  src: "/injection5",
-  alt: "capsule",
-  title: "Injection Medicine",
-  description:
-   "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
-  stock: 6,
-  price: 10.42,
- },
-];
-export const Medicines: React.FC = () => {
 
- const [quantities, setQuantities] = useState<number[]>(
-  Array(medicinesData.length).fill(0)
- );
- const [cartItems, setCartItems] = useState<number>(0);
- const [cartTotal, setCartTotal] = useState<number>(0);
- const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
-
- const handleIncrease = (index: number) => {
-  console.log(`Attempting to increase quantity for index: ${[index]}`);
-
-  setQuantities((prevQuantities) => {
-   const newQuantities = [...prevQuantities];
-   if (newQuantities[index] < medicinesData[index].stock) {
-    newQuantities[index] += 1;
-    console.log(`New quantity for index ${index}: ${newQuantities[index]}`);
-    return newQuantities;
-   }
-   console.log(`Cannot increase: stock limit reached for index ${index}`);
-   return prevQuantities;
-  });
-
-  // Check if all quantities are zero after decrementing
-  if (
-   quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0
-  ) {
-   setIsCartVisible(false);
-  }
-
-  //Only add drugs as long as they are not out of quantity
-  if (quantities[index] < medicinesData[index].stock) {
-   setCartItems((prevItems) => {
-    const newItems = prevItems + 1;
-    console.log(`Updated cart items: ${newItems}`);
-    return newItems;
-   });
-
-   setCartTotal((prevTotal) => {
-    const newTotal = prevTotal + medicinesData[index].price;
-    console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
-    return newTotal;
-   });
-  }
-  setIsCartVisible(true);
- };
-
- const handleDecrease = (index: number) => {
-  console.log(`Attempting to decrease quantity for index: ${index}`);
-
-  setQuantities((prevQuantities) => {
-   const newQuantities = [...prevQuantities];
-   if (newQuantities[index] > 0) {
-    newQuantities[index] -= 1;
-    console.log(`New quantity for index ${index}: ${newQuantities[index]}`);
-    return newQuantities;
-   }
-   console.log(`Cannot decrease: quantity already 0 for index ${index}`);
-   return prevQuantities;
-  });
-
-  if (quantities[index] > 0) {
-   setCartItems((prevItems) => {
-    const newItems = prevItems - 1;
-    console.log(`Updated cart items: ${newItems}`);
-    return newItems;
-   });
-
-   setCartTotal((prevTotal) => {
-    const newTotal = prevTotal - medicinesData[index].price;
-    console.log(`Updated cart total: $${newTotal.toFixed(2)}`);
-    return newTotal;
-   });
-  }
- };
+//  {
+//   src: "/para.jpg",
+//   alt: "para",
+//   title: "Paracetamol Berno",
+//   description:
+//    "Paracetamol works by inhibiting the production of certain chemicals..",
+//   netto: "60ml",
+//   stock: 12,
+//   price: 3.75,
+//  },
+//  {
+//   src: "/syrup.jpg",
+//   alt: "vento",
+//   title: "Vento Syrup",
+//   description:
+//    "Vento Syrup is used for treating cough and cold of different kinds..",
+//   netto: "33ml",
+//   stock: 0, // Deliberately empty stock for tesing
+//   price: 4.5,
+//  },
+//  {
+//   src: "/injection.jpg",
+//   alt: "injection",
+//   title: "Injection Fluid",
+//   description:
+//    "Used for intravenous administration to treat various conditions..",
+//   netto: "100ml",
+//   stock: 8,
+//   price: 5.2,
+//  },
+//  {
+//   src: "/capsule.jpg",
+//   alt: "capsule",
+//   title: "Capsule Medicine",
+//   description:
+//    "Effective in treating chronic illnesses with minimal side effects..",
+//   netto: "24ml",
+//   stock: 10,
+//   price: 2.99,
+//  },
+//  {
+//   src: "/ColaceGlycerin",
+//   alt: "capsule",
+//   title: "Colace Glycerine",
+//   description:
+//    "Effective in treating suppository illnesses with minimal side effects..",
+//   netto: "17ml",
+//   stock: 18,
+//   price: 8.99,
+//  },
+//  {
+//   src: "/injection5",
+//   alt: "capsule",
+//   title: "Injection Medicine",
+//   description:
+//    "Most effective way of adminsitering drugs into your body without any..",
+//   netto: "6ml",
+//   stock: 6,
+//   price: 10.42,
+//  },
+// ];
+export const Medicines: React.FC<MedicinesProps> = ( {
+ quantities,
+ handleIncrease,
+ handleDecrease,
+ isCartVisible,
+ cartItems,
+ cartTotal
+}) => {
 
  return (
   <>
@@ -254,7 +198,7 @@ export const Medicines: React.FC = () => {
    {isCartVisible && ( // Conditionally render the Cart section based on isCartVisible
     <section
      id="Cart"
-     className="flex justify-between  bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+     className="flex justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
     >
      <div className="flex flex-col justify-center items-center">
       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>

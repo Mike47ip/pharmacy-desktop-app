@@ -15,47 +15,24 @@ export interface Medicine {
 
 export interface WaitingListProps {
  medicines: Medicine[];
+ quantities: number[];
+ handleIncrease: (index: number) => void;
+ handleDecrease: (index: number) => void;
+ isCartVisible: boolean;
+ cartItems: number;
+ cartTotal: number;
 }
 
-export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
+export const WaitingList: React.FC<WaitingListProps> = ({
+ medicines,
+ quantities,
+ handleIncrease,
+ handleDecrease,
+ isCartVisible,
+ cartItems,
+ cartTotal,
+}) => {
  console.log("medicines prop in WaitingList:", medicines); // Log the medicines prop
-
- const [quantities, setQuantities] = useState<number[]>(
-  Array(medicines.length).fill(0)
- );
- const [cartItems, setCartItems] = useState<number>(0);
- const [cartTotal, setCartTotal] = useState<number>(0);
- const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
-
- const handleIncrease = (index: number) => {
-  setQuantities((prevQuantities) => {
-   const newQuantities = [...prevQuantities];
-   newQuantities[index] += 1;
-   return newQuantities;
-  });
-
-  setCartItems((prevItems) => prevItems + 1);
-  setCartTotal((prevTotal) => prevTotal + medicines[index].price);
-  setIsCartVisible(true);
- };
-
- const handleDecrease = (index: number) => {
-  setQuantities((prevQuantities) => {
-   const newQuantities = [...prevQuantities];
-   if (newQuantities[index] > 0) {
-    newQuantities[index] -= 1;
-   }
-   return newQuantities;
-  });
-
-  setCartItems((prevItems) => prevItems - 1);
-  setCartTotal((prevTotal) => prevTotal - medicines[index].price);
-  if (
-   quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) === 0
-  ) {
-   setIsCartVisible(false);
-  }
- };
 
  return (
   <main className="sticky top-0 h-auto p-4 bg-white border-l-[1px] border-slate-20">
@@ -136,7 +113,9 @@ export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
     <div className="h-44 overflow-y-auto rounded-lg bg-gray-100 custom-scrollbar">
      <ul className=" flex flex-col gap-8">
       {medicines.map((medicine, index) => (
-       <li key={index} className="flex-grow overflow-hidden">  {/*Hide to remove horizontal scroll */}
+       <li key={index} className="flex-grow overflow-hidden">
+        {" "}
+        {/*Hide to remove horizontal scroll */}
         <div className="flex justify-between gap-2 h-[6rem]">
          <div id="image" className="flex-shrink-0 z-10">
           <Image
@@ -148,13 +127,15 @@ export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
           />
          </div>
 
-       
-          <div className="flex-shrink" id="title">
-           <p className="font-bold z-40">{medicine.title}</p>
-          </div>
-     
-         <div id="control-panel" className="flex flex-shrink flex-col justify-between items-end">
-         <PencilSquareIcon className="w-6" />
+         <div className="flex-shrink" id="title">
+          <p className="font-bold z-40">{medicine.title}</p>
+         </div>
+
+         <div
+          id="control-panel"
+          className="flex flex-shrink flex-col justify-between items-end"
+         >
+          <PencilSquareIcon className="w-6" />
           <div className="bg-white w-34 w-24 p-1 flex justify-between relative items-center rounded-3xl">
            <button
             onClick={() => handleDecrease(index)}
@@ -190,7 +171,6 @@ export const WaitingList: React.FC<WaitingListProps> = ({ medicines }) => {
             </span>
            </button>
           </div>
-
          </div>
         </div>
        </li>
