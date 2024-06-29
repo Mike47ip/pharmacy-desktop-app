@@ -4,7 +4,6 @@ import Image from "next/image";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { medicinesData } from "../utils/medicineData";
 
-
 //  src: string;
 //  alt: string;
 //  title: string;
@@ -23,7 +22,6 @@ interface MedicinesProps {
  cartItems: number;
  cartTotal: number;
 }
-
 
 //  {
 //   src: "/para.jpg",
@@ -86,15 +84,14 @@ interface MedicinesProps {
 //   price: 10.42,
 //  },
 // ];
-export const Medicines: React.FC<MedicinesProps> = ( {
+export const Medicines: React.FC<MedicinesProps> = ({
  quantities,
  handleIncrease,
  handleDecrease,
  isCartVisible,
  cartItems,
- cartTotal
+ cartTotal,
 }) => {
-
  return (
   <>
    <section

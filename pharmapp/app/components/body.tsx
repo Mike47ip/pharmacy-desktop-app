@@ -132,7 +132,7 @@ const Body: React.FC<BodyProps> = () => {
 
    setIsCartVisible(
     quantities.reduce((acc, currentQuantity) => acc + currentQuantity, 0) > 1
-  ); // Update cart visibility based on remaining quantities
+   ); // Update cart visibility based on remaining quantities
   }
  };
 
