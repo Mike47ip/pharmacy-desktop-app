@@ -105,7 +105,10 @@ export const WaitingList: React.FC<WaitingListProps> = ({
 
           <div className="flex flex-col justify-between w-full">
            <div className="flex justify-between pb-2">
-            <div className="flex flex-col justify-between gap-2 flex-shrink" id="title">
+            <div
+             className="flex flex-col justify-between gap-2 flex-shrink"
+             id="title"
+            >
              <p className="font-bold z-40 whitespace-nowrap sticky">
               {medicine.title}
              </p>
@@ -121,7 +124,8 @@ export const WaitingList: React.FC<WaitingListProps> = ({
            </div>
            <div className="p-1 flex justify-between relative items-center rounded-3xl">
             <p className="font-semibold">
-             <span className="text-custom-green">$ </span>5.6 <span className="text-custom-gray"> /Strip</span>
+             <span className="text-custom-green">$ </span>5.6{" "}
+             <span className="text-custom-gray"> /Strip</span>
             </p>
             <div className="flex justify-between bg-white w-20">
              <button
@@ -168,10 +172,40 @@ export const WaitingList: React.FC<WaitingListProps> = ({
     </div>
    </div>
 
+   <table className="w-full table-fixed">
+    <h4 className="font-semibold px-4">Summary</h4>
+    <thead>
+     <tr className="text-custom-gray text-sm">
+      {/* <th className="px-4 py-2 w-1/2 text-left">Name</th>
+         <th className="px-4 py-2 w-1/2 text-right">Amount </th> */}
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td className="px-4 py-2 whitespace-nowrap text-sm text-custom-gray font-semibold">
+       Sum Total
+      </td>
+      <td className="px-4 py-2 font-semibold text-sm text-right ">{cartTotal.toFixed(2)}</td>
+     </tr>
+     <tr className="border-b-[0.5px] mb-3 border-custom-gray">
+      <td className="px-4 py-2 whitespace-nowrap text-sm text-custom-gray font-semibold">
+       Platform fees
+      </td>
+      <td className="px-4 py-2 font-semibold text-sm text-right ">$0.00</td>
+     </tr>
+     <tr className="!pt-10">
+      <td className="px-4 py-2 whitespace-nowrap text-md font-semibold">
+       Total
+      </td>
+      <td className="px-4 py-2 font-semibold text-md text-right ">{cartTotal.toFixed(2)}</td>
+     </tr>
+    </tbody>
+   </table>
+
    {isCartVisible && (
     <section
      id="Cart"
-     className="flex justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+     className="hidden justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
     >
      <div className="flex flex-col justify-center items-center">
       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
