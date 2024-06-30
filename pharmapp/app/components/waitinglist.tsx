@@ -51,11 +51,11 @@ export const WaitingList: React.FC<WaitingListProps> = ({
     Detail Prescription <span className="text-custom-green">3</span>
    </p>
 
-   <div className="max-w-md mx-auto mt-8 bg-custom-background p-4 rounded-lg">
+   <div className="max-w-md mx-auto mt-2 bg-custom-background p-4 rounded-lg">
     <div className="h-28 overflow-y-auto rounded-lg bg-gray-100 custom-scrollbar">
      <table className="w-full table-fixed">
       <thead>
-       <tr className="text-custom-gray">
+       <tr className="text-custom-gray text-sm">
         <th className="px-4 py-2 w-1/2 text-left">Name</th>
         <th className="px-4 py-2 w-1/2 text-right">Amount </th>
        </tr>
@@ -63,7 +63,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
       <tbody>
        {waitingListItems.map(({ medicine, index }) => (
         <tr key={index}>
-         <td className="px-4 py-2 font-semibold whitespace-nowrap">
+         <td className="px-4 py-2 whitespace-nowrap text-sm font-semibold">
           {medicine.title}
          </td>
          <td className="px-4 py-2 font-semibold text-right text-custom-gray">
@@ -78,7 +78,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
 
    <div className="max-w-md mx-auto mt-8 bg-custom-background p-4 rounded-lg">
     <div className="h-44 overflow-y-auto rounded-lg bg-gray-100 custom-scrollbar">
-     <ul className="flex flex-col-reverse gap-8">
+     <ul className="flex !flex-col-reverse gap-8">
       {waitingListItems.map(({ medicine, index }) => (
        <li key={index} className="flex-grow overflow-hidden">
         <div className="flex justify-between gap-2 h-[6rem]">
@@ -86,7 +86,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
           <Image
            src={medicine.src}
            alt={medicine.alt}
-           className="object-cover p-1 w-[4.5rem]"
+           className="object-cover p-1 w-[4.5rem] h-[7rem]"
            width={300}
            height={250}
           />
