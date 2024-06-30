@@ -5,12 +5,9 @@ import {
  ViewfinderCircleIcon,
 } from "@heroicons/react/24/solid";
 import Medicines from "./medicines";
-import {
- ArrowRightCircleIcon,
- ClockIcon,
- UserIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowRightCircleIcon, ClockIcon, UserIcon } from "@heroicons/react/24/outline";
 import { WaitingList } from "./waitinglist";
+
 import WaitlistInterface from "../types";
 import { medicinesData } from "../utils/medicineData";
 import { useState } from "react";
@@ -53,14 +50,13 @@ const waitListData: WaitlistInterface[] = [
   items: 11,
  },
 ];
+
 interface BodyProps {
  // Define props here if needed
 }
 
 const Body: React.FC<BodyProps> = () => {
- const [quantities, setQuantities] = useState<number[]>(
-  Array(medicinesData.length).fill(0)
- );
+ const [quantities, setQuantities] = useState<number[]>(Array(medicinesData.length).fill(0));
  const [cartItems, setCartItems] = useState<number>(0);
  const [cartTotal, setCartTotal] = useState<number>(0);
  const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
@@ -86,7 +82,7 @@ const Body: React.FC<BodyProps> = () => {
    setIsCartVisible(false);
   }
 
-  //Only add drugs as long as they are not out of quantity
+  // Only add drugs as long as they are not out of quantity
   if (quantities[index] < medicinesData[index].stock) {
    setCartItems((prevItems) => {
     const newItems = prevItems + 1;
@@ -274,6 +270,7 @@ const Body: React.FC<BodyProps> = () => {
       </ul>
      </article>
      <Medicines
+      medicines={medicinesData}
       quantities={quantities}
       handleIncrease={handleIncrease}
       handleDecrease={handleDecrease}
