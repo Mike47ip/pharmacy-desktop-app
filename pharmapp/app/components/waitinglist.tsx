@@ -91,61 +91,73 @@ export const WaitingList: React.FC<WaitingListProps> = ({
      ) : (
       <ul className="flex !flex-col-reverse gap-8">
        {waitingListItems.map(({ medicine, index }) => (
-        <li key={index} className="flex-grow overflow-hidden">
-         <div className="flex justify-between gap-2 h-[6rem]">
+        <li key={index} className="flex-grow">
+         <div className="flex justify-between items-center gap-2 h-[6rem]">
           <div id="image" className="flex-shrink-0 z-10">
            <Image
             src={medicine.src}
             alt={medicine.alt}
-            className="object-cover p-1 w-[4.5rem] h-[7rem]"
+            className="object-cover p-1 w-[4.8rem] h-[6rem]"
             width={300}
             height={250}
            />
           </div>
 
-          <div className="flex-shrink" id="title">
-           <p className="font-bold z-40">{medicine.title}</p>
-          </div>
+          <div className="flex flex-col justify-between w-full">
+           <div className="flex justify-between pb-2">
+            <div className="flex flex-col justify-between gap-2 flex-shrink" id="title">
+             <p className="font-bold z-40 whitespace-nowrap sticky">
+              {medicine.title}
+             </p>
+             <p className="text-custom-gray text-sm">dosage 3 times a day</p>
+            </div>
 
-          <div
-           id="control-panel"
-           className="flex flex-shrink flex-col justify-between items-end"
-          >
-           <PencilSquareIcon className="w-6" />
-           <div className="bg-white w-34 w-24 p-1 flex justify-between relative items-center rounded-3xl">
-            <button
-             onClick={() => handleDecrease(index)}
-             className="bg-white w-6 h-6 flex justify-center items-center rounded-full"
-             aria-label="Decrease quantity"
-             disabled={medicine.stock === 0}
+            <div
+             id="control-panel"
+             className="flex flex-shrink flex-col justify-between items-end"
             >
-             <span
-              className={`font-semibold text-3xl ${
-               medicine.stock === 0
-                ? "text-custom-gray cursor-not-allowed"
-                : "text-custom-green"
-              }`}
+             <PencilSquareIcon className="w-6" />
+            </div>
+           </div>
+           <div className="p-1 flex justify-between relative items-center rounded-3xl">
+            <p className="font-semibold">
+             <span className="text-custom-green">$ </span>5.6 <span className="text-custom-gray"> /Strip</span>
+            </p>
+            <div className="flex justify-between bg-white w-20">
+             <button
+              onClick={() => handleDecrease(index)}
+              className="bg-white w-6 h-6 flex justify-center items-center rounded-full"
+              aria-label="Decrease quantity"
+              disabled={medicine.stock === 0}
              >
-              -
+              <span
+               className={`font-semibold text-3xl ${
+                medicine.stock === 0
+                 ? "text-custom-gray cursor-not-allowed"
+                 : "text-custom-green"
+               }`}
+              >
+               -
+              </span>
+             </button>
+             <span className="text-[1rem] font-semibold">
+              {quantities[index]}
              </span>
-            </button>
-            <span className="text-[1rem] font-semibold">
-             {quantities[index]}
-            </span>
-            <button
-             onClick={() => handleIncrease(index)}
-             className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
-              medicine.stock === 0
-               ? "bg-custom-gray cursor-not-allowed"
-               : "bg-custom-green"
-             }`}
-             aria-label="Increase quantity"
-             disabled={medicine.stock === 0}
-            >
-             <span className={`pb-[1.1px] font-semibold text-2xl text-white`}>
-              +
-             </span>
-            </button>
+             <button
+              onClick={() => handleIncrease(index)}
+              className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
+               medicine.stock === 0
+                ? "bg-custom-gray cursor-not-allowed"
+                : "bg-custom-green"
+              }`}
+              aria-label="Increase quantity"
+              disabled={medicine.stock === 0}
+             >
+              <span className={`pb-[1.1px] font-semibold text-2xl text-white`}>
+               +
+              </span>
+             </button>
+            </div>
            </div>
           </div>
          </div>
