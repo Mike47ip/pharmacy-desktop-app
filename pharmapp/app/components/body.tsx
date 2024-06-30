@@ -5,7 +5,11 @@ import {
  ViewfinderCircleIcon,
 } from "@heroicons/react/24/solid";
 import Medicines from "./medicines";
-import { ArrowRightCircleIcon, ClockIcon, UserIcon } from "@heroicons/react/24/outline";
+import {
+ ArrowRightCircleIcon,
+ ClockIcon,
+ UserIcon,
+} from "@heroicons/react/24/outline";
 import { WaitingList } from "./waitinglist";
 
 import WaitlistInterface from "../types";
@@ -56,7 +60,9 @@ interface BodyProps {
 }
 
 const Body: React.FC<BodyProps> = () => {
- const [quantities, setQuantities] = useState<number[]>(Array(medicinesData.length).fill(0));
+ const [quantities, setQuantities] = useState<number[]>(
+  Array(medicinesData.length).fill(0)
+ );
  const [cartItems, setCartItems] = useState<number>(0);
  const [cartTotal, setCartTotal] = useState<number>(0);
  const [isCartVisible, setIsCartVisible] = useState<boolean>(false);

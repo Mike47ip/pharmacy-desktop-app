@@ -12,7 +12,6 @@ interface MedicinesProps {
  isCartVisible: boolean;
  cartItems: number;
  cartTotal: number;
-
 }
 
 export const Medicines: React.FC<MedicinesProps> = ({
@@ -22,7 +21,6 @@ export const Medicines: React.FC<MedicinesProps> = ({
  isCartVisible,
  cartItems,
  cartTotal,
-
 }) => {
  return (
   <>
