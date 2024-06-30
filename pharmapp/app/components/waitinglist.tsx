@@ -33,6 +33,10 @@ export const WaitingList: React.FC<WaitingListProps> = ({
   cartItems,
   cartTotal,
 }) => {
+  const waitingListItems = medicines
+    .map((medicine, index) => ({ medicine, index }))
+    .filter(({ index }) => quantities[index] > 0);
+
   return (
     <main className="sticky top-0 h-auto p-4 bg-white border-l-[1px] border-slate-20">
       <div className="flex justify-between">
