@@ -1,14 +1,12 @@
 import Body from "./components/body";
-import Header from "./components/header";
+import React from 'react';
 
-
-export default function Home() {
- return (
-  <>
-   <main>
-    <Header />
+const Home: React.FC = () => {
+  return (
+    <main className="w-full">
     <Body />
-   </main>
-  </>
- );
+    </main>
+  );
 }
+
+export default Home;
