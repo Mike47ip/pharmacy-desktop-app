@@ -83,7 +83,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
       </div>
 
       <div className="max-w-md mx-auto mt-8 bg-custom-background p-4 rounded-lg">
-        <div className="h-44 overflow-y-auto rounded-lg bg-gray-100 custom-scrollbar">
+        <div className="h-64 overflow-y-auto rounded-lg bg-gray-100 custom-scrollbar">
           {waitingListItems.length === 0 ? (
             <p className="text-center py-4 text-custom-gray">
               Please, you have not added anything yet.
@@ -127,10 +127,10 @@ export const WaitingList: React.FC<WaitingListProps> = ({
                           <span className="text-custom-green">$ </span>5.6{" "}
                           <span className="text-custom-gray"> /Strip</span>
                         </p>
-                        <div className="flex justify-between bg-white w-20">
+                        <div className="flex justify-between rounded-3xl p-1 bg-white w-24">
                           <button
                             onClick={() => handleDecrease(index)}
-                            className="bg-white w-6 h-6 flex justify-center items-center rounded-full"
+                            className="bg-custom-backgray w-7 h-7 flex justify-center items-center rounded-full"
                             aria-label="Decrease quantity"
                             disabled={medicine.stock === 0}
                           >
@@ -149,7 +149,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
                           </span>
                           <button
                             onClick={() => handleIncrease(index)}
-                            className={`w-6 h-6 flex justify-center items-center text-white rounded-full ${
+                            className={`w-7 h-7 flex justify-center items-center text-white rounded-full ${
                               medicine.stock === 0
                                 ? "bg-custom-gray cursor-not-allowed"
                                 : "bg-custom-green"
@@ -175,12 +175,6 @@ export const WaitingList: React.FC<WaitingListProps> = ({
       {isCartVisible && (
       <table className="w-full table-fixed">
         <h4 className="font-semibold px-4">Summary</h4>
-        <thead>
-          <tr className="text-custom-gray text-sm">
-            {/* <th className="px-4 py-2 w-1/2 text-left">Name</th>
-               <th className="px-4 py-2 w-1/2 text-right">Amount</th> */}
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td className="px-4 py-2 whitespace-nowrap text-sm text-custom-gray font-semibold">

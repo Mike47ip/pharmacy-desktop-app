@@ -11,7 +11,7 @@ const Sidebar = () => {
  return (
   <>
    <div className="w-2/12 bg-custom-dark h-full overflow-y-auto flex flex-col custom-scrollbar">
-    <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-custom-gray">
+    <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
      <h1 className="text-white">MedkitPOS</h1>
      <svg
       className="w-10 h-10"
