@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
-import { useEffect } from "react";
 
 export interface Medicine {
   src: string;

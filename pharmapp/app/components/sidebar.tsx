@@ -10,8 +10,8 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 const Sidebar = () => {
  return (
   <>
-   <div className="w-2/12 p-4 bg-custom-dark h-full overflow-y-auto flex flex-col custom-scrollbar">
-    <div className="flex flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-custom-gray">
+   <div className="w-2/12 bg-custom-dark h-full overflow-y-auto flex flex-col custom-scrollbar">
+    <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-custom-gray">
      <h1 className="text-white">MedkitPOS</h1>
      <svg
       className="w-10 h-10"
@@ -32,55 +32,65 @@ const Sidebar = () => {
     </div>
 
     <div className="flex flex-col h-full justify-between">
-     <div>
-      <div className="pt-16">
-       <h2 className="text-custom-gray pb-4 font-semibold">Main Menu</h2>
+     <div className="">
+      <div className="pt-16 ">
+       <h2 className="text-custom-gray pb-4 font-semibold ml-5">Main Menu</h2>
 
-       <ul className="text-white">
-        <li className="flex items-center gap-5 py-3">
+       <ul className="text-white ">
+       <li className="flex  items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all  ">
          {" "}
          <svg
           xmlns="http://www.w3.org/2000/svg"
           height="28px"
           viewBox="0 -960 960 960"
           width="28px"
-          className="text-custom-green"
+          className="ml-5"
           fill="currentColor"
          >
           <path d="M666-440 440-666l226-226 226 226-226 226Zm-546-80v-320h320v320H120Zm400 400v-320h320v320H520Zm-400 0v-320h320v320H120Z" />
          </svg>
-         Home
+         <h2 className="!text-white hover:text-white">Home</h2>
         </li>
-        <li className="flex items-center gap-5 py-3">
-         <ClockIcon className="w-7" /> History
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
+         <ClockIcon className="w-7 ml-5" /> History
         </li>
-        <li className="flex items-center gap-5 py-3">
-         <ChartPieIcon className="w-7" /> Supplies
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
+         <ChartPieIcon className="w-7 ml-5" /> Supplies
         </li>
-        <li className="flex items-center gap-5 py-3">
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
          {" "}
-         <UsersIcon className="w-7" /> Waitlist
+         <UsersIcon className="w-7 ml-5" /> Waitlist
+        </li>
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
+         <ClockIcon className="w-7 ml-5" /> History
+        </li>
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
+         <ChartPieIcon className="w-7 ml-5" /> Supplies
+        </li>
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
+         {" "}
+         <UsersIcon className="w-7 ml-5" /> Waitlist
         </li>
        </ul>
       </div>
 
       <div>
-       <h3 className="text-custom-gray pb-4 pt-7 font-semibold">General</h3>
+       <h3 className="text-custom-gray pb-4 pt-7 font-semibol ml-5">General</h3>
        <ul className="text-white">
-        <li className="flex items-center gap-5 py-3">
-         <Cog6ToothIcon className="w-7" />
-         Home
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all">
+         <Cog6ToothIcon className="w-7 ml-5" />
+         Settings
         </li>
-        <li className="flex items-center gap-5 py-3">
-         <UserGroupIcon className="w-7" /> History
+        <li className="flex items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all">
+         <UserGroupIcon className="w-7 ml-5" /> Community
         </li>
        </ul>
       </div>
      </div>
 
-     <div className="flex text-white pt-16">
-      <button className="flex items-center gap-5 py-3">
-       <ArrowLeftStartOnRectangleIcon className="w-7" />
+     <div className="flex text-white pt-16 ">
+      <button className="flex items-center gap-5 py-3  hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all">
+       <ArrowLeftStartOnRectangleIcon className="w-7 ml-5" />
        Logout
       </button>
      </div>
