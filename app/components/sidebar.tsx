@@ -89,7 +89,7 @@ const Sidebar = () => {
      </div>
 
      <div className="flex text-white pt-16 ">
-      <button className="flex items-center gap-5 py-3  hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all">
+      <button className="flex items-center gap-5 py-3 w-full  hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all">
        <ArrowLeftStartOnRectangleIcon className="w-7 ml-5" />
        Logout
       </button>
