@@ -34,10 +34,12 @@ const Sidebar = () => {
     <div className="flex flex-col h-full w-full justify-between">
      <div>
       <div className="pt-16 ">
-       <h2 className="text-custom-gray 2xl:pl-[19%] pb-4 font-semibold pl-[12%]">Main Menu</h2>
+       <h2 className="text-custom-gray 2xl:pl-[19%] pb-4 font-semibold pl-[12%]">
+        Main Menu
+       </h2>
 
        <ul className="text-white">
-       <li className="flex pl-[12%] 2xl:pl-[19%]  items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all  ">
+        <li className="flex pl-[12%] 2xl:pl-[19%]  items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all  ">
          {" "}
          <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +77,9 @@ const Sidebar = () => {
       </div>
 
       <div>
-       <h3 className="text-custom-gray pl-[12%] 2xl:pl-[19%]  pb-4 pt-7 font-semibol ">General</h3>
+       <h3 className="text-custom-gray pl-[12%] 2xl:pl-[19%]  pb-4 pt-7 font-semibol ">
+        General
+       </h3>
        <ul className="text-white">
         <li className="flex pl-[12%] 2xl:pl-[19%]  items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all">
          <Cog6ToothIcon className="w-7 " />
