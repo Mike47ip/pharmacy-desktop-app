@@ -202,9 +202,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
       </tbody>
      </table>
      <button className="flex justify-center rounded-xl w-full mt-4 h-11 bg-custom-green text-white items-center">
-      <p className="text-sm whitespace-nowrap absolute">
-       Print bill
-      </p>
+      <p className="text-sm whitespace-nowrap absolute">Print bill</p>
      </button>
     </>
    )}
