@@ -16,20 +16,19 @@ interface MedicinesProps {
 
 //truncate the description
 const truncateText = (text: string, maxLength: number = 60): string => {
-  if (text.length <= maxLength) {
-    return text;
-  }
+ if (text.length <= maxLength) {
+  return text;
+ }
 
-  let truncated = text.slice(0, maxLength);
-  const lastSpaceIndex = truncated.lastIndexOf(" ");
+ let truncated = text.slice(0, maxLength);
+ const lastSpaceIndex = truncated.lastIndexOf(" ");
 
-  if (lastSpaceIndex > 0) {
-    truncated = truncated.slice(0, lastSpaceIndex);
-  }
+ if (lastSpaceIndex > 0) {
+  truncated = truncated.slice(0, lastSpaceIndex);
+ }
 
-  return truncated + "...";
+ return truncated + "...";
 };
-
 
 export const Medicines: React.FC<MedicinesProps> = ({
  quantities,
@@ -66,8 +65,11 @@ export const Medicines: React.FC<MedicinesProps> = ({
 
          <div className="w-full md:px-5 lg:px-0">
           <p className="pt-3  text-sm font-bold">{medicine.title}</p>
-          <div id="des" className="w-full h-20 lg:text-[0.8rem] xl:text-[1rem] leading-snug text-custom-gray">
-          {truncateText(medicine.description)}
+          <div
+           id="des"
+           className="w-full h-20 lg:text-[0.8rem] xl:text-[1rem] leading-snug text-custom-gray"
+          >
+           {truncateText(medicine.description)}
           </div>
           <div className="flex  gap-6 items-center whitespace-nowrap">
            <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">
