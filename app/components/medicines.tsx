@@ -14,6 +14,23 @@ interface MedicinesProps {
  cartTotal: number;
 }
 
+//truncate the description
+const truncateText = (text: string, maxLength: number = 60): string => {
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  let truncated = text.slice(0, maxLength);
+  const lastSpaceIndex = truncated.lastIndexOf(" ");
+
+  if (lastSpaceIndex > 0) {
+    truncated = truncated.slice(0, lastSpaceIndex);
+  }
+
+  return truncated + "...";
+};
+
+
 export const Medicines: React.FC<MedicinesProps> = ({
  quantities,
  handleIncrease,
@@ -37,20 +54,20 @@ export const Medicines: React.FC<MedicinesProps> = ({
     <div className="flex justify-center items-center">
      <ul className="grid grid-cols-2 w-full gap-5 pt-2">
       {medicinesData.map((medicine, index) => (
-       <li className="flex flex-col bg-white rounded-xl" key={index}>
-        <div className="flex">
+       <li className="flex flex-col w-full bg-white rounded-xl" key={index}>
+        <div className="flex md:flex-col lg:flex-row ">
          <Image
           src={medicine.src}
           alt={medicine.alt}
-          className="object-cover p-5 rounded-3xl"
-          width={220}
-          height={250}
+          className="object-cover md:w-full lg:w-1/2 p-5 rounded-3xl"
+          width={250}
+          height={220}
          />
 
-         <div>
-          <p className="pt-3 text-sm font-bold">{medicine.title}</p>
-          <div className="w-36 h-20 text-[0.8rem] leading-snug text-custom-gray">
-           {medicine.description}
+         <div className="w-full md:px-5 lg:px-0">
+          <p className="pt-3  text-sm font-bold">{medicine.title}</p>
+          <div id="des" className="w-full h-20 lg:text-[0.8rem] xl:text-[1rem] leading-snug text-custom-gray">
+          {truncateText(medicine.description)}
           </div>
           <div className="flex  gap-6 items-center whitespace-nowrap">
            <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">

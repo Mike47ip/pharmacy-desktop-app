@@ -97,7 +97,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
            <Image
             src={medicine.src}
             alt={medicine.alt}
-            className="object-cover p-1 w-[4.8rem] h-[6rem]"
+            className="object-cover hidden lg:block p-1 w-[4.8rem] h-[6rem]"
             width={300}
             height={250}
            />
