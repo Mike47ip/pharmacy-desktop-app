@@ -20,7 +20,7 @@ const Sidebar = () => {
      >
       <defs>
        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style={{ stopColor: "#07AF29", stopOpacity: 1 }} />
+        <stop offset="0%" style={{ stopColor: "#07AF29", stopOpacity: 1 }} />3
         <stop offset="100%" style={{ stopColor: "#07AF", stopOpacity: 1 }} />
        </linearGradient>
       </defs>

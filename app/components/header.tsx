@@ -46,19 +46,19 @@ export default function Header() {
     </div>
 
     <div className="flex justify-center items-center px-4">
-     <div className="left-[32%] absolute">
+     <div className=" md:left-[26%] md2:relative lg:left-[11%] absolute">
       <MagnifyingGlassIcon className="w-7 text-custom-gray" />
      </div>
      <input
       type="text"
-      className="border w-[27rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+      className="border w-[24rem] hidden lg:block bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
       placeholder="Search collection..."
      />
     </div>
 
     <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <Image src="/voucher.png" alt="voucher" width={23} height={23} />
-     <p className="whitespace-nowrap text-sm font-semibold">Use Voucher</p>
+     <p className="whitespace-nowrap text-sm font-semibold hidden lg:block">Use Voucher</p>
     </div>
     <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <svg
@@ -70,7 +70,7 @@ export default function Header() {
      >
       <path d="M40-120v-200h80v120h120v80H40Zm680 0v-80h120v-120h80v200H720ZM160-240v-480h80v480h-80Zm120 0v-480h40v480h-40Zm120 0v-480h80v480h-80Zm120 0v-480h120v480H520Zm160 0v-480h40v480h-40Zm80 0v-480h40v480h-40ZM40-640v-200h200v80H120v120H40Zm800 0v-120H720v-80h200v200h-80Z" />
      </svg>
-     <p className="whitespace-nowrap text-sm font-semibold">
+     <p className="whitespace-nowrap text-sm font-semibold hidden lg:block">
       Scan Prescription
      </p>
     </div>

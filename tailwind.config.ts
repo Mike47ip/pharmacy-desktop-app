@@ -8,8 +8,8 @@ const config: Config = {
  ],
  theme: {
   extend: {
-   screen: {
-      '3xl': '1749',
+   screens: {
+      'md2': '770px',
    },
    backgroundImage: {
       'dark-black-background': "url('/dark-black-background.jpg')",

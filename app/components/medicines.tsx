@@ -54,7 +54,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
      <ul className="grid grid-cols-2 w-full gap-5 pt-2">
       {medicinesData.map((medicine, index) => (
        <li className="flex flex-col w-full bg-white rounded-xl" key={index}>
-        <div className="flex md:flex-col lg:flex-row ">
+        <div className="flex flex-col lg:flex-row ">
          <Image
           src={medicine.src}
           alt={medicine.alt}
