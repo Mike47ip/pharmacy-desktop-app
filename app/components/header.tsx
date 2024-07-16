@@ -40,7 +40,7 @@ export default function Header() {
 
     <div className="flex flex-col">
      <h1 className="text-lg font-bold whitespace-nowrap">
-      Nana Adjei Barim
+      Nana Adjei Barima
      </h1>
      <span className="text-sm text-custom-gray">{formattedDate}</span>
     </div>
