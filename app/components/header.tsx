@@ -40,7 +40,7 @@ export default function Header() {
 
     <div className="flex flex-col">
      <h1 className="text-lg font-bold whitespace-nowrap">
-      Nana Adjei Barimaba
+      Nana Adjei Barim
      </h1>
      <span className="text-sm text-custom-gray">{formattedDate}</span>
     </div>
@@ -51,7 +51,7 @@ export default function Header() {
      </div>
      <input
       type="text"
-      className="border w-[24rem] hidden lg:block bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+      className="border xl:w-[24rem] hidden lg:block lg:w-[20rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
       placeholder="Search collection..."
      />
     </div>
@@ -88,7 +88,7 @@ export default function Header() {
     />
 
     <div>
-     <h3 className="font-semibold whitespace-nowrap">Sugar Yaw</h3>
+     <h3 className="font-semibold whitespace-nowrap">Sugar</h3>
      <p className="text-xs text-custom-gray">Pharmacist</p>
     </div>
    </nav>

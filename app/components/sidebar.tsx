@@ -10,7 +10,9 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 const Sidebar = () => {
  return (
   <>
-   <div className="w-2/12 md:hidden lg:block bg-custom-dark h-full overflow-y-auto flex items-center flex-col custom-scrollbar">
+  
+
+   <div className="w-2/12 flex-shrink-0 lg:flex lg:!h-screen  hidden  bg-custom-dark h-full overflow-y-auto  items-center flex-col custom-scrollbar">
     <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
      <h1 className="text-white">MedkitPOS</h1>
      <svg
@@ -63,16 +65,6 @@ const Sidebar = () => {
          {" "}
          <UsersIcon className="w-7 " /> Waitlist
         </li>
-        <li className="flex pl-[12%] 2xl:pl-[19%]  items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
-         <ClockIcon className="w-7 " /> History
-        </li>
-        <li className="flex pl-[12%] 2xl:pl-[19%]  items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
-         <ChartPieIcon className="w-7 " /> Supplies
-        </li>
-        <li className="flex pl-[12%] 2xl:pl-[19%]  items-center gap-5 py-3 hover:bg-gradient-to-r hover:from-custom-green/30 hover:via-custom-green/15 hover:via-30% hover:to-custom-green/5 hover:to-70% hover:text-custom-green cursor-pointer transition-all ">
-         {" "}
-         <UsersIcon className="w-7 " /> Waitlist
-        </li>
        </ul>
       </div>
 
@@ -100,6 +92,7 @@ const Sidebar = () => {
      </div>
     </div>
    </div>
+         
   </>
  );
 };
