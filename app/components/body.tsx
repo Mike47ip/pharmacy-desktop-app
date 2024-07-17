@@ -140,7 +140,7 @@ const Body: React.FC<BodyProps> = () => {
 
  return (
   <>
-   <main className="flex w-full">
+   <main className="flex w-full ">
     <div className="w-[69%]">
      <article className="p-10">
       <div className="relative flex justify-between items-center p-7 bg-dark-black-background bg-cover bg-center rounded-3xl">
