@@ -18,11 +18,11 @@ export default function RootLayout({
 }>) {
  return (
   <html lang="en">
-   <body className={`${inter.className} flex  h-screen`}>
+   <body className={`${inter.className} flex h-screen`}>
      <Sidebar />
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col flex-grow-0 w-full lg:pr-[16.6667%] lg2:pr-0">
      <Header />
-     <main className="overflow-auto w-full bg-custom-background">
+     <main className="overflow-auto flex-grow w-full bg-custom-background">
       {children}
      </main>
     </div>
