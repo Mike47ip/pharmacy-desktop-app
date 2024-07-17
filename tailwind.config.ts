@@ -9,12 +9,12 @@ const config: Config = {
  theme: {
   extend: {
    screens: {
-      'md2': '770px',
-      'lg2' : '1254px', //body breakpoint
+    md2: "770px",
+    lg2: "1254px", //body breakpoint
    },
    backgroundImage: {
-      'dark-black-background': "url('/dark-black-background.jpg')",
-    },
+    "dark-black-background": "url('/dark-black-background.jpg')",
+   },
    fontFamily: {
     "open-sans": ["Open Sans", "sans-serif"],
    },
@@ -32,12 +32,12 @@ const config: Config = {
     },
    },
    gradientColorStops: {
-      'green-gradient': '#08B133', // Starting color
-      'green-gradient-light': '#06A680', // Ending color
+    "green-gradient": "#08B133", // Starting color
+    "green-gradient-light": "#06A680", // Ending color
    },
    boxShadow: {
-      'upward': '0 -4px 6px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.06)',
-    },
+    upward: "0 -4px 6px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.06)",
+   },
   },
  },
  plugins: [],

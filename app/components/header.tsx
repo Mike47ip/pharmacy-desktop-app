@@ -39,9 +39,7 @@ export default function Header() {
     </div>
 
     <div className="flex flex-col">
-     <h1 className="text-lg font-bold whitespace-nowrap">
-      Nana Adjei Barima
-     </h1>
+     <h1 className="text-lg font-bold whitespace-nowrap">Nana Adjei Barima</h1>
      <span className="text-sm text-custom-gray">{formattedDate}</span>
     </div>
 
@@ -58,7 +56,9 @@ export default function Header() {
 
     <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <Image src="/voucher.png" alt="voucher" width={23} height={23} />
-     <p className="whitespace-nowrap text-sm font-semibold hidden lg:block">Use Voucher</p>
+     <p className="whitespace-nowrap text-sm font-semibold hidden lg:block">
+      Use Voucher
+     </p>
     </div>
     <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <svg
