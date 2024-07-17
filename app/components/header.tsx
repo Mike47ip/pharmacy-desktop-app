@@ -17,7 +17,7 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(today);
 export default function Header() {
  return (
   <>
-   <nav className="flex justify-between items-center px-5 py-7 border-b-[1px] border-slate-20">
+   <nav className="flex justify-between  xl:w-full items-center px-5 py-7 border-b-[1px] border-slate-20">
     <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"
@@ -51,7 +51,7 @@ export default function Header() {
      </div>
      <input
       type="text"
-      className="border xl:w-[24rem] hidden lg:block lg:w-[20rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+      className="border xl:w-[24rem] hidden lg:w-[20rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
       placeholder="Search collection..."
      />
     </div>
@@ -74,9 +74,9 @@ export default function Header() {
       Scan Prescription
      </p>
     </div>
-    <div className="border-[0.5px] p-2 border-slate-200 rounded-lg">
+    <div className="flex gap-0 border-[0.5px] p-2 border-slate-200 rounded-lg">
      <BellIcon className="w-6" />
-     <span className="w-2 h-2 right-[11%] top-[6%] rounded-full absolute bg-red-600"></span>
+     <span className="w-2 h-2  rounded-full  bg-red-600"></span>
     </div>
 
     <Image

@@ -10,7 +10,7 @@ const config: Config = {
   extend: {
    screens: {
       'md2': '770px',
-      "lg2" : '1024px',
+      'lg2' : '1254px', //body breakpoint
    },
    backgroundImage: {
       'dark-black-background': "url('/dark-black-background.jpg')",
