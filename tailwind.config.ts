@@ -13,6 +13,7 @@ const config: Config = {
     md2: '770px',
     md3: '811px',
     md4: '908px',
+    md5: '989px',
     lg1: '1168px',
     lg2: "1254px", //body breakpoint
    },
