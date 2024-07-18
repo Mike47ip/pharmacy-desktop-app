@@ -163,7 +163,7 @@ const Sidebar = () => {
    {/* Desktop fixed sidebar */}
    <div
     ref={sidebarRef}
-    className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 md:w-3/12 z-20 overflow-y-auto custom-scrollbar bg-custom-dark h-ful fixed left-0 top-0 h-full w-2/12 text-white transition-transform duration-500 ${
+    className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
      isHovered ? "transform translate-x-0" : "transform -translate-x-full"
     }`}
    >

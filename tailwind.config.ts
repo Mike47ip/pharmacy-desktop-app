@@ -9,7 +9,10 @@ const config: Config = {
  theme: {
   extend: {
    screens: {
-    md2: "770px",
+    md1: "600px",
+    md2: '770px',
+    md3: '811px',
+    md4: '908px',
     lg2: "1254px", //body breakpoint
    },
    backgroundImage: {
