@@ -116,7 +116,7 @@ const Sidebar = () => {
 
    {/* Mobile sidebar */}
    <div
-    className="sidebar-mobile p-4 bg-custom-dark text-white cursor-pointer lg:hidden"
+    className="sidebar-mobile p-4 hidden md:block bg-custom-dark text-white cursor-pointer lg:hidden"
     onMouseEnter={() => setIsHovered(true)}
    >
     <ul className="flex flex-col justify-between h-full items-center py-6">
