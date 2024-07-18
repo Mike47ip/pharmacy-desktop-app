@@ -33,7 +33,7 @@ const Sidebar = () => {
    {/* Desktop relaive sidebar */}
    <div
     id="sidebar-desktop"
-    className="w-2/12  flex-shrink-0 lg:flex lg:!h-screen hidden bg-custom-dark h-full overflow-y-auto  items-center flex-col custom-scrollbar"
+    className="w-2/12 xl:w-[15%] flex-shrink-0 lg:flex lg:!h-screen hidden bg-custom-dark h-full overflow-y-auto  items-center flex-col custom-scrollbar"
    >
     <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
      <h1 className="text-white">MedkitPOS</h1>

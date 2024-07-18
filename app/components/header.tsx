@@ -49,7 +49,7 @@ export default function Header() {
      </div>
      <input
       type="text"
-      className="border xl:w-[24rem] hidden lg:w-[20rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+      className="border xl:w-[24rem] hidden lg:hidden lg1:block lg:w-[20rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
       placeholder="Search collection..."
      />
     </div>
