@@ -12,12 +12,25 @@ import { useRef, useEffect, useState } from "react";
 
 const Sidebar = () => {
  const [isHovered, setIsHovered] = useState<boolean>(false);
+ const [isOpenByClick, setIsOpenByClick] = useState<boolean>(false);
  const sidebarRef = useRef<HTMLDivElement>(null);
 
  // Function to handle clicks
+
+
  const handleClick = (event: MouseEvent) => {
+  const mobileSidebar = document.querySelector('.sidebar-mobile');
+  if (mobileSidebar && mobileSidebar.contains(event.target as Node)) {
+    return;
+  }
   setIsHovered(false);
- };
+  setIsOpenByClick(false);
+};
+
+const handleMobileSidebarClick = (event: React.MouseEvent) => {
+  event.stopPropagation();
+  setIsOpenByClick(prevState => !prevState);
+};
 
  // Set up the event listener for clicks
  useEffect(() => {
@@ -116,9 +129,10 @@ const Sidebar = () => {
 
    {/* Mobile sidebar */}
    <div
-    className="sidebar-mobile p-4 hidden md:block bg-custom-dark text-white cursor-pointer lg:hidden"
-    onMouseEnter={() => setIsHovered(true)}
-   >
+  className="sidebar-mobile p-4 hidden md:block bg-custom-dark text-white cursor-pointer lg:hidden"
+  onMouseEnter={() => !isOpenByClick && setIsHovered(true)}
+  onClick={handleMobileSidebarClick}
+>
     <ul className="flex flex-col justify-between h-full items-center py-6">
      <li>
       {" "}
@@ -162,11 +176,11 @@ const Sidebar = () => {
 
    {/* Desktop fixed sidebar */}
    <div
-    ref={sidebarRef}
-    className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
-     isHovered ? "transform translate-x-0" : "transform -translate-x-full"
-    }`}
-   >
+  ref={sidebarRef}
+  className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
+    isHovered || isOpenByClick ? "transform translate-x-0" : "transform -translate-x-full"
+  }`}
+>
     {" "}
     <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
      <h1 className="text-white">MedkitPOS</h1>

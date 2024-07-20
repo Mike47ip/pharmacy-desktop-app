@@ -135,7 +135,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
               disabled={medicine.stock === 0}
              >
               <span
-               className={`font-semibold text-3xl ${
+               className={`font-semibold text-3xl pb-[5.7px] ${
                 medicine.stock === 0
                  ? "text-custom-gray cursor-not-allowed"
                  : "text-custom-green"
@@ -157,7 +157,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
               aria-label="Increase quantity"
               disabled={medicine.stock === 0}
              >
-              <span className={`pb-[1.1px] font-semibold text-2xl text-white`}>
+              <span className={`pb-[3.2px] font-semibold text-2xl text-white`}>
                +
               </span>
              </button>

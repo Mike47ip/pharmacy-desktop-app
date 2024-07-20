@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/solid";
 import { medicinesData } from "../utils/medicineData";
 import { Medicine } from "./waitinglist";
+import { MinusIcon } from "@heroicons/react/24/outline";
 interface MedicinesProps {
  medicines: Medicine[];
  quantities: number[];
@@ -109,15 +110,15 @@ export const Medicines: React.FC<MedicinesProps> = ({
            aria-label="Decrease quantity"
            disabled={medicine.stock === 0}
           >
-           <span
-            className={`font-semibold text-3xl ${
+           <div
+            className={`font-semibold pb-[5.5px] text-3xl ${
              medicine.stock === 0
               ? "text-custom-gray cursor-not-allowed"
               : "text-custom-green"
             }`}
            >
-            -
-           </span>
+            <span className="text-center">-</span>
+           </div>
           </button>
           <span className="text-[1rem] font-semibold">{quantities[index]}</span>
           <button
@@ -130,9 +131,9 @@ export const Medicines: React.FC<MedicinesProps> = ({
            aria-label="Increase quantity"
            disabled={medicine.stock === 0}
           >
-           <span className={`pb-[1.1px] font-semibold text-2xl text-white`}>
-            +
-           </span>
+           <div className={`pb-[5px] font-semibold text-2xl text-white`}>
+           <span className="text-center">+</span> 
+           </div>
           </button>
          </div>
         </div>
