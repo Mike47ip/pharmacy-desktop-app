@@ -1,14 +1,17 @@
+'use client';
 import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import ClientDate from "./clientDate";
+import { useSidebar } from "./sidebarContext";
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
+  const { toggleSidebar } = useSidebar(); // Get the context values
  return (
   <>
-   <nav className="flex justify-between xl:w-full items-center px-5 py-7 border-b-[1px] border-slate-20">
+   <nav className="flex justify-between xl:w-full items-center   px-5 py-7 border-b-[1px] border-slate-20">
     <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"
@@ -28,9 +31,14 @@ const Header: React.FC<HeaderProps> = () => {
      </svg>
      <h1 className="text-5 font-semibold">MedKitPOS</h1>
     </div>
-    <button>
-     <Bars3Icon className="w-7 p-0 block md:hidden lg:hidden" />
-    </button>
+      {/* Mobile Menu Icon */}
+      <button
+        onClick={toggleSidebar}
+        className="block md:hidden lg:hidden"
+        aria-label="Toggle Sidebar"
+      >
+        <Bars3Icon className="w-9" />
+      </button>
     <div className="hidden lg:flex flex-col ">
      <h1 className="text-lg font-bold whitespace-nowrap">Nana Adjei Barima</h1>
      <ClientDate /> {/* Use the ClientDate component */}
@@ -80,7 +88,7 @@ const Header: React.FC<HeaderProps> = () => {
      height={25}
     />
 
-    <div>
+    <div className="">
      <h3 className="font-semibold whitespace-nowrap">Sugar</h3>
      <p className="text-xs text-custom-gray">Pharmacist</p>
     </div>
