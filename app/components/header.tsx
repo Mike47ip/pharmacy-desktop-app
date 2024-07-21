@@ -1,4 +1,4 @@
-import { BellIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
@@ -38,7 +38,11 @@ export default function Header() {
      <h1 className="text-5 font-semibold">MedKitPOS</h1>
     </div>
 
-    <div className="flex flex-col">
+    <div className="md:hidden ">
+      <Bars3Icon className="w-8" />
+    </div>
+
+    <div className="hidden md:flex flex-col">
      <h1 className="text-lg font-bold whitespace-nowrap">Nana Adjei Barima</h1>
      <span className="text-sm text-custom-gray">{formattedDate}</span>
     </div>

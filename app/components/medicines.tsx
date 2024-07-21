@@ -111,7 +111,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
            disabled={medicine.stock === 0}
           >
            <div
-            className={`font-semibold pb-[5.5px] text-3xl ${
+            className={`font-semibold pb-[3px] text-3xl ${
              medicine.stock === 0
               ? "text-custom-gray cursor-not-allowed"
               : "text-custom-green"
@@ -131,7 +131,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
            aria-label="Increase quantity"
            disabled={medicine.stock === 0}
           >
-           <div className={`pb-[5px] font-semibold text-2xl text-white`}>
+           <div className={`pb-[1.8px] font-semibold text-2xl text-white`}>
            <span className="text-center">+</span> 
            </div>
           </button>
