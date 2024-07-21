@@ -3,10 +3,9 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import ClientDate from "./clientDate";
 
-interface HeaderProps {
-}
+interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = ( ) => {
+const Header: React.FC<HeaderProps> = () => {
  return (
   <>
    <nav className="flex justify-between xl:w-full items-center px-5 py-7 border-b-[1px] border-slate-20">
