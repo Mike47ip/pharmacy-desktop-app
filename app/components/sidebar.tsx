@@ -9,10 +9,12 @@ import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { UsersIcon } from "@heroicons/react/24/outline";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { useRef, useEffect, useState } from "react";
+import { useSidebar } from "./sidebarContext";
 
 const Sidebar = () => {
+  const { isSidebarOpen, toggleSidebar } = useSidebar(); // Get the context values
  const [isHovered, setIsHovered] = useState<boolean>(false);
- const [isOpenByClick, setIsOpenByClick] = useState<boolean>(false);
+//  const [isOpenByClick, setIsOpenByClick] = useState<boolean>(false);
  const sidebarRef = useRef<HTMLDivElement>(null);
 
  // Function to handle clicks
@@ -20,26 +22,29 @@ const Sidebar = () => {
  const handleClick = (event: MouseEvent) => {
   const mobileSidebar = document.querySelector(".sidebar-mobile");
   if (mobileSidebar && mobileSidebar.contains(event.target as Node)) {
-   return;
+    return;
   }
   setIsHovered(false);
-  setIsOpenByClick(false);
- };
+  // If the sidebar is open by click, close it when clicking outside
+  if (isSidebarOpen) {
+    toggleSidebar();
+  }
+};
 
- const handleMobileSidebarClick = (event: React.MouseEvent) => {
+const handleMobileSidebarClick = (event: React.MouseEvent) => {
   event.stopPropagation();
-  setIsOpenByClick((prevState) => !prevState);
- };
+  toggleSidebar();
+};
 
- // Set up the event listener for clicks
- useEffect(() => {
-  document.addEventListener("click", handleClick);
+  // Set up the event listener for clicks
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
 
-  // Clean up the event listener on component unmount
-  return () => {
-   document.removeEventListener("click", handleClick);
-  };
- }, []);
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [isSidebarOpen]); // Depend on isSidebarOpen to ensure the effect is re-run
  return (
   <>
    {/* Desktop relaive sidebar */}
@@ -129,7 +134,7 @@ const Sidebar = () => {
    {/* Mobile sidebar */}
    <div
     className="sidebar-mobile p-4 hidden md:block bg-custom-dark text-white cursor-pointer lg:hidden"
-    onMouseEnter={() => !isOpenByClick && setIsHovered(true)}
+    onMouseEnter={() => !isSidebarOpen  && setIsHovered(true)}
     onClick={handleMobileSidebarClick}
    >
     <ul className="flex flex-col justify-between h-full items-center py-6">
@@ -177,7 +182,7 @@ const Sidebar = () => {
    <div
     ref={sidebarRef}
     className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
-     isHovered || isOpenByClick
+     isHovered || isSidebarOpen 
       ? "transform translate-x-0"
       : "transform -translate-x-full"
     }`}
@@ -191,13 +196,13 @@ const Sidebar = () => {
       viewBox="0 -960 960 960"
      >
       <defs>
-       <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+       <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" style={{ stopColor: "#07AF29", stopOpacity: 1 }} />3
         <stop offset="100%" style={{ stopColor: "#07AF", stopOpacity: 1 }} />
        </linearGradient>
       </defs>
       <path
-       fill="url(#grad1)"
+       fill="url(#grad3)"
        d="M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v480q0 33-23.5 56.5T800-80H160Zm240-640h160v-80H400v80Zm40 360v120h80v-120h120v-80H520v-120h-80v120H320v80h120Z"
       />
      </svg>
