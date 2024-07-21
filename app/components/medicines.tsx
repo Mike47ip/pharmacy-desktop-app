@@ -59,7 +59,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
          <Image
           src={medicine.src}
           alt={medicine.alt}
-          className="object-cover md:w-full lg:w-1/2 p-5 rounded-3xl"
+          className="object-cover w-full md:w-full lg:w-1/2 p-5 rounded-3xl"
           width={250}
           height={220}
          />
@@ -145,7 +145,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
    {isCartVisible && ( // Conditionally render the Cart section based on isCartVisible
     <section
      id="Cart"
-     className="hidden justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+     className=" md:hidden justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
     >
      <div className="flex flex-col justify-center items-center">
       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>

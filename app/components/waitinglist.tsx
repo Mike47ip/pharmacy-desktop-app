@@ -37,7 +37,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
   .filter(({ index }) => quantities[index] > 0);
 
  return (
-  <main className="sticky top-0 h-auto p-4 bg-white border-l-[1px] border-slate-20">
+  <main className="sticky hidden md:block top-0 h-auto p-4 bg-white border-l-[1px] border-slate-20">
    <div className="flex justify-between">
     <h1 className="text-lg font-semibold">Waitlist</h1>
     <p>
@@ -89,7 +89,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
        Please, you have not added anything yet.
       </p>
      ) : (
-      <ul className="flex !flex-col-reverse gap-8">
+      <ul className="flex !flex-col-reverse gap-8 pt-10">
        {waitingListItems.map(({ medicine, index }) => (
         <li key={index} className="flex-grow">
          <div className="flex justify-between items-center gap-2 h-[6rem]">
