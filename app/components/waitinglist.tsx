@@ -210,7 +210,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
    {isCartVisible && (
     <section
      id="Cart"
-     className="hidden fixed justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+     className="!fixed md:hidden bottom-0 left-0 right-0 flex justify-between items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
     >
      <div className="flex flex-col justify-center items-center">
       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>

@@ -88,7 +88,7 @@ const Header: React.FC<HeaderProps> = () => {
      height={25}
     />
 
-    <div className="cursor-pointer">
+    <div className="cursor-pointer md:pr-2 lg:pr-0">
      <h3 className="font-semibold whitespace-nowrap">Sugar</h3>
      <p className="text-xs text-custom-gray">Pharmacist</p>
     </div>
