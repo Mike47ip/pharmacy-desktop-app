@@ -55,13 +55,13 @@ const Header: React.FC<HeaderProps> = () => {
      />
     </div>
 
-    <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
+    <div className="flex justify-center items-center font-normal cursor-pointer border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <Image src="/voucher.png" alt="voucher" width={23} height={23} />
      <p className="whitespace-nowrap text-sm font-semibold hidden lg1:hidden lg2:block lg:block">
       Use Voucher
      </p>
     </div>
-    <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
+    <div className="flex justify-center items-center cursor-pointer font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = () => {
       Scan <span className="">Prescription</span>
      </p>
     </div>
-    <div className="flex gap-0 border-[0.5px] p-2 border-slate-200 rounded-lg">
+    <div className="flex gap-0 border-[0.5px] cursor-pointer p-2 border-slate-200 rounded-lg">
      <BellIcon className="w-6" />
      <span className="w-2 h-2  rounded-full  bg-red-600"></span>
     </div>
@@ -88,7 +88,7 @@ const Header: React.FC<HeaderProps> = () => {
      height={25}
     />
 
-    <div className="">
+    <div className="cursor-pointer">
      <h3 className="font-semibold whitespace-nowrap">Sugar</h3>
      <p className="text-xs text-custom-gray">Pharmacist</p>
     </div>
