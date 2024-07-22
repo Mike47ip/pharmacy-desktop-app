@@ -8,7 +8,7 @@ import {
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { UsersIcon } from "@heroicons/react/24/outline";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { useSidebar } from "./sidebarContext";
 
 const Sidebar = () => {
@@ -18,8 +18,7 @@ const Sidebar = () => {
  const sidebarRef = useRef<HTMLDivElement>(null);
 
  // Function to handle clicks
-
- const handleClick = (event: MouseEvent) => {
+ const handleClick = useCallback((event: MouseEvent) => {
   const mobileSidebar = document.querySelector(".sidebar-mobile");
   if (mobileSidebar && mobileSidebar.contains(event.target as Node)) {
     return;
@@ -29,7 +28,7 @@ const Sidebar = () => {
   if (isSidebarOpen) {
     toggleSidebar();
   }
-};
+}, [isSidebarOpen, toggleSidebar]);
 
 const handleMobileSidebarClick = (event: React.MouseEvent) => {
   event.stopPropagation();
@@ -44,7 +43,8 @@ const handleMobileSidebarClick = (event: React.MouseEvent) => {
     return () => {
       document.removeEventListener("click", handleClick);
     };
-  }, [isSidebarOpen]); // Depend on isSidebarOpen to ensure the effect is re-run
+  }, [handleClick]); // Depend on handleClick to ensure the effect is re-run
+
  return (
   <>
    {/* Desktop relaive sidebar */}
@@ -183,8 +183,8 @@ const handleMobileSidebarClick = (event: React.MouseEvent) => {
     ref={sidebarRef}
     className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
      isHovered || isSidebarOpen 
-      ? "transform translate-x-0"
-      : "transform -translate-x-full"
+      ? "transform translate-x-0 ease-in-out"
+      : "transform -translate-x-full ease-in-out"
     }`}
    >
     {" "}
