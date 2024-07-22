@@ -149,13 +149,13 @@ export const Medicines: React.FC<MedicinesProps> = ({
    {isCartVisible && ( // Conditionally render the Cart section based on isCartVisible
     <>
      <section className="flex justify-between md:hidden items-center  fixed bottom-0 bg-white w-full h-24 px-4 py-9 shadow-upward">
-     <div className="flex flex-col justify-center items-center">
-      <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
-      <p className="flex font-semibold gap-1">
-       <span className="text-custom-green font-semibold">{cartItems}</span>items{" "}
-       <ChevronDownIcon className="w-4 absolute ml-16" />
-      </p>
-     </div>
+      <div className="flex flex-col justify-center items-center">
+       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
+       <p className="flex font-semibold gap-1">
+        <span className="text-custom-green font-semibold">{cartItems}</span>
+        items <ChevronDownIcon className="w-4 absolute ml-16" />
+       </p>
+      </div>
       <button className="flex justify-center rounded-xl min-w-min h-10 bg-custom-green text-white items-center px-4">
        <p className="text-sm whitespace-nowrap">
         Purchase {cartTotal.toFixed(2)}

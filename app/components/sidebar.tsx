@@ -12,38 +12,41 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { useSidebar } from "./sidebarContext";
 
 const Sidebar = () => {
-  const { isSidebarOpen, toggleSidebar } = useSidebar(); // Get the context values
+ const { isSidebarOpen, toggleSidebar } = useSidebar(); // Get the context values
  const [isHovered, setIsHovered] = useState<boolean>(false);
-//  const [isOpenByClick, setIsOpenByClick] = useState<boolean>(false);
+ //  const [isOpenByClick, setIsOpenByClick] = useState<boolean>(false);
  const sidebarRef = useRef<HTMLDivElement>(null);
 
  // Function to handle clicks
- const handleClick = useCallback((event: MouseEvent) => {
-  const mobileSidebar = document.querySelector(".sidebar-mobile");
-  if (mobileSidebar && mobileSidebar.contains(event.target as Node)) {
+ const handleClick = useCallback(
+  (event: MouseEvent) => {
+   const mobileSidebar = document.querySelector(".sidebar-mobile");
+   if (mobileSidebar && mobileSidebar.contains(event.target as Node)) {
     return;
-  }
-  setIsHovered(false);
-  // If the sidebar is open by click, close it when clicking outside
-  if (isSidebarOpen) {
+   }
+   setIsHovered(false);
+   // If the sidebar is open by click, close it when clicking outside
+   if (isSidebarOpen) {
     toggleSidebar();
-  }
-}, [isSidebarOpen, toggleSidebar]);
+   }
+  },
+  [isSidebarOpen, toggleSidebar]
+ );
 
-const handleMobileSidebarClick = (event: React.MouseEvent) => {
+ const handleMobileSidebarClick = (event: React.MouseEvent) => {
   event.stopPropagation();
   toggleSidebar();
-};
+ };
 
-  // Set up the event listener for clicks
-  useEffect(() => {
-    document.addEventListener("click", handleClick);
+ // Set up the event listener for clicks
+ useEffect(() => {
+  document.addEventListener("click", handleClick);
 
-    // Clean up the event listener on component unmount
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
-  }, [handleClick]); // Depend on handleClick to ensure the effect is re-run
+  // Clean up the event listener on component unmount
+  return () => {
+   document.removeEventListener("click", handleClick);
+  };
+ }, [handleClick]); // Depend on handleClick to ensure the effect is re-run
 
  return (
   <>
@@ -134,7 +137,7 @@ const handleMobileSidebarClick = (event: React.MouseEvent) => {
    {/* Mobile sidebar */}
    <div
     className="sidebar-mobile p-4 hidden md:block bg-custom-dark text-white cursor-pointer lg:hidden"
-    onMouseEnter={() => !isSidebarOpen  && setIsHovered(true)}
+    onMouseEnter={() => !isSidebarOpen && setIsHovered(true)}
     onClick={handleMobileSidebarClick}
    >
     <ul className="flex flex-col justify-between h-full items-center py-6">
@@ -182,7 +185,7 @@ const handleMobileSidebarClick = (event: React.MouseEvent) => {
    <div
     ref={sidebarRef}
     className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar scrollbar-hidden bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
-     isHovered || isSidebarOpen 
+     isHovered || isSidebarOpen
       ? "transform translate-x-0 ease-in-out"
       : "transform -translate-x-full ease-in-out"
     }`}

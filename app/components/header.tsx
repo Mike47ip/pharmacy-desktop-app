@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import { useSidebar } from "./sidebarContext";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
-  const { toggleSidebar } = useSidebar(); // Get the context values
+ const { toggleSidebar } = useSidebar(); // Get the context values
  return (
   <>
    <nav className="flex justify-between xl:w-full items-center   px-5 py-7 border-b-[1px] border-slate-20">
@@ -31,14 +31,14 @@ const Header: React.FC<HeaderProps> = () => {
      </svg>
      <h1 className="text-5 font-semibold">MedKitPOS</h1>
     </div>
-      {/* Mobile Menu Icon */}
-      <button
-        onClick={toggleSidebar}
-        className="block md:hidden lg:hidden"
-        aria-label="Toggle Sidebar"
-      >
-        <Bars3Icon className="w-9" />
-      </button>
+    {/* Mobile Menu Icon */}
+    <button
+     onClick={toggleSidebar}
+     className="block md:hidden lg:hidden"
+     aria-label="Toggle Sidebar"
+    >
+     <Bars3Icon className="w-9" />
+    </button>
     <div className="hidden lg:flex flex-col ">
      <h1 className="text-lg font-bold whitespace-nowrap">Nana Adjei Barima</h1>
      <ClientDate /> {/* Use the ClientDate component */}
