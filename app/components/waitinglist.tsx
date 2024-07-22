@@ -68,7 +68,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
        <tbody>
         {waitingListItems.map(({ medicine, index }) => (
          <tr key={index}>
-          <td className="px-4 py-2 whitespace-nowrap text-sm font-semibold">
+          <td className="px-4 py-2 lg:whitespace-nowrap text-sm font-semibold">
            {medicine.title}
           </td>
           <td className="px-4 py-2 font-semibold text-right text-custom-gray">
@@ -89,7 +89,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
        Please, you have not added anything yet.
       </p>
      ) : (
-      <ul className="flex !flex-col-reverse gap-8 pt-10">
+      <ul className="flex !flex-col-reverse gap-8 pt-6">
        {waitingListItems.map(({ medicine, index }) => (
         <li key={index} className="flex-grow">
          <div className="flex justify-between items-center gap-2 h-[6rem]">

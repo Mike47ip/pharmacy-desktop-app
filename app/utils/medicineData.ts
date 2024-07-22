@@ -69,4 +69,164 @@ export const medicinesData: Medicine[] = [
   stock: 6,
   price: 10.42,
  },
+ {
+  src: "/potion1",
+  alt: "Mixture",
+  title: "Tabea Mixture",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 24,
+  price: 33.43,
+ },
+ {
+  src: "/potion2",
+  alt: "Angel Bitters",
+  title: "Angel Bitters",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 15,
+  price: 24.3,
+ },
+ {
+  src: "/suppo1",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/suppo2",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 11,
+  price: 7.43,
+ },
+ {
+  src: "/suppo3",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/capsule1",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/capsule2",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/capsule4",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/honey",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/vento",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/tablet1",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/tablet2",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/tablet3",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 10.42,
+ },
+ {
+  src: "/nurofen",
+  alt: "capsule",
+  title: "Nurofen",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 9,
+  price: 15.42,
+ },
+ {
+  src: "/FAK",
+  alt: "first-add",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 6,
+  price: 21.76,
+ },
+ {
+  src: "/tablet6",
+  alt: "capsule",
+  title: "Injection Medicine",
+  description:
+   "Most effective way of adminsitering drugs into your body without any..",
+  netto: "6ml",
+  stock: 10,
+  price: 19.42,
+ },
 ];
