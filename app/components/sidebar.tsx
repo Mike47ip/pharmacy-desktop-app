@@ -50,7 +50,7 @@ const handleMobileSidebarClick = (event: React.MouseEvent) => {
    {/* Desktop relaive sidebar */}
    <div
     id="sidebar-desktop"
-    className="w-2/12 xl:w-[15%] flex-shrink-0 lg:flex lg:!h-screen hidden bg-custom-dark h-full overflow-y-auto  items-center flex-col custom-scrollbar"
+    className="w-2/12 xl:w-[15%] flex-shrink-0 lg:flex lg:!h-screen hidden bg-custom-dark h-full overflow-y-auto  items-center flex-col custom-scrollbar scrollbar-hidden"
    >
     <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
      <h1 className="text-white">MedkitPOS</h1>
@@ -181,7 +181,7 @@ const handleMobileSidebarClick = (event: React.MouseEvent) => {
    {/* Desktop fixed sidebar */}
    <div
     ref={sidebarRef}
-    className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
+    className={`sidebar-desktop lg:hidden flex flex-col flex-shrink-0 w-[35%] md1:w-[27%] md:w-[24%] md3:w-[24%] md4:w-[22%] z-20 overflow-y-auto custom-scrollbar scrollbar-hidden bg-custom-dark h-ful fixed left-0 top-0 h-full text-white transition-transform duration-500 ${
      isHovered || isSidebarOpen 
       ? "transform translate-x-0 ease-in-out"
       : "transform -translate-x-full ease-in-out"
