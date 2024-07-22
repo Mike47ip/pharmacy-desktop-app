@@ -58,15 +58,17 @@ export const Medicines: React.FC<MedicinesProps> = ({
     <div className="flex justify-center items-center">
      <ul className="grid grid-cols-2 w-full gap-5 pt-2">
       {medicinesData.map((medicine, index) => (
-       <li className="flex flex-col w-full bg-white rounded-xl" key={index}>
+       <li className="flex flex-col w-full bg-white rounded-2xl" key={index}>
         <div className="flex flex-col lg:flex-row ">
-         <Image
-          src={medicine.src}
-          alt={medicine.alt}
-          className="object-cover w-full md:w-full lg:w-1/2 p-5 rounded-3xl"
-          width={250}
-          height={220}
-         />
+        <div className="w-full h-[220px] md:h-[190px] lg:!h-[165px] p-5 !rounded-3xl overflow-hidden">
+          <Image
+            src={medicine.src}
+            alt={medicine.alt}
+            className="object-cover w-full h-full rounded-2xl"
+            width={250}
+            height={220}
+          />
+        </div>
 
          <div className="w-full md:px-5 lg:px-0">
           <p className="pt-3  text-sm font-bold">{medicine.title}</p>
