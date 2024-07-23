@@ -65,7 +65,7 @@ export const medicinesData: Medicine[] = [
   title: "Injection Medicine",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+  netto: "33ml",
   stock: 6,
   price: 10.42,
  },
@@ -75,7 +75,7 @@ export const medicinesData: Medicine[] = [
   title: "Tabea Mixture",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+  netto: "18ml",
   stock: 24,
   price: 33.43,
  },
@@ -85,44 +85,44 @@ export const medicinesData: Medicine[] = [
   title: "Angel Bitters",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+  netto: "12ml",
   stock: 15,
   price: 24.3,
  },
  {
   src: "/suppo1",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Vitamin B12",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
-  stock: 6,
+  netto: "1ml",
+  stock: 0,
   price: 10.42,
  },
  {
   src: "/suppo2",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Anusal",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+  netto: "3ml",
   stock: 11,
   price: 7.43,
  },
  {
   src: "/suppo3",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Gravol",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+  netto: "2ml",
   stock: 6,
   price: 10.42,
  },
  {
   src: "/capsule1",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Tramol",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
   netto: "6ml",
@@ -132,7 +132,7 @@ export const medicinesData: Medicine[] = [
  {
   src: "/capsule2",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Food supplement",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
   netto: "6ml",
@@ -142,7 +142,7 @@ export const medicinesData: Medicine[] = [
  {
   src: "/capsule4",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Malacare",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
   netto: "6ml",
@@ -152,7 +152,7 @@ export const medicinesData: Medicine[] = [
  {
   src: "/honey",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Honey",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
   netto: "6ml",
@@ -162,40 +162,40 @@ export const medicinesData: Medicine[] = [
  {
   src: "/vento",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Cough Mixture",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
   netto: "6ml",
-  stock: 6,
+  stock: 9,
   price: 10.42,
  },
  {
   src: "/tablet1",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Sleeping pills",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
-  stock: 6,
+  netto: "3ml",
+  stock: 12,
   price: 10.42,
  },
  {
   src: "/tablet2",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Painkillers",
   description:
-   "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+   "Most effective of blowing your pains away completely",
+  netto: "5ml",
   stock: 6,
   price: 10.42,
  },
  {
   src: "/tablet3",
   alt: "capsule",
-  title: "Injection Medicine",
+  title: "Sleeping pills",
   description:
-   "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+   "With these pill you can say goodbye to insomnia and trouble with",
+  netto: "11ml",
   stock: 6,
   price: 10.42,
  },
@@ -204,9 +204,9 @@ export const medicinesData: Medicine[] = [
   alt: "capsule",
   title: "Nurofen",
   description:
-   "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
-  stock: 9,
+   "Most effective way of adminsitering drugs into your body without any",
+  netto: "13ml",
+  stock: 12,
   price: 15.42,
  },
  {
@@ -215,18 +215,18 @@ export const medicinesData: Medicine[] = [
   title: "Injection Medicine",
   description:
    "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
-  stock: 6,
-  price: 21.76,
+  netto: "7ml",
+  stock: 7,
+  price: 8.76,
  },
  {
   src: "/tablet6",
-  alt: "capsule",
-  title: "Injection Medicine",
+  alt: "Contraceptives",
+  title: "Contraceptives",
   description:
-   "Most effective way of adminsitering drugs into your body without any..",
-  netto: "6ml",
+   "Most effective way of stopping unwanted pregnaancy and safeguarding the womb..",
+  netto: "7ml",
   stock: 10,
-  price: 19.42,
+  price: 4.42,
  },
 ];
