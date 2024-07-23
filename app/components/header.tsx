@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = () => {
 
     <div className="flex justify-center items-center px-4">
      <div className="md:left-[26%] md2:relative lg:left-[11%] absolute">
-      <MagnifyingGlassIcon className="w-7 text-custom-gray" />
+      <MagnifyingGlassIcon className="w-7 text-custom-gray cursor-pointer" />
      </div>
      <input
       type="text"
