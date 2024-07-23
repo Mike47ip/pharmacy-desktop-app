@@ -1,23 +1,17 @@
-import { BellIcon } from "@heroicons/react/24/outline";
+"use client";
+import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import ClientDate from "./clientDate";
+import { useSidebar } from "./sidebarContext";
 
-const today = new Date();
-// Define options for formatting the date
-const options: Intl.DateTimeFormatOptions = {
- weekday: "long",
- day: "2-digit",
- month: "long",
- year: "numeric",
-};
+interface HeaderProps {}
 
-// Format the date
-const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(today);
-
-export default function Header() {
+const Header: React.FC<HeaderProps> = () => {
+ const { toggleSidebar } = useSidebar(); // Get the context values
  return (
   <>
-   <nav className="flex justify-between items-center px-5 py-7 border-b-[1px] border-slate-20">
+   <nav className="flex justify-between xl:w-full items-center   px-5 py-7 border-b-[1px] border-slate-20">
     <div className="items-center gap-2 hidden">
      <svg
       className="w-10 h-10"
@@ -37,30 +31,37 @@ export default function Header() {
      </svg>
      <h1 className="text-5 font-semibold">MedKitPOS</h1>
     </div>
-
-    <div className="flex flex-col">
-     <h1 className="text-lg font-bold whitespace-nowrap">
-      Nana Adjei Barimaba
-     </h1>
-     <span className="text-sm text-custom-gray">{formattedDate}</span>
+    {/* Mobile Menu Icon */}
+    <button
+     onClick={toggleSidebar}
+     className="block md:hidden lg:hidden"
+     aria-label="Toggle Sidebar"
+    >
+     <Bars3Icon className="w-9" />
+    </button>
+    <div className="hidden lg:flex flex-col ">
+     <h1 className="text-lg font-bold whitespace-nowrap">Nana Adjei Barima</h1>
+     <ClientDate /> {/* Use the ClientDate component */}
     </div>
 
     <div className="flex justify-center items-center px-4">
-     <div className="left-[32%] absolute">
-      <MagnifyingGlassIcon className="w-7 text-custom-gray" />
+     <div className="md:left-[26%] md2:relative lg:left-[11%] absolute">
+      <MagnifyingGlassIcon className="w-7 text-custom-gray cursor-pointer" />
      </div>
      <input
       type="text"
-      className="border w-[27rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+      className="border xl:w-[24rem] hidden lg:hidden lg1:block lg:w-[20rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
       placeholder="Search collection..."
      />
     </div>
 
-    <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
+    <div className="flex justify-center items-center font-normal cursor-pointer border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <Image src="/voucher.png" alt="voucher" width={23} height={23} />
-     <p className="whitespace-nowrap text-sm font-semibold">Use Voucher</p>
+     <p className="whitespace-nowrap text-sm font-semibold hidden lg1:hidden lg2:block lg:block">
+      Use Voucher
+     </p>
     </div>
-    <div className="flex justify-center items-center font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
+    <div className="flex justify-center items-center cursor-pointer font-normal border-[0.5px] gap-1 p-2 border-slate-200 rounded-lg">
      <svg
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
@@ -70,13 +71,13 @@ export default function Header() {
      >
       <path d="M40-120v-200h80v120h120v80H40Zm680 0v-80h120v-120h80v200H720ZM160-240v-480h80v480h-80Zm120 0v-480h40v480h-40Zm120 0v-480h80v480h-80Zm120 0v-480h120v480H520Zm160 0v-480h40v480h-40Zm80 0v-480h40v480h-40ZM40-640v-200h200v80H120v120H40Zm800 0v-120H720v-80h200v200h-80Z" />
      </svg>
-     <p className="whitespace-nowrap text-sm font-semibold">
-      Scan Prescription
+     <p className="whitespace-nowrap text-sm font-semibold hidden lg1:hidden lg2:block lg:block">
+      Scan <span className="">Prescription</span>
      </p>
     </div>
-    <div className="border-[0.5px] p-2 border-slate-200 rounded-lg">
+    <div className="flex gap-0 border-[0.5px] cursor-pointer p-2 border-slate-200 rounded-lg">
      <BellIcon className="w-6" />
-     <span className="w-2 h-2 right-[11%] top-[6%] rounded-full absolute bg-red-600"></span>
+     <span className="w-2 h-2  rounded-full  bg-red-600"></span>
     </div>
 
     <Image
@@ -87,11 +88,13 @@ export default function Header() {
      height={25}
     />
 
-    <div>
-     <h3 className="font-semibold whitespace-nowrap">Sugar Yaw</h3>
+    <div className="cursor-pointer md:pr-2 lg:pr-0">
+     <h3 className="font-semibold whitespace-nowrap">Sugar</h3>
      <p className="text-xs text-custom-gray">Pharmacist</p>
     </div>
    </nav>
   </>
  );
-}
+};
+
+export default Header;

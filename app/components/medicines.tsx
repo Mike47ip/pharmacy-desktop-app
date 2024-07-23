@@ -1,9 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import {
+ ChevronDownIcon,
+ MinusCircleIcon,
+ PlusCircleIcon,
+} from "@heroicons/react/24/solid";
 import { medicinesData } from "../utils/medicineData";
 import { Medicine } from "./waitinglist";
+import { MinusIcon } from "@heroicons/react/24/outline";
 interface MedicinesProps {
  medicines: Medicine[];
  quantities: number[];
@@ -13,6 +18,22 @@ interface MedicinesProps {
  cartItems: number;
  cartTotal: number;
 }
+
+//truncate the description
+const truncateText = (text: string, maxLength: number = 60): string => {
+ if (text.length <= maxLength) {
+  return text;
+ }
+
+ let truncated = text.slice(0, maxLength);
+ const lastSpaceIndex = truncated.lastIndexOf(" ");
+
+ if (lastSpaceIndex > 0) {
+  truncated = truncated.slice(0, lastSpaceIndex);
+ }
+
+ return truncated + "...";
+};
 
 export const Medicines: React.FC<MedicinesProps> = ({
  quantities,
@@ -37,20 +58,25 @@ export const Medicines: React.FC<MedicinesProps> = ({
     <div className="flex justify-center items-center">
      <ul className="grid grid-cols-2 w-full gap-5 pt-2">
       {medicinesData.map((medicine, index) => (
-       <li className="flex flex-col bg-white rounded-xl" key={index}>
-        <div className="flex">
-         <Image
-          src={medicine.src}
-          alt={medicine.alt}
-          className="object-cover p-5 rounded-3xl"
-          width={220}
-          height={250}
-         />
+       <li className="flex flex-col w-full bg-white rounded-2xl" key={index}>
+        <div className="flex flex-col lg:flex-row ">
+        <div className="w-full h-[220px] md:h-[190px] lg:!h-[165px] p-5 !rounded-3xl overflow-hidden">
+          <Image
+            src={medicine.src}
+            alt={medicine.alt}
+            className="object-cover w-full h-full rounded-2xl"
+            width={250}
+            height={220}
+          />
+        </div>
 
-         <div>
-          <p className="pt-3 text-sm font-bold">{medicine.title}</p>
-          <div className="w-36 h-20 text-[0.8rem] leading-snug text-custom-gray">
-           {medicine.description}
+         <div className="w-full md:px-5 lg:px-0">
+          <p className="pt-3  text-sm font-bold">{medicine.title}</p>
+          <div
+           id="des"
+           className="w-full h-20 lg:text-[0.8rem] xl:text-[1rem] leading-snug text-custom-gray"
+          >
+           {truncateText(medicine.description)}
           </div>
           <div className="flex  gap-6 items-center whitespace-nowrap">
            <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">
@@ -90,15 +116,15 @@ export const Medicines: React.FC<MedicinesProps> = ({
            aria-label="Decrease quantity"
            disabled={medicine.stock === 0}
           >
-           <span
-            className={`font-semibold text-3xl ${
+           <div
+            className={`font-semibold pb-[3px] text-3xl ${
              medicine.stock === 0
               ? "text-custom-gray cursor-not-allowed"
               : "text-custom-green"
             }`}
            >
-            -
-           </span>
+            <span className="text-center">-</span>
+           </div>
           </button>
           <span className="text-[1rem] font-semibold">{quantities[index]}</span>
           <button
@@ -111,9 +137,9 @@ export const Medicines: React.FC<MedicinesProps> = ({
            aria-label="Increase quantity"
            disabled={medicine.stock === 0}
           >
-           <span className={`pb-[1.1px] font-semibold text-2xl text-white`}>
-            +
-           </span>
+           <div className={`pb-[1.8px] font-semibold text-2xl text-white`}>
+            <span className="text-center">+</span>
+           </div>
           </button>
          </div>
         </div>
@@ -123,23 +149,39 @@ export const Medicines: React.FC<MedicinesProps> = ({
     </div>
    </section>
    {isCartVisible && ( // Conditionally render the Cart section based on isCartVisible
-    <section
-     id="Cart"
-     className="hidden justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
-    >
-     <div className="flex flex-col justify-center items-center">
-      <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
-      <p className="flex font-semibold gap-1">
-       <span className="text-custom-green font-semibold">{cartItems}</span>items{" "}
-       <ChevronDownIcon className="w-4 absolute ml-16" />
-      </p>
-     </div>
-     <button className="flex justify-center rounded-xl min-w-min h-10 bg-custom-green text-white items-center px-4">
-      <p className="text-sm whitespace-nowrap">
-       Purchase {cartTotal.toFixed(2)}
-      </p>
-     </button>
-    </section>
+    <>
+     <section className="flex justify-between md:hidden items-center  fixed bottom-0 bg-white w-full h-24 px-4 py-9 shadow-upward">
+      <div className="flex flex-col justify-center items-center">
+       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
+       <p className="flex font-semibold gap-1">
+        <span className="text-custom-green font-semibold">{cartItems}</span>
+        items <ChevronDownIcon className="w-4 absolute ml-16" />
+       </p>
+      </div>
+      <button className="flex justify-center rounded-xl min-w-min h-10 bg-custom-green text-white items-center px-4">
+       <p className="text-sm whitespace-nowrap">
+        Purchase {cartTotal.toFixed(2)}
+       </p>
+      </button>
+     </section>
+     {/* <section
+      id="Cart"
+      className=" md:hidden justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+     >
+      <div className="flex flex-col justify-center items-center">
+       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
+       <p className="flex font-semibold gap-1">
+        <span className="text-custom-green font-semibold">{cartItems}</span>
+        items <ChevronDownIcon className="w-4 absolute ml-16" />
+       </p>
+      </div>
+      <button className="flex justify-center rounded-xl min-w-min h-10 bg-custom-green text-white items-center px-4">
+       <p className="text-sm whitespace-nowrap">
+        Purchase {cartTotal.toFixed(2)}
+       </p>
+      </button>
+     </section> */}
+    </>
    )}
   </>
  );

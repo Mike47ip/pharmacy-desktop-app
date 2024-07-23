@@ -141,13 +141,13 @@ const Body: React.FC<BodyProps> = () => {
  return (
   <>
    <main className="flex w-full">
-    <div className="w-[69%]">
-     <article className="p-10">
-      <div className="relative flex justify-between items-center p-7 bg-dark-black-background bg-cover bg-center rounded-3xl">
+    <div className="w-full md:w-[69%]">
+     <article className="p-10 flex justify-center">
+      <div className="relative flex flex-col items-start gap-5 w-4/5 lg:w-full lg:flex-row justify-between lg:items-center p-7 bg-dark-black-background bg-cover bg-center rounded-3xl">
        <div className="flex flex-col gap-2">
         <div className="flex gap-4 text-white font-semibold">
          <h1>Your subscription is almost expired</h1>
-         <div className="flex  justify-center gap-1 font-medium text-xs align-super">
+         <div className="flex items-center justify-center gap-1 font-medium text-xs whitespace-nowrap">
           {" "}
           <ClockIcon className="text-white w-3 h-3" /> 7 days left
          </div>
@@ -158,7 +158,7 @@ const Body: React.FC<BodyProps> = () => {
          </p>
         </div>
        </div>
-       <button className="bg-custom-green py-3 px-5 text-white font-bold rounded-2xl">
+       <button className="bg-custom-green py-3 px-5  text-white font-bold rounded-2xl whitespace-nowrap">
         Upgrade Plan
        </button>
       </div>

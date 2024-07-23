@@ -37,7 +37,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
   .filter(({ index }) => quantities[index] > 0);
 
  return (
-  <main className="sticky top-0 h-auto p-4 bg-white border-l-[1px] border-slate-20">
+  <main className="sticky hidden md:block top-0 h-auto p-4 bg-white border-l-[1px] border-slate-20">
    <div className="flex justify-between">
     <h1 className="text-lg font-semibold">Waitlist</h1>
     <p>
@@ -68,7 +68,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
        <tbody>
         {waitingListItems.map(({ medicine, index }) => (
          <tr key={index}>
-          <td className="px-4 py-2 whitespace-nowrap text-sm font-semibold">
+          <td className="px-4 py-2 lg:whitespace-nowrap text-sm font-semibold">
            {medicine.title}
           </td>
           <td className="px-4 py-2 font-semibold text-right text-custom-gray">
@@ -89,7 +89,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
        Please, you have not added anything yet.
       </p>
      ) : (
-      <ul className="flex !flex-col-reverse gap-8">
+      <ul className="flex !flex-col-reverse gap-8 pt-6">
        {waitingListItems.map(({ medicine, index }) => (
         <li key={index} className="flex-grow">
          <div className="flex justify-between items-center gap-2 h-[6rem]">
@@ -97,7 +97,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
            <Image
             src={medicine.src}
             alt={medicine.alt}
-            className="object-cover p-1 w-[4.8rem] h-[6rem]"
+            className="object-cover hidden lg:block p-1 w-[4.8rem] h-[6rem]"
             width={300}
             height={250}
            />
@@ -135,7 +135,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
               disabled={medicine.stock === 0}
              >
               <span
-               className={`font-semibold text-3xl ${
+               className={`font-semibold text-3xl pb-[3px] ${
                 medicine.stock === 0
                  ? "text-custom-gray cursor-not-allowed"
                  : "text-custom-green"
@@ -157,7 +157,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
               aria-label="Increase quantity"
               disabled={medicine.stock === 0}
              >
-              <span className={`pb-[1.1px] font-semibold text-2xl text-white`}>
+              <span className={`pb-[2px] font-semibold text-2xl text-white`}>
                +
               </span>
              </button>
@@ -202,9 +202,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
       </tbody>
      </table>
      <button className="flex justify-center rounded-xl w-full mt-4 h-11 bg-custom-green text-white items-center">
-      <p className="text-sm whitespace-nowrap absolute">
-       Print bill
-      </p>
+      <p className="text-sm whitespace-nowrap absolute">Print bill</p>
      </button>
     </>
    )}
@@ -212,7 +210,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
    {isCartVisible && (
     <section
      id="Cart"
-     className="hidden justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
+     className="!fixed md:hidden bottom-0 left-0 right-0 flex justify-between items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
     >
      <div className="flex flex-col justify-center items-center">
       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
