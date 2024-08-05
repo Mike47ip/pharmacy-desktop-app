@@ -58,7 +58,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
        Please, you have not added anything yet.
       </p>
      ) : (
-      <table className="w-full table-fixed">
+      <table className="w-fll table-fixed">
        <thead>
         <tr className="text-custom-gray text-sm">
          <th className="px-4 py-2 w-1/2 text-left">Name</th>
