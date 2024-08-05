@@ -55,7 +55,7 @@ const Sidebar = () => {
     id="sidebar-desktop"
     className="w-2/12 xl:w-[15%] flex-shrink-0 lg:flex lg:!h-screen hidden bg-custom-dark h-full overflow-y-auto  items-center flex-col custom-scrollbar scrollbar-hidden"
    >
-    <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
+    <div className="flex pt-6 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
      <h1 className="text-white">MedkitPOS</h1>
      <svg
       className="w-10 h-10"
@@ -77,7 +77,7 @@ const Sidebar = () => {
 
     <div className="flex flex-col h-full w-full justify-between">
      <div>
-      <div className="pt-16 ">
+      <div className="pt-14 ">
        <h2 className="text-custom-gray 2xl:pl-[19%] pb-4 font-semibold pl-[12%]">
         Main Menu
        </h2>
