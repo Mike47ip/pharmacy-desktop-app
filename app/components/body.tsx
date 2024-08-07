@@ -250,8 +250,8 @@ const Body: React.FC<BodyProps> = () => {
       </div>
      </article>
 
-     <article className="pt-4 px-8 overflow-x-auto">
-      <ul className="flex gap-4 font-open-sans ">
+     <article className="pt-4 w-full px-8 overflow-x-auto">
+      <ul className="flex w-full gap-4 font-open-sans ">
        <li className="koo text-sm font-bold px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">
         All
        </li>

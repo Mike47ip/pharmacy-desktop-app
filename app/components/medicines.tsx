@@ -47,7 +47,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
   <>
    <section
     id="medicineCards"
-    className={`pt-6 px-4 ${isCartVisible ? "mb-10" : "pb-4"}`}
+    className={`pt-6 px-4 ${isCartVisible ? "mb-20 " : " pb-28 pb-56 mb-60"}`}
    >
     <div className="flex justify-between">
      <h2 className="font-bold text-lg pl-4">Medicines</h2>
