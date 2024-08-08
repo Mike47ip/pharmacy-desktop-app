@@ -44,13 +44,13 @@ const Header: React.FC<HeaderProps> = () => {
      <ClientDate /> {/* Use the ClientDate component */}
     </div>
 
-    <div className="flex justify-center items-center px-4">
-     <div className="md:left-[26%] xl:left-[8%] md2:relative lg:left-[11%] absolute">
+    <div className="flex justify-center items-center">
+     <div className="md:left-[26%] xl:left-[10%] xl1:left-[8%] md2:relative lg:left-[12%] absolute">
       <MagnifyingGlassIcon className="w-7 text-custom-gray cursor-pointer" />
      </div>
      <input
       type="text"
-      className="border xl:w-[24rem] hidden lg:hidden lg1:block lg:w-[20rem] xl1:w-[30rem] xl2:w-[35rem] xl3:w-[40rem] xl4:w-[46rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
+      className="border xl:w-[24rem] hidden lg:hidden lg1:block lg:w-[20rem] xl1:w-[30rem] xl1:px-20 xl2:w-[35rem] xl3:w-[40rem] xl4:w-[46rem] bg-custom-backgray rounded-full round px-12 py-6 h-6 text-sm border-custom-backgray focus:outline-none focus:border-custom-green"
       placeholder="Search collection..."
      />
     </div>

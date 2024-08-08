@@ -127,7 +127,7 @@ export const WaitingList: React.FC<WaitingListProps> = ({
              <span className="text-custom-green">$ </span>5.6{" "}
              <span className="text-custom-gray"> /Strip</span>
             </p>
-            <div className="flex justify-between rounded-3xl p-1 bg-white w-24">
+            <div className="flex justify-between gap-1 items-center rounded-3xl p-1 bg-white w-24">
              <button
               onClick={() => handleDecrease(index)}
               className="bg-custom-backgray w-7 h-7 flex justify-center items-center rounded-full"

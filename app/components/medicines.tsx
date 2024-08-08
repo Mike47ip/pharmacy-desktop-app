@@ -70,11 +70,11 @@ export const Medicines: React.FC<MedicinesProps> = ({
           />
         </div>
 
-         <div className="w-full md:px-5 lg:px-0">
-          <p className="pt-3  text-sm font-bold">{medicine.title}</p>
+         <div className="w-full px-5 lg:px-0">
+          <p className="pt-3  text-base font-bold">{medicine.title}</p>
           <div
            id="des"
-           className="w-full h-20 lg:text-[0.8rem] xl:text-[1rem] leading-snug text-custom-gray"
+           className="w-full h-20 lg:text-[0.6rem] xl:text-[1rem] leading-snug text-custom-gray"
           >
            {truncateText(medicine.description)}
           </div>
