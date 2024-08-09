@@ -10,6 +10,7 @@ import { UsersIcon } from "@heroicons/react/24/outline";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { useRef, useEffect, useState, useCallback } from "react";
 import { useSidebar } from "./sidebarContext";
+import Image from "next/image";
 
 const Sidebar = () => {
  const { isSidebarOpen, toggleSidebar } = useSidebar(); // Get the context values
@@ -55,29 +56,17 @@ const Sidebar = () => {
     id="sidebar-desktop"
     className="w-2/12 xl:w-[15%] flex-shrink-0 lg:flex lg:!h-screen hidden bg-custom-dark h-full overflow-y-auto  items-center flex-col custom-scrollbar scrollbar-hidden"
    >
-    <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
-     <h1 className="text-white">MedkitPOS</h1>
-     <svg
-      className="w-10 h-10"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 -960 960 960"
-     >
-      <defs>
-       <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style={{ stopColor: "#07AF29", stopOpacity: 1 }} />3
-        <stop offset="100%" style={{ stopColor: "#07AF", stopOpacity: 1 }} />
-       </linearGradient>
-      </defs>
-      <path
-       fill="url(#grad2)"
-       d="M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v480q0 33-23.5 56.5T800-80H160Zm240-640h160v-80H400v80Zm40 360v120h80v-120h120v-80H520v-120h-80v120H320v80h120Z"
-      />
-     </svg>
-    </div>
-
+  
+     <Image
+      src="/dougi.png"
+      alt="Douginas"
+      className="object-contain py-5  border-b-[0.2px] border-slate-600"
+      width={150}
+      height={140}
+     />
     <div className="flex flex-col h-full w-full justify-between">
      <div>
-      <div className="pt-16 ">
+      <div className="pt-7 ">
        <h2 className="text-custom-gray 2xl:pl-[19%] pb-4 font-semibold pl-[12%]">
         Main Menu
        </h2>
@@ -191,28 +180,18 @@ const Sidebar = () => {
     }`}
    >
     {" "}
-    <div className="flex pt-7 flex-row-reverse gap-3 pb-7 justify-center items-center border-b-[0.2px] border-slate-600">
-     <h1 className="text-white">MedkitPOS</h1>
-     <svg
-      className="w-10 h-10"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 -960 960 960"
-     >
-      <defs>
-       <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style={{ stopColor: "#07AF29", stopOpacity: 1 }} />3
-        <stop offset="100%" style={{ stopColor: "#07AF", stopOpacity: 1 }} />
-       </linearGradient>
-      </defs>
-      <path
-       fill="url(#grad3)"
-       d="M160-80q-33 0-56.5-23.5T80-160v-480q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v480q0 33-23.5 56.5T800-80H160Zm240-640h160v-80H400v80Zm40 360v120h80v-120h120v-80H520v-120h-80v120H320v80h120Z"
-      />
-     </svg>
+    <div className="flex pt-3 flex-row-reverse gap-3 pb-7 justify-center items-center">
+     <Image
+      src="/dougi.png"
+      alt="Douginas"
+      className="object-contain py-5  border-b-[0.2px] border-slate-600"
+      width={150}
+      height={140}
+     />
     </div>
     <div className="flex flex-col h-full w-full justify-between">
      <div>
-      <div className="pt-16 ">
+      <div className="pt-7 ">
        <h2 className="text-custom-gray 2xl:pl-[19%] pb-4 font-semibold pl-[12%]">
         Main Menu
        </h2>

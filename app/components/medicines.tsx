@@ -47,7 +47,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
   <>
    <section
     id="medicineCards"
-    className={`pt-6 px-4 ${isCartVisible ? "mb-24" : "pb-4"}`}
+    className={`pt-6 px-4 ${isCartVisible ? "mb-28 md:mb-14" : "mb-14"}`}
    >
     <div className="flex justify-between">
      <h2 className="font-bold text-lg pl-4">Medicines</h2>
@@ -70,11 +70,11 @@ export const Medicines: React.FC<MedicinesProps> = ({
           />
         </div>
 
-         <div className="w-full md:px-5 lg:px-0">
-          <p className="pt-3  text-sm font-bold">{medicine.title}</p>
+         <div className="w-full px-5 lg:px-0">
+          <p className="pt-3  text-base font-bold">{medicine.title}</p>
           <div
            id="des"
-           className="w-full h-20 lg:text-[0.8rem] xl:text-[1rem] leading-snug text-custom-gray"
+           className="w-full h-20 lg:text-[0.6rem] xl:text-[1rem] leading-snug text-custom-gray"
           >
            {truncateText(medicine.description)}
           </div>
@@ -164,23 +164,6 @@ export const Medicines: React.FC<MedicinesProps> = ({
        </p>
       </button>
      </section>
-     {/* <section
-      id="Cart"
-      className=" md:hidden justify-between bottom-0 items-center bg-white w-full h-24 px-4 py-9 shadow-upward z-30"
-     >
-      <div className="flex flex-col justify-center items-center">
-       <h2 className="text-xs pl-4 text-custom-gray">You&apos;ve added</h2>
-       <p className="flex font-semibold gap-1">
-        <span className="text-custom-green font-semibold">{cartItems}</span>
-        items <ChevronDownIcon className="w-4 absolute ml-16" />
-       </p>
-      </div>
-      <button className="flex justify-center rounded-xl min-w-min h-10 bg-custom-green text-white items-center px-4">
-       <p className="text-sm whitespace-nowrap">
-        Purchase {cartTotal.toFixed(2)}
-       </p>
-      </button>
-     </section> */}
     </>
    )}
   </>

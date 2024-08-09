@@ -18,6 +18,11 @@ const config: Config = {
     lg1: "1168px",
     lg3: "1181px",
     lg2: "1254px", // body breakpoint
+    lg4: "1367px",
+    xl1: "1412px",
+    xl2: "1568px",
+    xl3: "1620px",
+    xl4: "1750px",
    },
    backgroundImage: {
     "dark-black-background": "url('/dark-black-background.jpg')",

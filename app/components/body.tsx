@@ -141,7 +141,7 @@ const Body: React.FC<BodyProps> = () => {
  return (
   <>
    <main className="flex w-full">
-    <div className="w-full md:w-[69%]">
+    <div className="w-full md:!w-[69%] flex-grow-0">
      <article className="p-10 flex justify-center">
       <div className="relative flex flex-col items-start gap-5 w-4/5 lg:w-full lg:flex-row justify-between lg:items-center p-7 bg-dark-black-background bg-cover bg-center rounded-3xl">
        <div className="flex flex-col gap-2">
@@ -171,7 +171,7 @@ const Body: React.FC<BodyProps> = () => {
         See more
        </button>
       </div>
-      <div className="max-w-[50rem]">
+      <div className="">
        <ul id="waiting-list" className="flex gap-5 overflow-x-hidden">
         {waitListData.map((medicine, index) => (
          <li key={index} className="flex bg-white rounded-2xl gap-4 p-2">
@@ -250,8 +250,8 @@ const Body: React.FC<BodyProps> = () => {
       </div>
      </article>
 
-     <article className="pt-4 px-8 overflow-x-auto">
-      <ul className="flex gap-4 font-open-sans ">
+     <article className="pt-4 w-full px-8 overflow-x-auto">
+      <ul className="flex w-full gap-4 font-open-sans ">
        <li className="koo text-sm font-bold px-5 py-3 rounded-3xl text-white bg-gradient-to-b from-green-gradient to-green-gradient-light">
         All
        </li>
@@ -285,7 +285,7 @@ const Body: React.FC<BodyProps> = () => {
       cartTotal={cartTotal}
      />
     </div>
-    <aside className="w-[31%]">
+    <aside className="!w-[31%]">
      <WaitingList
       medicines={medicinesData}
       quantities={quantities}
