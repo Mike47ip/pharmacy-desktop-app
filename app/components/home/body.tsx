@@ -12,8 +12,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { WaitingList } from "./waitinglist";
 
-import WaitlistInterface from "../types";
-import { medicinesData } from "../utils/medicineData";
+import WaitlistInterface from "../../types";
+import { medicinesData } from "../../utils/medicineData";
 import { useState } from "react";
 
 const waitListData: WaitlistInterface[] = [

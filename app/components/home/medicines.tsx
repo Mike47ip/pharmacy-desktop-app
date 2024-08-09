@@ -6,7 +6,7 @@ import {
  MinusCircleIcon,
  PlusCircleIcon,
 } from "@heroicons/react/24/solid";
-import { medicinesData } from "../utils/medicineData";
+import { medicinesData } from "../../utils/medicineData";
 import { Medicine } from "./waitinglist";
 import { MinusIcon } from "@heroicons/react/24/outline";
 interface MedicinesProps {
