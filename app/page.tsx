@@ -1,10 +1,10 @@
-import Body from "./components/home/body";
 import React from "react";
+import Login from "./components/login/login";
 
 const Home: React.FC = () => {
  return (
   <main className="w-full">
-   <Body />
+   <Login />
   </main>
  );
 };
