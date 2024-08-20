@@ -2,11 +2,7 @@ import React from "react";
 import Login from "./components/login/login";
 
 const Home: React.FC = () => {
- return (
-  <main className="w-full">
-   <Login />
-  </main>
- );
+ return <Login />;
 };
 
 export default Home;
