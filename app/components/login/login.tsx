@@ -16,7 +16,7 @@ const Login = () => {
  return (
   <>
    <div className="flex w-full h-screen bg-custom-background  ">
-    <div className="w-[50%] h-full">
+    <div className="w-[100%] md:w-[50%] h-full hidden md:block">
      <Image
       src="/boxes2.jpg"
       alt="shopping cart"
@@ -25,9 +25,9 @@ const Login = () => {
       height={220}
      />
     </div>
-    <div className="flex flex-col justify-center items-center px-20 rounded shadow-md w-[50%]">
+    <div className="flex flex-col justify-center items-center px-10 lg:px-20  rounded shadow-md w-[100%] md:[50%]">
      <h1 className="text-2xl font-bold mb-6">Sign in to Salesai</h1>
-     <form onSubmit={handleSubmit} className="w-full px-20">
+     <form onSubmit={handleSubmit} className="w-full ">
       <div className="mb-4 bg-custom-logininput">
        <input
         type="text"
@@ -49,8 +49,8 @@ const Login = () => {
        Sign in
       </button>
      </form>
-    <div className="pt-1">
-    <span>Do not have an account?</span> <button className="text-custom-green font-semibold">Sign Up now</button>
+    <div className="pt-1 font-semibold">
+    <span>Do not have an account?</span> <button className="text-custom-green">Sign Up now</button>
     </div>
     </div>
    </div>
