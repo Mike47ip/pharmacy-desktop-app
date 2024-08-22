@@ -70,19 +70,19 @@ export const Medicines: React.FC<MedicinesProps> = ({
         </div>
 
          <div className="w-full px-5 lg:px-0">
-          <p className="pt-3  text-base font-bold">{medicine.title}</p>
+          <p className="pt-3 text-lg font-extrabold">{medicine.title}</p>
           <div
            id="des"
-           className="w-full h-20 lg:text-[0.6rem] xl:text-[1rem] leading-snug text-custom-gray"
+           className="w-full h-20 lg:text-[0.8rem] xl:text-[0.9rem] leading-snug text-custom-gray"
           >
            {truncateText(medicine.description)}
           </div>
           <div className="flex  gap-6 items-center whitespace-nowrap">
-           <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">
+           <p className="text-[0.7rem] font-semibold flex text-custom-gray flex-col">
             Netto:{" "}
             <span className="text-black text-[0.9rem]">{medicine.netto}</span>
            </p>
-           <p className="text-[0.6rem] font-semibold flex text-custom-gray flex-col">
+           <p className="text-[0.7rem] font-semibold flex text-custom-gray flex-col">
             {" "}
             Stock:{" "}
             <span className="text-black text-[0.9rem]">
