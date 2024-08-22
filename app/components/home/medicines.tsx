@@ -8,7 +8,6 @@ import {
 } from "@heroicons/react/24/solid";
 import { medicinesData } from "../../utils/medicineData";
 import { Medicine } from "./waitinglist";
-import { MinusIcon } from "@heroicons/react/24/outline";
 interface MedicinesProps {
  medicines: Medicine[];
  quantities: number[];
@@ -117,7 +116,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
            disabled={medicine.stock === 0}
           >
            <div
-            className={`font-semibold pb-[3px] text-3xl ${
+            className={`font-semibold pb-[4px] text-3xl ${
              medicine.stock === 0
               ? "text-custom-gray cursor-not-allowed"
               : "text-custom-green"
@@ -137,7 +136,7 @@ export const Medicines: React.FC<MedicinesProps> = ({
            aria-label="Increase quantity"
            disabled={medicine.stock === 0}
           >
-           <div className={`pb-[1.8px] font-semibold text-2xl text-white`}>
+           <div className={`pt-[1px] font-semibold text-2xl text-white`}>
             <span className="text-center">+</span>
            </div>
           </button>
